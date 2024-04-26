@@ -51,7 +51,7 @@ blockquote, q {
 * {
     overflow-x: hidden;
 }
-body {
+html, body {
     background-color: var(--bg-color-1);
 }
 section {

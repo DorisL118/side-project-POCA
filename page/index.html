@@ -25,38 +25,81 @@
 
         const App = () => {
             return <>
+                {/*首頁*/}
                 <div className="index">
                     <section className="header">
                         <div className="header-photo"><img src="../img/@1x/Top.png" alt="" /></div>
                         <div className="header-logo"><img src="../logo/@1x/LOGO-L.svg" alt="" /></div>
                     </section>
 
+                    {/*搜尋主題*/}
                     <section className="search">
                         <div><img src="../img/@1x/wave.svg" alt="" /></div>
                         <div>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>
-                            <img src="" alt=""/>    
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
                         </div>
                     </section>
 
+                    {/*文章 找咖啡*/}
                     <section className="article">
                         <div>
-                        <img src="../img/@1x/" alt=""/>
+                            <p>找咖啡</p>
+                            <img src="../title-coco-font/CAFE.png" alt="" />
+                        </div>
+                        <div>
+                            <img src="../img/@1x/" alt="" />
                             <p className="title">隱藏在巷弄在地人的老咖啡廳</p>
-                            <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI"/>有WIFI</button>
-                            <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座"/>有插座</button>
-                            <button className="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善"/>寵物友善</button>
-                            <hr/>
+                            <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                            <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                            <button className="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                            <hr />
                         </div>
                     </section>
 
-
+                    {/*地圖*/}
                     <section className="map"></section>
 
-                    <section className="coffe"></section>
-                    
-                    <section className="product"></section>
+                    {/*公平貿易咖啡*/}
+                    <section className="coffe">
+                        <div>
+                            <p>公平貿易咖啡</p>
+                            <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                            <img src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                        </div>
+
+                        <div>
+                            <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。<br />針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。<br />某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。</p>
+                        </div>
+
+                        <div>
+                            <img src="../img/@1x/wave-M.svg" alt="" />
+                            <div>
+                                <img src="../img/@1x/circle-txt.svg" alt="" />
+                                <p>Buy It Now !</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    {/*咖啡豆販賣產品*/}
+                    <section className="product">
+                        <div>
+                            <p>買咖啡</p>
+                            <img src="../title-coco-font/ONLINE SHOP.png" alt="" />
+                        </div>
+
+                        <div>
+                            <img src="../img/@1x/product-M.png" alt="" />
+                            <button>#巴西</button>
+                            <button>#日曬</button>
+                            <button>#中深焙</button>
+
+                        </div>
+
+
+                    </section>
 
                 </div>
             </>
