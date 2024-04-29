@@ -1,0 +1,11 @@
+.nav-item, .nav-item-search {
+    padding: 4px;
+    cursor: pointer;
+}
+.nav-item-search{
+    position: relative;
+}
+.form-control {
+    display: none;
+    position: absolute;
+}
