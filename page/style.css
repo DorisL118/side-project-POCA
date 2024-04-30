@@ -92,3 +92,62 @@ section {
 }
 
 
+
+/* 搜尋主題 */
+.search-bg {
+    position: relative;
+    display: flex;
+    justify-content: space-around; /* 水平等間距分佈 */
+    align-items: center; /* 垂直置中 */
+    
+}
+.search-item {
+    margin: auto; /* 在 Flexbox 中水平平均分散 */
+    text-align: center; /* 文字水平置中 */
+    position: relative; /* 設置 search-item 為相對定位 */
+    margin-bottom: 20px; /* 設置 search-item 之間的間距 */
+
+}
+.search-item-content {
+    color: #FFFFFF;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.search-item-bg {
+	width: 350px;
+	height: 335px;
+	animation: morph 10s ease-in-out infinite alternate,
+		change 20s linear infinite alternate;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes morph {
+	0%,
+	100% {
+		border-radius: 68% 55% 80% 50% / 68% 60% 70% 55%;
+	}
+	20% {
+		border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+	}
+	40% {
+		border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+	}
+	60% {
+		border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+	}
+	80% {
+		border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+	}
+}
+
+@keyframes change {
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
