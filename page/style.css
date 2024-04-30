@@ -94,19 +94,27 @@ section {
 
 
 /* 搜尋主題 */
-.search-bg {
+.search {
     position: relative;
+    
+}
+.search-item-all {
     display: flex;
+    flex-direction: row;
     justify-content: space-around; /* 水平等間距分佈 */
     align-items: center; /* 垂直置中 */
-    
+    position: absolute; /* 設置為絕對定位 */
+    top: 40%; /* 垂直置中 */
+    left: 50%; /* 水平置中 */
+    transform: translate(-50%, -50%); /* 居中 */
+
 }
 .search-item {
     margin: auto; /* 在 Flexbox 中水平平均分散 */
     text-align: center; /* 文字水平置中 */
     position: relative; /* 設置 search-item 為相對定位 */
-    margin-bottom: 20px; /* 設置 search-item 之間的間距 */
-
+    margin-bottom: 40px; /* 設置 search-item 之間的間距 */
+    padding: 0 30px;
 }
 .search-item-content {
     color: #FFFFFF;
@@ -115,6 +123,7 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
 } 
 
 .search-item-bg {
