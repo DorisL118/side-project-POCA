@@ -52,13 +52,10 @@ blockquote, q {
 /* 共用區 */
 @font-face{
     font-family: "noto-sans-tc";
-    src: url();
-}
-* {
-
+    src: url(../noto-sans-tc-font);
 }
 body {
-    font-family: ;
+    font-family: "noto-sans-tc";
     background-color: var(--bg-color-1);
     overflow-x: hidden;
 }
@@ -81,7 +78,6 @@ section {
     --main: #CDD42A;
     --deep: #111111;
     --light: #FFFFFF;
-
 }
 
 
