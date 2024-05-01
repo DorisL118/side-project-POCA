@@ -17,6 +17,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./nav.js"></script>
     <link rel="stylesheet" type="text/css" href="./nav.css">
 
 </head>
@@ -36,7 +37,7 @@
                 <div className="container">
                     <div className="row row-cols-2 mt-3">
                         <div className="row-col-2">
-                            <img src="../logo/@1x/Header-LOGO.svg" alt="" />
+                            <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
                         </div>
 
                         <div className="row-col-2 ">
@@ -44,7 +45,9 @@
                                 <li className="nav-item-1">
                                     <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
                                 </li>
-                                <li className="nav-item-2">
+                                <li className="nav-item-2" click={()=>{
+                                    console.log("nav-click")
+                                }}>
                                     <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                 </li>
                             </ul>
@@ -59,7 +62,7 @@
 
     </script>
 
-    <script src="./nav.js"></script>
+    
 
 </body>
 
