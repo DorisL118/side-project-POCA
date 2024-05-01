@@ -126,25 +126,37 @@
 
 
                     {/*地圖*/}
-                    <section className="map"></section>
+                    <section className="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.6978557971224!2d121.52481907394224!3d25.044325837878393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9c0ac903e35%3A0x99603698998bee1f!2zQUJPVVQgSCBDb2ZmZWUg5ZKW5ZWh5buzIOiykyDlt7flrZDmmK_np4HkurrlnJ_lnLDoq4vli7_lgZzou4o!5e0!3m2!1szh-TW!2stw!4v1714566015259!5m2!1szh-TW!2stw"
+                            className="google-map"
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </section>
+
 
                     {/*公平貿易咖啡*/}
                     <section className="coffe">
-                        <div>
-                            <p>公平貿易咖啡</p>
-                            <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
-                            <img src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                        <div className="coffe-item-all">
+                            <div className="coffe-item-1">
+                                <p>公平貿易咖啡</p>
+                                <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                                <img src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                            </div>
+
+                            <div className="coffe-item-2">
+                                <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。<br />針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。<br />某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。</p>
+                            </div>
                         </div>
 
-                        <div>
-                            <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。<br />針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。<br />某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。</p>
-                        </div>
-
-                        <div>
-                            <img src="../img/@1x/wave-M.svg" alt="" />
-                            <div>
-                                <img src="../img/@1x/circle-txt.svg" alt="" />
-                                <p>Buy It Now !</p>
+                        <div className="coffe-2">
+                            <div className="wave"><img src="../img/@1x/wave-M.svg" alt="" /></div>
+                            
+                            <div className="coffe-item-all-2">
+                                <div className="coffe-item-2-1"><img src="../img/@1x/circle-txt.svg" alt="" /></div>
+                                <div className="coffe-item-2-2"><p>Buy It Now !</p></div>
                             </div>
                         </div>
 
