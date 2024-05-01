@@ -1,18 +1,11 @@
-$(document).ready(function() {
-    $(".nav-item-search").click(function() {
-        $(".form-control").fadeToggle(); // 切換表單的顯示/隱藏
-    });
+// 找到你的 .nav-item-2 元素
+const navItem2 = document.querySelector('.nav-item-2');
+// 找到你的 .overlay 元素
+const overlay = document.querySelector('.overlay');
 
-    $(".form-control").click(function(e) {
-        e.stopPropagation(); // 防止點擊表單時冒泡到 document
-    });
-
-    $(document).click(function(e) {
-        // 點擊頁面其他地方時，如果表單是顯示的，則隱藏表單
-        if ($(e.target).closest(".form-control").length === 0) {
-            $(".form-control").fadeOut();
-        }
-    });
-
+// 當 .nav-item-2 被點擊時，觸發事件
+navItem2.addEventListener('click', function(){
+    // 切換 .show-overlay 類的存在，以顯示/隱藏毛玻璃效果
+    overlay.classList.toggle('show-overlay');
     
 });

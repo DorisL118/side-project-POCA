@@ -1,0 +1,225 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* eric's css */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/*--------------- 共用區 ---------------*/
+@font-face{
+    font-family: "noto-sans-tc";
+    src: url(../noto-sans-tc-font);
+}
+body {
+    font-family: "noto-sans-tc";
+    background-color: var(--bg-color-1);
+    overflow-x: hidden;
+}
+section {
+    width: 100%;
+    height: 100vh;
+    /*上下垂直置中*/
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /*水平置中*/
+    /* align-items: center; */ 
+}
+:root {
+    /*bg color*/
+    --bg-color-1: #F6F7F2;
+
+    /*main color*/
+    --main: #CDD42A;
+    --deep: #111111;
+    --light: #FFFFFF;
+}
+
+
+
+/*--------------- header ---------------*/
+.header {
+    height: 100vh; /* 佔滿視窗高度 */
+    width: 100%;
+}
+.header-photo {
+    height: 100vh;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header-photo img {
+    height: 100vh;
+    width: auto;
+}
+
+.header-logo {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateY(95%); /* 垂直置中 */
+}
+
+
+
+/*--------------- 搜尋主題 ---------------*/
+.search {
+    width: 100%;
+    position: relative; 
+}
+.search-bg {
+    width: 100%;
+    height: auto;
+}
+.search-bg img {
+    width: 100%;
+    height: auto;
+}
+.search-item-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* 水平等間距分佈 */
+    align-items: center; /* 垂直置中 */
+    position: absolute; /* 設置為絕對定位 */
+    top: 50%; /* 垂直置中 */
+    left: 50%; /* 水平置中 */
+    transform: translate(-50%, -50%); /* 居中 */
+}
+.search-item {
+    margin: auto; /* 在 Flexbox 中水平平均分散 */
+    text-align: center; /* 文字水平置中 */
+    position: relative; /* 設置 search-item 為相對定位 */
+    margin-bottom: 200px; /* 設置 search-item 之間的間距 */
+    padding: 0 30px;
+}
+.search-item-content {
+    color: #FFFFFF;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+} 
+.search-item-content {
+    font-weight: 700;
+}
+.search-item-bg {
+    width: 100%;
+	height: 100%;
+	animation: morph 10s ease-in-out infinite alternate,
+		change 20s linear infinite alternate;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes morph {
+	0%,
+	100% {
+		border-radius: 68% 55% 80% 50% / 68% 60% 70% 55%;
+	}
+	20% {
+		border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+	}
+	40% {
+		border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+	}
+	60% {
+		border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+	}
+	80% {
+		border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+	}
+}
+
+@keyframes change {
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+
+
+/*--------------- 文章 找咖啡 ---------------*/
+.article {
+    width: 100%;
+}
+.article-title {
+
+}
+.article-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* 內容分散排列 */
+    margin: 10px auto; /* 水平置中 */
+}
+.article-item {
+    white-space: nowrap; /* 防止文本折行 */
+    animation: scroll 20s linear infinite; /* 滾動動畫 */
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* 起始位置 */
+    }
+    100% {
+        transform: translateX(100%); /* 結束位置 */
+        visibility: hidden;
+    }
+}
+.article-item:nth-child(n+4){
+    display: none;
+}
+.article-item-photo {
+    width: 90%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px 0px;
+}

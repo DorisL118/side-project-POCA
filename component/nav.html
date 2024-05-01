@@ -27,6 +27,12 @@
 
         const Nav = () => {
             return (<>
+                <div className="overlay">
+                    <div><p>找咖啡 | Cafe ❯</p></div>
+                    <div><p>買咖啡 | Online Shop ❯</p></div>
+                    <div><p>店家地圖 | Cafe Map ❯</p></div>
+                    <div><p>聯絡我們 | Contact Us ❯</p></div>
+                </div>
                 <div className="container">
                     <div className="row row-cols-2 mt-3">
                         <div className="row-col-2">
@@ -35,16 +41,10 @@
 
                         <div className="row-col-2 ">
                             <ul className="nav justify-content-end">
-                                <form className="d-flex">
-                                    <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                </form>
-                                <li className="nav-item-search">
-                                    <img src="../icon/@1x/magnifier-1.svg" className="nav-link-saerch" aria-current="page" href="#"></img>
-                                </li>
-                                <li className="nav-item">
+                                <li className="nav-item-1">
                                     <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item-2">
                                     <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                 </li>
                             </ul>
@@ -56,7 +56,11 @@
 
 
         ReactDOM.createRoot(document.getElementById('root')).render(<Nav />);
+
     </script>
+
+    <script src="./nav.js"></script>
+
 </body>
 
 </html>
