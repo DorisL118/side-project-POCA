@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
 /* eric's css */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -46,19 +49,24 @@ blockquote, q {
 	quotes: "" "";
 }
 
-
 /* 共用區 */
+@font-face{
+    font-family: "noto-sans-tc";
+    src: url();
+}
 * {
+
+}
+body {
+    font-family: ;
+    background-color: var(--bg-color-1);
     overflow-x: hidden;
 }
-html, body {
-    background-color: var(--bg-color-1);
-}
 section {
-    height: 100%;
-    width: auto;
-    padding-bottom: 200px;
+    width: 100%;
+    height: 100vh;
     /*上下垂直置中*/
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -78,25 +86,41 @@ section {
 
 
 /* header */
+.header {
+    height: 100vh; /* 佔滿視窗高度 */
+    width: 100%;
+}
 .header-photo {
-    height: 100%;
+    height: 100vh;
     position: relative;
     justify-content: flex-end;
     align-items: center;
+}
+.header-photo img {
+    height: 100vh;
+    width: auto;
 }
 
 .header-logo {
     position: absolute;
     margin-left: 50%;
-    transform: translateY(80%); /* 垂直置中 */
+    transform: translateY(95%); /* 垂直置中 */
 }
 
 
 
 /* 搜尋主題 */
 .search {
-    position: relative;
-    
+    width: 100%;
+    position: relative; 
+}
+.search-bg {
+    width: 100%;
+    height: auto;
+}
+.search-bg img {
+    width: 100%;
+    height: auto;
 }
 .search-item-all {
     display: flex;
@@ -104,7 +128,7 @@ section {
     justify-content: space-around; /* 水平等間距分佈 */
     align-items: center; /* 垂直置中 */
     position: absolute; /* 設置為絕對定位 */
-    top: 40%; /* 垂直置中 */
+    top: 50%; /* 垂直置中 */
     left: 50%; /* 水平置中 */
     transform: translate(-50%, -50%); /* 居中 */
 
@@ -113,7 +137,7 @@ section {
     margin: auto; /* 在 Flexbox 中水平平均分散 */
     text-align: center; /* 文字水平置中 */
     position: relative; /* 設置 search-item 為相對定位 */
-    margin-bottom: 40px; /* 設置 search-item 之間的間距 */
+    margin-bottom: 200px; /* 設置 search-item 之間的間距 */
     padding: 0 30px;
 }
 .search-item-content {
@@ -127,8 +151,8 @@ section {
 } 
 
 .search-item-bg {
-	width: 350px;
-	height: 335px;
+    width: 100%;
+	height: 100%;
 	animation: morph 10s ease-in-out infinite alternate,
 		change 20s linear infinite alternate;
     overflow: hidden;
