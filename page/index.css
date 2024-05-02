@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* eric's css */
 html, body, div, span, applet, object, iframe,
@@ -54,17 +55,29 @@ blockquote, q {
     font-family: "noto-sans-tc";
     src: url(../noto-sans-tc-font);
 }
+@font-face{
+    font-family: "Poppins";
+    src: url(../popins-font);
+}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 body {
-    font-family: "noto-sans-tc";
+    font-family: "noto-sans-tc" ,"Poppins";
     background-color: var(--bg-color-1);
     overflow-x: hidden;
 }
-section {
+section:not(.product) {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0px 10px 0px 0px;
+    padding: 0px 0px 4px 0px;
+}
+.product {
+    padding-bottom: 40vh;
 }
 
 :root {
@@ -76,7 +89,16 @@ section {
     --deep: #111111;
     --light: #FFFFFF;
 }
-
+button {
+    border-radius: 99px;
+    margin: 0px 4px 0px 0px;
+    background-color: #FFFFFF;
+    border-width: 1px; /* 設置邊框寬度為 1 像素 */
+    border-style: solid; /* 使用實線邊框 */
+}
+.product-item-btn {
+    margin-top: 10px;
+}
 
 
 /*--------------- header ---------------*/
@@ -95,11 +117,10 @@ section {
     height: 100vh;
     width: auto;
 }
-
 .header-logo {
     position: absolute;
     margin-left: 50%;
-    transform: translateY(50%); /* 垂直置中 */
+    transform: translateY(90%); /* 垂直置中 */
     background-attachment: fixed;
 }
 
@@ -202,7 +223,7 @@ section {
     line-height: 1.2rem;
 }
 .view-all {
-    font-family: "noto-sans-tc";
+    font-family: "Poppins";
     font-size: 1.2rem;
     font-weight: 600;
     color: #111111;
@@ -335,6 +356,13 @@ p br {
 
 
 
+/*--------------- 產品 ---------------*/
+.product-title {
+    margin: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .product p {
     font-family: "noto-sans-tc";
     font-size: 0.9rem;
@@ -342,4 +370,30 @@ p br {
     color: #111111;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
+}
+.product-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* 內容分散排列 */
+    margin: 10px auto; /* 水平置中 */
+}
+.product-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+}
+
+
+
+
+/*--------------- footer ---------------*/
+.footer {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer p {
+    text-align: center;
+    padding: 10px 0px;
 }
