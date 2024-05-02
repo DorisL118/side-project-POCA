@@ -23,8 +23,8 @@
     <script type="text/babel">
 
         const App = {() => {
+
             return <>
-            
                 {/*首頁*/}
                 <Nav></Nav>
                 <div className="index">
