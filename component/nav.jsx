@@ -1,6 +1,10 @@
-<html lang="en">
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import './nav.css'; // 引入 CSS 文件
+
 <head>
-    <title>nav-bar</title>
+<meta charset='utf-8' />
+    <title>map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8"/>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -16,55 +20,48 @@
             crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./nav.css"/>
+
 </head>
-<body>
-<div id="root"></div>
-<script type="text/babel">
-    const { useState } = React;
 
-    const Nav = {()=> {
-        const [showOverlay, setShowOverlay] = useState(false);
+const Nav = () => {
+    const [showOverlay, setShowOverlay] = useState(false);
 
-        const handleClick = ()=>{
-            setShowOverlay(!showOverlay) // 點擊時切換 showOverlay 的狀態
-        }
-        const handleHomeClick = ()=>{
-            setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
-        }
+    const handleClick = () => {
+        setShowOverlay(!showOverlay); // 點擊時切換 showOverlay 的狀態
+    }
 
-        return (
-            <>
-                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
-                    <div className="find"><p>找咖啡 | Cafe ❯</p></div>
-                    <div className="buy"><p>買咖啡 | Online Shop ❯</p></div>
-                    <div className="map"><p>店家地圖 | Cafe Map ❯</p></div>
-                    <div className="contact"><p>聯絡我們 | Contact Us ❯</p></div>
-                    <div className="home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
-                </div>
-                <div className="container">
-                    <div className="row row-cols-2 mt-3">
-                        <div className="row-col-2">
-                            <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
-                        </div>
-                        <div className="row-col-2 ">
-                            <ul className="nav justify-content-end">
-                                <li className="nav-item-1">
-                                    <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
-                                </li>
-                                <li className="nav-item-2" onClick={handleClick}>
-                                    <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
-                                </li>
-                            </ul>
-                        </div>
+    const handleHomeClick = () => {
+        setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
+    }
+
+    return (
+        <>
+            <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                <div className="find"><p>找咖啡 | Cafe ❯</p></div>
+                <div className="buy"><p>買咖啡 | Online Shop ❯</p></div>
+                <div className="map"><p>店家地圖 | Cafe Map ❯</p></div>
+                <div className="contact"><p>聯絡我們 | Contact Us ❯</p></div>
+                <div className="home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
+            </div>
+            <div className="container">
+                <div className="row row-cols-2 mt-3">
+                    <div className="row-col-2">
+                        <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                    </div>
+                    <div className="row-col-2">
+                        <ul className="nav justify-content-end">
+                            <li className="nav-item-1">
+                                <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
+                            </li>
+                            <li className="nav-item-2" onClick={handleClick}>
+                                <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </>
-        );
-    }}
-        
-    
+            </div>
+        </>
+    );
+}
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<Nav />);
-</script>
-</body>
-</html>
+ReactDOM.createRoot(document.getElementById('root')).render(<Nav />);
