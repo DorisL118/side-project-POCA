@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>article</title>
+    <title>POCA 找咖啡 文章</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -16,14 +16,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./article.css">
+    <link rel="stylesheet" href="./index.css">
 
+    <script src="../json/jquery-1.11.3.min.js"></script>
+    <script src="../json/jquery.jcarousellite.min.js"></script>
 </head>
 
 <body>
     <div id="root"></div>
     <script type="text/babel">
+
         const articles = [
             {
                 id: 1,
@@ -50,8 +52,8 @@
             const Article = () => {
                 return <>
                     {articles.map(({ id, img, title, button }) => (
-                        <div className="article-item" key={id}>
-                            <img className="article-item-photo" src={img} alt="咖啡廳形象照" />
+                        <div className="article-content" key={id}>
+                            <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
                             <p className="title">{title}</p>
                             <button className="button"><img src={button} alt="button" /></button>
                         </div>
@@ -60,10 +62,30 @@
             }
 
             return (<>
-            
-                <div className="article-all">
-                    <Article />
+                <div>
+                    <p>首頁 | 找咖啡</p>
+                    <hr />
                 </div>
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle" id="dropdownMenuButton">
+                        鄰近捷運站
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">文湖線</a>
+                        <a class="dropdown-item" href="#">淡水信義線</a>
+                        <a class="dropdown-item" href="#">松山新店線</a>
+                        <a class="dropdown-item" href="#">中和新蘆線</a>
+                        <a class="dropdown-item" href="#">板南線</a>
+                    </div>
+                </div>
+
+                <section>
+                    <div className="article-content-all">
+                        <Article />
+                    </div>
+                </section>
+
             </>);
 
         }
@@ -71,6 +93,7 @@
 
         ReactDOM.createRoot(document.getElementById('root')).render(<App />);
     </script>
+
 </body>
 
 </html>
