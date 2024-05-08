@@ -82,7 +82,10 @@ body {
     color: black;
     background: white;
 }
+iframe {
+    width: 100vw;
 
+}
 ol,
 ul {
     list-style: none;
@@ -188,11 +191,23 @@ section {
 button {
     border-radius: 99px;
     margin: 0px 4px 0px 0px;
-    background-color: #FFFFFF;
     border-width: 1px;
-    /* 設置邊框寬度為 1 像素 */
     border-style: solid;
-    /* 使用實線邊框 */
+    background-color: #f1f1f1;
+    color: #686868;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: .7rem;
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 4px 7px 4px 4px;
+}
+.button img {
+    padding: 0 2px 0 2px;
+    width: 1.1rem;
+    color: #686868;
 }
 
 .product-item-btn {
@@ -471,6 +486,16 @@ button {
 
 
 
+
+/*--------------- nav ---------------*/
+#nav {
+    height: 6.5vh;
+    background-color: rgba(255, 255, 255, 0.5); /* 白色背景，透明度為 0.5 */
+}
+
+
+
+
 /*--------------- 文章 找咖啡 ---------------*/
 .article {
     width: 100%;
@@ -528,14 +553,7 @@ button {
     margin: 10px 0px;
 }
 
-button {
-    padding: 2px 7px 2px 3px;
-}
 
-.button img {
-    padding: 0 2px 0 2px;
-    width: 1.1rem;
-}
 
 
 
@@ -806,8 +824,8 @@ p br {
 }
 
 .title {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin: 10px 0px;
 }
 
@@ -815,6 +833,7 @@ p br {
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 0px 50px 40px 50px;
 }
 
 .dropdown-toggle {
@@ -824,6 +843,7 @@ p br {
     padding: 8px 12px;
     cursor: pointer;
     position: relative;
+    font-size: .7rem;
 }
 
 .dropdown-menu {
@@ -834,7 +854,8 @@ p br {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    top: calc(100% + 5px); /* 將菜單顯示在 toggle 下方 */
+    top: calc(100% + 5px);
+    /* 將菜單顯示在 toggle 下方 */
     font-size: .8rem;
 }
 

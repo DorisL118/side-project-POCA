@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>POCA 找咖啡 文章</title>
+    <title>POCA | 找咖啡</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -48,7 +48,7 @@
         ]
 
 
-        const App = () => {
+        const Article = () => {
             const Article = () => {
                 return <>
                     {articles.map(({ id, img, title, button }) => (
@@ -67,17 +67,20 @@
                     <hr />
                 </div>
 
-                <div class="dropdown">
-                    <button class="dropdown-toggle" id="dropdownMenuButton">
+                <div className="dropdown">
+                    <button className="dropdown-toggle" id="dropdownMenuButton">
                         鄰近捷運站
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">文湖線</a>
-                        <a class="dropdown-item" href="#">淡水信義線</a>
-                        <a class="dropdown-item" href="#">松山新店線</a>
-                        <a class="dropdown-item" href="#">中和新蘆線</a>
-                        <a class="dropdown-item" href="#">板南線</a>
+                        <a className="dropdown-item, 文湖線" href="#">文湖線</a>
+                        <a className="dropdown-item, 淡水信義線" href="#">淡水信義線</a>
+                        <a className="dropdown-item, 松山新店線" href="#">松山新店線</a>
+                        <a className="dropdown-item, 中和新蘆線" href="#">中和新蘆線</a>
+                        <a className="dropdown-item, 板南線" href="#">板南線</a>
                     </div>
+                    <button className><img src="../icon/@1x/Plug.svg" alt="有插座"/>有插座</button>
+                    <button className><img src="../icon/@1x/Plug.svg" alt="有插座"/>有插座</button>
+
                 </div>
 
                 <section>
@@ -91,7 +94,7 @@
         }
 
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        ReactDOM.createRoot(document.getElementById('root')).render(<Article />);
     </script>
 
 </body>
