@@ -84,7 +84,6 @@ body {
 }
 iframe {
     width: 100vw;
-
 }
 ol,
 ul {
@@ -228,9 +227,53 @@ button {
     background-color: rgba(255, 255, 255, 0.009); 
     z-index: 99; /* 確保 #nav 在其他元素上方 */
 }
-
-
-
+.nav-item-1,.nav-item-2, .nav-item-search {
+    padding: 4px;
+    cursor: pointer;
+}
+.nav-item-search{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    z-index: 999; 
+    display: none; 
+}
+.overlay p {
+    text-align: center;
+}
+.show-overlay {
+    display: block; /* 點擊後顯示 */
+}
+p {
+    cursor: pointer;
+    font-weight: 600;
+}
+.nav-find, .nav-buy, .nav-map, .nav-contact, .nav-home {
+    padding: 4% 0;
+}
+.container {
+    background-color: transparent !important;
+    position: absolute;
+    width: 100vw;
+}
+.row {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.row-cols-2>* {
+    flex: 0 0 auto;
+    width: 45%;
+}
 /*--------------- header ---------------*/
 .header {
     position: relative;
@@ -815,6 +858,15 @@ p br {
     src: url(../noto-sans-tc-font);
 }
 
+#article-nav {
+    height: 7vh;
+    width: 100vw;
+    background-color: var(--bg-color-1);
+}
+.article-container {
+    background-color: transparent !important;
+    width: 100vw;
+}
 .article-content-all {
     width: 80vw;
     display: flex;
@@ -822,13 +874,30 @@ p br {
     justify-content: space-evenly;
     margin: 0px auto;
 }
-
+.page-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* 允許元素換行 */
+}
+.page-title p {
+    margin-left: 3vw;
+    font-size: .8rem;
+    color: #777777;
+    margin-top: 10px;
+}
+.page-title hr {
+    display: block;
+    width: 100%; /* 設置 hr 寬度為父元素的寬度 */
+    height: 1px; /* 設置 hr 高度 */
+    border: none; /* 移除 hr 邊框 */
+    background-color: #111111; /* 設置 hr 背景顏色 */
+    margin: 6px 0;
+}
 .article-content {
     width: calc(33.33% - 20px);
     /* 每個欄位佔三分之一，並考慮間距 */
     margin-bottom: 20px;
     /* 元素之間的間距 */
-
 }
 
 .article-content-photo {
@@ -844,11 +913,23 @@ p br {
     margin: 10px 0px;
 }
 
-/* 基本樣式 */
+/* 選單 */
 .dropdown {
-    position: relative;
     display: inline-block;
-    margin: 0px 50px 40px 50px;
+    margin: 10px 50px 40px 45px;
+}
+.dropdown button {
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: .7rem;
+}
+.dropdown img {
+    width: 15px;
+    margin-right: 4px;
 }
 
 .dropdown-toggle {
@@ -866,10 +947,10 @@ p br {
     position: absolute;
     background-color: #fff;
     min-width: 6rem;
-    left: 50%;
+    left: 5.5%;
     transform: translateX(-50%);
     z-index: 1;
-    top: calc(100% + 5px);
+    top: calc(100% + 1px);
     /* 將菜單顯示在 toggle 下方 */
     font-size: .8rem;
 }
