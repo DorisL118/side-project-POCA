@@ -82,9 +82,11 @@ body {
     color: black;
     background: white;
 }
+
 iframe {
     width: 100vw;
 }
+
 ol,
 ul {
     list-style: none;
@@ -203,6 +205,7 @@ button {
     align-items: center;
     padding: 4px 7px 4px 4px;
 }
+
 .button img {
     padding: 0 2px 0 2px;
     width: 1.1rem;
@@ -219,68 +222,93 @@ button {
 
 /*--------------- nav ---------------*/
 #nav {
-    position: absolute; /* 將 #nav 設置為絕對定位 */
-    top: 0; /* 與父元素頂部對齊 */
-    left: 0; /* 與父元素左側對齊 */
-    width: 100%; /* 撐滿父元素寬度 */
+    position: absolute;
+    /* 將 #nav 設置為絕對定位 */
+    top: 0;
+    /* 與父元素頂部對齊 */
+    left: 0;
+    /* 與父元素左側對齊 */
+    width: 100%;
+    /* 撐滿父元素寬度 */
     height: 6.5vh;
-    background-color: rgba(255, 255, 255, 0.009); 
-    z-index: 99; /* 確保 #nav 在其他元素上方 */
+    background-color: rgba(255, 255, 255, 0.009);
+    z-index: 99;
+    /* 確保 #nav 在其他元素上方 */
 }
-.nav-item-1,.nav-item-2, .nav-item-search {
+
+.nav-item-1,
+.nav-item-2,
+.nav-item-search {
     padding: 4px;
     cursor: pointer;
 }
-.nav-item-search{
+
+.nav-item-search {
     display: flex;
     position: relative;
     align-items: center;
 }
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
-    backdrop-filter: blur(10px); /* 毛玻璃效果 */
-    z-index: 999; 
-    display: none; 
+    background-color: rgba(255, 255, 255, 0.5);
+    /* 半透明背景 */
+    backdrop-filter: blur(10px);
+    /* 毛玻璃效果 */
+    z-index: 999;
+    display: none;
 }
+
 .overlay p {
     text-align: center;
 }
+
 .show-overlay {
-    display: block; /* 點擊後顯示 */
+    display: block;
+    /* 點擊後顯示 */
 }
+
 p {
     cursor: pointer;
     font-weight: 600;
 }
-.nav-find, .nav-buy, .nav-map, .nav-contact, .nav-home {
+
+.nav-find,
+.nav-buy,
+.nav-map,
+.nav-contact,
+.nav-home {
     padding: 4% 0;
 }
+
 .container {
     background-color: transparent !important;
     position: absolute;
     width: 100vw;
 }
+
 .row {
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
 }
+
 .row-cols-2>* {
     flex: 0 0 auto;
     width: 45%;
 }
+
 /*--------------- header ---------------*/
 .header {
     position: relative;
     height: 100vh;
     width: 100%;
     margin-bottom: 150px;
-    z-index: 1; 
+    z-index: 1;
 }
 
 /* header RWD斷點 */
@@ -674,7 +702,6 @@ p {
     line-height: 1.2rem;
     padding: 60px 0px 0px 40px;
 }
-
 p br {
     display: block;
     /* 將換行符視為區塊元素 */
@@ -683,7 +710,11 @@ p br {
     margin-bottom: 1em;
     /* 調整段落下邊距 */
 }
-
+br::after {
+    content: "";
+    display: block;
+    margin-top: 1em; /* 調整空行的行高，根據需要調整 */
+}
 /* RWD斷點 */
 /* 電腦 */
 @media (min-width:821px) {}
@@ -832,6 +863,7 @@ p br {
 
 /*--------------- footer ---------------*/
 .footer {
+    width: 100vw;
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -842,6 +874,10 @@ p br {
     text-align: center;
     padding: 10px 0px;
 }
+
+
+
+
 
 
 
@@ -863,10 +899,12 @@ p br {
     width: 100vw;
     background-color: var(--bg-color-1);
 }
+
 .article-container {
     background-color: transparent !important;
     width: 100vw;
 }
+
 .article-content-all {
     width: 80vw;
     display: flex;
@@ -874,25 +912,34 @@ p br {
     justify-content: space-evenly;
     margin: 0px auto;
 }
+
 .page-title {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* 允許元素換行 */
+    flex-wrap: wrap;
+    /* 允許元素換行 */
 }
+
 .page-title p {
     margin-left: 3vw;
     font-size: .8rem;
     color: #777777;
     margin-top: 2px;
 }
+
 .page-title hr {
     display: block;
-    width: 100%; /* 設置 hr 寬度為父元素的寬度 */
-    height: 1px; /* 設置 hr 高度 */
-    border: none; /* 移除 hr 邊框 */
-    background-color: #111111; /* 設置 hr 背景顏色 */
+    width: 100%;
+    /* 設置 hr 寬度為父元素的寬度 */
+    height: 1px;
+    /* 設置 hr 高度 */
+    border: none;
+    /* 移除 hr 邊框 */
+    background-color: #111111;
+    /* 設置 hr 背景顏色 */
     margin: 6px 0;
 }
+
 .article-content {
     width: calc(33.33% - 20px);
     /* 每個欄位佔三分之一，並考慮間距 */
@@ -918,6 +965,7 @@ p br {
     display: inline-block;
     margin: 10px 50px 40px 45px;
 }
+
 .dropdown button {
     margin-right: 10px;
     background-color: #f1f1f1;
@@ -927,6 +975,7 @@ p br {
     cursor: pointer;
     font-size: .7rem;
 }
+
 .dropdown img {
     width: 15px;
     margin-right: 4px;
@@ -966,4 +1015,104 @@ p br {
 /* 滑鼠懸停時顯示下拉式選單 */
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-3 | Article-Content 找咖啡 文章 內容---------------*/
+.article-content section {
+    width: 100vw;
+    height: auto;
+}
+
+.content-title-all {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-title-img {
+    width: 69vw;
+    height: auto;
+}
+
+.content-title-1 {
+    width: 40vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-title-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.content-title-2 iframe {
+    width: 53vh;
+    height: 35vh;
+}
+/* RWD斷點
+/* 電腦 */
+@media (min-width:821px) {}
+
+/* 平板 */
+@media (max-width:820px) {
+    .content-title-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content-title-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+}
+/* 手機板 */
+@media (max-width:640px) {
+    .content-title-all {
+        display: flex;
+        flex-direction: column;
+    }
+    .content-title-img img {
+        height: 50vh;
+        width: 120vw;
+    }
+    .content-title-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+}
+
+.article-text-all {
+    display: flex;
+    align-items: center;
+}
+.article-text {
+    width: 60vw;
+    height: auto;
+}
+.article-text img {
+    width: 60vw;
+    height: auto;
+    margin: 6vh 0 6vh 0;
 }
