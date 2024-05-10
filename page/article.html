@@ -75,19 +75,70 @@
                 id: 1,
                 img: "../img/cafe/cafe1.png",
                 title: "隱藏在巷弄內的老咖啡廳",
-                button: "../icon/@1x/Plug.svg",
+                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },            
             },
             {
                 id: 2,
                 img: "../img/cafe/cafe2.png",
                 title: "令人食指大動的咖啡廳鹹食料理",
-                button: "../icon/@1x/Wifi.svg",
+                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "../icon/@1x/nochat.svg", text: "安靜" },            
             },
             {
                 id: 3,
                 img: "../img/cafe/cafe3.png",
                 title: "最適合友聚時光的下午茶咖啡館",
-                button: "../icon/@1x/Wifi.svg",
+                button1: { src: "../icon/@1x/mrt.svg", text: "淡水信義線" },
+                button2: { src: "../icon/@1x/Date.svg", text: "可訂位" }, 
+            },
+            {
+                id: 4,
+                img: "../img/cafe/cafe4.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
+                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
+                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },            
+            },
+            {
+                id: 5,
+                img: "../img/cafe/cafe5.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/mrt.svg", text: "板南線" },
+                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },            
+            },
+            {
+                id: 6,
+                img: "../img/cafe/cafe6.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
+                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+            },
+            {
+                id: 7,
+                img: "../img/cafe/cafe7.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/Time.svg", text: "有限時" },
+                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },            
+            },
+            {
+                id: 8,
+                img: "../img/cafe/cafe8.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+                button2: { src: "../icon/@1x/Time.svg", text: "有限時" },
+                button3: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },            
+            },
+            {
+                id: 9,
+                img: "../img/cafe/cafe9.png",
+                title: "沉浸書香，品味咖啡的文學天堂",
+                button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
+                button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
+                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },            
             },
         ]
 
@@ -95,12 +146,26 @@
         const Article = () => {
             const Article = () => {
                 return <>
-                    {articles.map(({ id, img, title, button }) => (
+                    {articles.map(({ id, img, title, button1, button2, button3 }) => (
                         <div className="article-content" key={id}>
                             <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
                             <p className="title">{title}</p>
-                            <button className="button"><img src={button} alt="button" /></button>
-                        </div>
+                            <div>
+                                <button className="button">
+                                    <img src={button1.src} alt="button" />
+                                    <p>{button1.text}</p>
+                                </button>
+                                {button2 &&
+                                    <button className="button">
+                                        <img src={button2.src} alt="button" />
+                                        <p>{button2.text}</p>
+                                    </button>}
+                                {button3 &&
+                                    <button className="button">
+                                        <img src={button3.src} alt="button" />
+                                        <p>{button3.text}</p>
+                                    </button>}
+                            </div>                        </div>
                     ))}
                 </>
             }
@@ -115,7 +180,7 @@
                 </div>
 
                 <div className="dropdown">
-                    <button className="dropdown-toggle" id="dropdownMenuButton">
+                    <button className="button dropdown-toggle" id="dropdownMenuButton">
                         鄰近捷運站
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -125,21 +190,21 @@
                         <a className="dropdown-item 中和新蘆線" href="#">中和新蘆線</a>
                         <a className="dropdown-item 板南線" href="#">板南線</a>
                     </div>
-                    <button className="有插座" ><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
-                    <button className="有WIFI" ><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
-                    <button className="不限時" ><img src="../icon/@1x/Time.svg" alt="不限時" />不限時</button>
-                    <button className="可訂位" ><img src="../icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
-                    <button className="寵物友善" ><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
-                    <button className="可聊天" ><img src="../icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
-                    <button className="安靜" ><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
-                    <button className="有鹹食" ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
+                    <button className="button 有插座" ><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                    <button className="button 有WIFI" ><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                    <button className="button 不限時" ><img src="../icon/@1x/Time.svg" alt="不限時" />不限時</button>
+                    <button className="button 可訂位" ><img src="../icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
+                    <button className="button 寵物友善" ><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                    <button className="button 可聊天" ><img src="../icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
+                    <button className="button 安靜" ><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
+                    <button className="button 有鹹食" ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
                 </div>
 
-                <section>
+                
                     <div className="article-content-all">
                         <Article />
                     </div>
-                </section>
+                
 
                 <div className="footer">
                     <hr />

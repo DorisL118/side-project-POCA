@@ -191,7 +191,7 @@ section {
 
 button {
     border-radius: 99px;
-    margin: 0px 4px 0px 0px;
+    margin: 0px 8px 0px 0px;
     border-width: 1px;
     border-style: solid;
     background-color: #f1f1f1;
@@ -199,7 +199,7 @@ button {
     border: 1px solid #ccc;
     padding: 8px 12px;
     cursor: pointer;
-    font-size: .7rem;
+    font-size: .9rem;
     display: flex;
     float: left;
     align-items: center;
@@ -274,7 +274,7 @@ button {
 
 p {
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .nav-find,
@@ -918,6 +918,7 @@ br::after {
     align-items: center;
     flex-wrap: wrap;
     /* 允許元素換行 */
+    margin-top: 5px;
 }
 
 .page-title p {
@@ -948,9 +949,10 @@ br::after {
 }
 
 .article-content-photo {
-    width: 100%;
+    width: 97%;
     /* 圖片佔滿父容器寬度 */
     height: auto;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -969,11 +971,16 @@ br::after {
 .dropdown button {
     margin-right: 10px;
     background-color: #f1f1f1;
-    color: #333;
+    color: #2e2e2e;
     border: 1px solid #ccc;
     padding: 8px 12px;
-    cursor: pointer;
-    font-size: .7rem;
+}
+.dropdown button:hover {
+    margin-right: 10px;
+    background-color: var(--main);
+    color: #141414;
+    border: 1px solid #ffffff;
+    padding: 8px 12px;
 }
 
 .dropdown img {
@@ -988,7 +995,7 @@ br::after {
     padding: 8px 12px;
     cursor: pointer;
     position: relative;
-    font-size: .7rem;
+    font-size: .9rem;
 }
 
 .dropdown-menu {
@@ -996,14 +1003,13 @@ br::after {
     position: absolute;
     background-color: #fff;
     min-width: 6rem;
-    left: 5.5%;
+    left: 5.9%;
     transform: translateX(-50%);
     z-index: 1;
-    top: calc(100% + 1px);
+    top: calc(100% + 3px);
     /* 將菜單顯示在 toggle 下方 */
-    font-size: .8rem;
+    font-size: .9rem;
 }
-
 
 .dropdown-item {
     padding: 8px 12px;
@@ -1011,7 +1017,10 @@ br::after {
     color: #333;
     text-decoration: none;
 }
-
+.dropdown-item:hover {
+    background-color: var(--main);
+    color: #141414;
+}
 /* 滑鼠懸停時顯示下拉式選單 */
 .dropdown:hover .dropdown-menu {
     display: block;
