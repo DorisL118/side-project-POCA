@@ -216,9 +216,16 @@ button {
     margin-top: 10px;
 }
 
+p {
+    cursor: pointer;
+    font-weight: 600;
+}
 
-
-
+.ps {
+    font-weight: 300;
+    font-size: .7rem;
+    color: #777777;
+}
 
 /*--------------- nav ---------------*/
 #nav {
@@ -270,11 +277,6 @@ button {
 .show-overlay {
     display: block;
     /* 點擊後顯示 */
-}
-
-p {
-    cursor: pointer;
-    font-weight: 500;
 }
 
 .nav-find,
@@ -702,6 +704,7 @@ p {
     line-height: 1.2rem;
     padding: 60px 0px 0px 40px;
 }
+
 p br {
     display: block;
     /* 將換行符視為區塊元素 */
@@ -710,11 +713,14 @@ p br {
     margin-bottom: 1em;
     /* 調整段落下邊距 */
 }
+
 br::after {
     content: "";
     display: block;
-    margin-top: 1em; /* 調整空行的行高，根據需要調整 */
+    margin-top: 1em;
+    /* 調整空行的行高，根據需要調整 */
 }
+
 /* RWD斷點 */
 /* 電腦 */
 @media (min-width:821px) {}
@@ -975,6 +981,7 @@ br::after {
     border: 1px solid #ccc;
     padding: 8px 12px;
 }
+
 .dropdown button:hover {
     margin-right: 10px;
     background-color: var(--main);
@@ -1017,10 +1024,12 @@ br::after {
     color: #333;
     text-decoration: none;
 }
+
 .dropdown-item:hover {
     background-color: var(--main);
     color: #141414;
 }
+
 /* 滑鼠懸停時顯示下拉式選單 */
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -1074,6 +1083,7 @@ br::after {
     width: 53vh;
     height: 35vh;
 }
+
 /* RWD斷點
 /* 電腦 */
 @media (min-width:821px) {}
@@ -1085,6 +1095,7 @@ br::after {
         flex-direction: column;
         justify-content: center;
     }
+
     .content-title-2 {
         display: flex;
         flex-direction: column;
@@ -1093,16 +1104,19 @@ br::after {
         width: 100vw;
     }
 }
+
 /* 手機板 */
 @media (max-width:640px) {
     .content-title-all {
         display: flex;
         flex-direction: column;
     }
+
     .content-title-img img {
         height: 50vh;
         width: 120vw;
     }
+
     .content-title-2 {
         display: flex;
         flex-direction: column;
@@ -1116,12 +1130,24 @@ br::after {
     display: flex;
     align-items: center;
 }
+.text {
+    font-size: 1.2rem;
+    color: #919191;
+    margin: 10vh 0 10vh 0;
+}
+.article-text-all p {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 2.3px;
+    line-height: 1.3rem;
+}
+
 .article-text {
     width: 60vw;
     height: auto;
 }
+
 .article-text img {
     width: 60vw;
     height: auto;
-    margin: 6vh 0 6vh 0;
 }
