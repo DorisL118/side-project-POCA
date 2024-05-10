@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>POCA | 找咖啡</title>
+    <title>POCA | 咖啡地圖</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -20,6 +20,16 @@
 
     <script src="../json/jquery-1.11.3.min.js"></script>
     <script src="../json/jquery.jcarousellite.min.js"></script>
+
+    <style>
+        section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -46,7 +56,6 @@
                         <div className="nav-find"><p>找咖啡 | Cafe ❯</p></div>
                         <div className="nav-buy"><p>買咖啡 | Online Shop ❯</p></div>
                         <div className="nav-map"><p>店家地圖 | Cafe Map ❯</p></div>
-                        <div className="nav-contact"><p>聯絡我們 | Contact Us ❯</p></div>
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
                     </div>
 
@@ -71,17 +80,7 @@
             );
         }
 
-        const content = [
-
-        ]
-
-
-        const Content = () => {
-            const Content = () => {
-                return <>
-
-                </>
-            }
+        const MapPage = () => {
 
             return (<>
 
@@ -89,28 +88,31 @@
 
                 <div className="page-title">
                     <hr />
-                    <p>首頁 | 找咖啡 | 文章內容</p>
+                    <p>POCA | 咖啡地圖</p>
                     <hr />
                 </div>
 
 
-                <section>
-                    
-
-                    {/*------------這裡放你們的內容 記得 class=>className------------*/}
-
-
-                    <div className="footer">
-                        <hr />
-                        <p> © 2024 POCA. | 跑咖</p>
+                <section id="map-page">
+                    <div className="map-page">
+                        <p className="title">咖啡地圖</p>
+                        <hr/>
                     </div>
+                        <iframe id="map-page-map" src="../map/map.html" frameBorder="0" ></iframe>
+                    
                 </section>
+
+                <div className="footer">
+                    <hr />
+                    <p> © 2024 POCA. | 跑咖</p>
+                </div>
+
             </>);
 
         }
 
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Content />);
+        ReactDOM.createRoot(document.getElementById('root')).render(<MapPage />);
         ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
 
     </script>
