@@ -69,16 +69,15 @@
                 </>
             );
         }
-        
+
 
         const articles = [
             {
                 id: 1,
-                img: "../img/cafe/cafe1.png",
-                title: "隱藏在巷弄內的老咖啡廳",
-                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-                button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
-                button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
                 price: "674",
             },
         ]
@@ -111,11 +110,12 @@
             }
 
             return (
-                <div>
+                <div class="counter">
                     <label htmlFor="quantity">數量：</label>
-                    <button onClick={decreaseQuantity}>-</button>
                     <input type="text" id="quantity" value={quantity} readOnly />
-                    <button onClick={increaseQuantity}>+</button>
+                    <button className="counter-btn" onClick={increaseQuantity}>+</button>
+                    <button className="counter-btn" onClick={decreaseQuantity}>-</button>
+                    <img src="../icon/@1x/ShoppingCart-btn.svg" alt="" />
                 </div>
             )
         }
@@ -131,30 +131,27 @@
                         <hr />
                     </div>
 
-                    <div className="article-content-all">
-                        {articles.map(({ id, img, title, button1, button2, button3, price }) => (
-                            <div className="article-content" key={id}>
-                                <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
-                                <p className="title">{title}</p>
+                    <div className="product-content-all">
+                        {articles.map(({ id, img, button1, button2, button3, price }) => (
+                            <div className="product-content" key={id}>
                                 <div>
-                                    <button className="button">
-                                        <img src={button1.src} alt="button" />
-                                        <p>{button1.text}</p>
-                                    </button>
-                                    {button2 &&
+                                    <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
+                                    <div>
                                         <button className="button">
-                                            <img src={button2.src} alt="button" />
-                                            <p>{button2.text}</p>
-                                        </button>}
-                                    {button3 &&
-                                        <button className="button">
-                                            <img src={button3.src} alt="button" />
-                                            <p>{button3.text}</p>
-                                        </button>}
+                                            <p>{button1.text}</p>
+                                        </button>
+                                        {button2 &&
+                                            <button className="button">
+                                                <p>{button2.text}</p>
+                                            </button>}
+                                        {button3 &&
+                                            <button className="button">
+                                                <p>{button3.text}</p>
+                                            </button>}
+                                    </div>
                                 </div>
                                 <div>
-                                    <div><p>NT$ {price}</p></div>
-                                    <hr />
+                                    <div className="price"><p>NT$ {price}</p></div>
                                     <ShoppingCart />
                                 </div>
                             </div>

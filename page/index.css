@@ -1174,3 +1174,51 @@ br::after {
     height: 100vh;
     width: 100vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-5 | Product 咖啡豆產品總覽---------------*/
+#quantity {
+    width: 2vw;
+    height: 22px;
+    margin-right: .5rem;
+}
+.product-content-all {
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 0px auto;
+}
+.product-content {
+    display: flex; 
+    flex-direction: column;
+}
+.product-content > div {
+    margin-bottom: 10px; 
+}
+.counter {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    position: relative;
+}
+.counter-btn {
+    width: 1.5vw;
+    height: auto;
+}
+.price {
+    position: absolute;
+    font-size: 1.3rem;
+    margin-top: .3rem;
+}
+
+
