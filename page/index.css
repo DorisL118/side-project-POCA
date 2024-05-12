@@ -1205,6 +1205,9 @@ br::after {
 .product-content > div {
     margin-bottom: 10px; 
 }
+.product-content img {
+    margin-bottom: .3rem;
+}
 .counter {
     display: flex;
     align-items: center; 
@@ -1215,10 +1218,16 @@ br::after {
     width: 1.5vw;
     height: auto;
 }
+.counter label{
+    margin-right: 10px;
+}
+.counter img {
+    cursor: pointer;
+}
 .price {
     position: absolute;
     font-size: 1.3rem;
-    margin-top: .3rem;
+    margin-top: .5rem;
 }
 
 

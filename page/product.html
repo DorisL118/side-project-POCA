@@ -80,6 +80,62 @@
                 button3: { text: "#中深焙" },
                 price: "674",
             },
+            {
+                id: 2,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 3,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 4,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 5,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 6,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 7,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
+            {
+                id: 8,
+                img: "../img/@1x/product-M.png",
+                button1: { text: "#巴西" },
+                button2: { text: "#水洗" },
+                button3: { text: "#中深焙" },
+                price: "674",
+            },
         ]
 
 
@@ -111,7 +167,7 @@
 
             return (
                 <div class="counter">
-                    <label htmlFor="quantity">數量：</label>
+                    <label htmlFor="quantity">數量 |</label>
                     <input type="text" id="quantity" value={quantity} readOnly />
                     <button className="counter-btn" onClick={increaseQuantity}>+</button>
                     <button className="counter-btn" onClick={decreaseQuantity}>-</button>
@@ -153,6 +209,7 @@
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
                                     <ShoppingCart />
+                                    <hr/>
                                 </div>
                             </div>
                         ))}
