@@ -69,6 +69,7 @@
                 </>
             );
         }
+        
 
         const articles = [
             {
@@ -83,69 +84,96 @@
         ]
 
 
-        const Article = () => {
-            const Article = () => {
-                return <>
-                    {articles.map(({ id, img, title, button1, button2, button3, price}) => (
-                        <div className="article-content" key={id}>
-                            <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
-                            <p className="title">{title}</p>
-                            <div>
-                                <button className="button">
-                                    <img src={button1.src} alt="button" />
-                                    <p>{button1.text}</p>
-                                </button>
-                                {button2 &&
-                                    <button className="button">
-                                        <img src={button2.src} alt="button" />
-                                        <p>{button2.text}</p>
-                                    </button>}
-                                {button3 &&
-                                    <button className="button">
-                                        <img src={button3.src} alt="button" />
-                                        <p>{button3.text}</p>
-                                    </button>}
-                            </div>
-                            <div>
-                                <div><p>NT$ {price}</p></div>
-                                <div>
-                                    <p></p>
-                                    </div>
-                                <hr/>
-                                </div>
+        const globalState = {
+            cartQuantity: 0
+        }
 
-                        </div>
-                    ))}
-                </>
+        const ShoppingCart = () => {
+            const [quantity, setQuantity] = useState(1); // 初始化數量為1
+
+            // 減少數量
+            const decreaseQuantity = () => {
+                if (quantity > 1) {
+                    setQuantity(quantity - 1);
+                    updateCartQuantity(quantity - 1); // 更新全域狀態中的購物車數量
+                }
             }
 
-            return (<>
+            // 增加數量
+            const increaseQuantity = () => {
+                setQuantity(quantity + 1);
+                updateCartQuantity(quantity + 1); // 更新全域狀態中的購物車數量
+            }
 
-                <Nav></Nav>
+            // 更新全域狀態中的購物車數量
+            const updateCartQuantity = (newQuantity) => {
+                globalState.cartQuantity = newQuantity;
+            }
 
-                <div className="page-title">
-                    <hr/>
-                    <p>首頁 | 找咖啡</p>
-                    <hr />
+            return (
+                <div>
+                    <label htmlFor="quantity">數量：</label>
+                    <button onClick={decreaseQuantity}>-</button>
+                    <input type="text" id="quantity" value={quantity} readOnly />
+                    <button onClick={increaseQuantity}>+</button>
                 </div>
-
-                <div className="article-content-all">
-                    <Article />
-                </div>
-
-
-                <div className="footer">
-                    <hr />
-                    <p> © 2024 POCA. | 跑咖 </p>
-                </div>
-            </>);
-
+            )
         }
 
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Article />);
-        ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
+        const Product = () => {
+            return <>
+                <div>
+                    <Nav />
+                    <div className="page-title">
+                        <hr />
+                        <p>首頁 | 找咖啡</p>
+                        <hr />
+                    </div>
 
+                    <div className="article-content-all">
+                        {articles.map(({ id, img, title, button1, button2, button3, price }) => (
+                            <div className="article-content" key={id}>
+                                <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
+                                <p className="title">{title}</p>
+                                <div>
+                                    <button className="button">
+                                        <img src={button1.src} alt="button" />
+                                        <p>{button1.text}</p>
+                                    </button>
+                                    {button2 &&
+                                        <button className="button">
+                                            <img src={button2.src} alt="button" />
+                                            <p>{button2.text}</p>
+                                        </button>}
+                                    {button3 &&
+                                        <button className="button">
+                                            <img src={button3.src} alt="button" />
+                                            <p>{button3.text}</p>
+                                        </button>}
+                                </div>
+                                <div>
+                                    <div><p>NT$ {price}</p></div>
+                                    <hr />
+                                    <ShoppingCart />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="footer">
+                        <hr />
+                        <p> © 2024 POCA. | 跑咖 </p>
+                    </div>
+                </div>
+            </>
+        }
+
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<Product />);
+
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<Article />);
     </script>
 
 </body>
