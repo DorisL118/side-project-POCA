@@ -1192,11 +1192,11 @@ br::after {
     margin-right: .5rem;
 }
 .product-content-all {
-        width: 80vw;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin: 0px auto;
+    width:  64.32vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0px auto;
 }
 .product-content {
     display: flex; 
@@ -1215,8 +1215,8 @@ br::after {
     position: relative;
 }
 .counter-btn {
-    width: 1.5vw;
-    height: auto;
+    width: 1.4rem;
+    height: 1.4rem;
 }
 .counter label{
     margin-right: 10px;
