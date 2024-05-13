@@ -165,8 +165,8 @@
                     } else {
                         setTag(tag.filter((item) => item !== e.target.value));
                     }
+                    setFilteredArticles(filtered);
                 })
-                setFilteredArticles(filtered);
 
 
                 return <>
@@ -209,20 +209,20 @@
                         鄰近捷運站
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item 文湖線" href="#" >文湖線</a>
-                        <a className="dropdown-item 淡水信義線" href="#" >淡水信義線</a>
-                        <a className="dropdown-item 松山新店線" href="#" >松山新店線</a>
-                        <a className="dropdown-item 中和新蘆線" href="#" >中和新蘆線</a>
-                        <a className="dropdown-item 板南線" href="#" >板南線</a>
+                        <a className="dropdown-item 文湖線" href="#" onClick={filtered} >文湖線</a>
+                        <a className="dropdown-item 淡水信義線" href="#" onClick={filtered} >淡水信義線</a>
+                        <a className="dropdown-item 松山新店線" href="#" onClick={filtered} >松山新店線</a>
+                        <a className="dropdown-item 中和新蘆線" href="#" onClick={filtered} >中和新蘆線</a>
+                        <a className="dropdown-item 板南線" href="#" onClick={filtered} >板南線</a>
                     </div>
-                    <button className="button 有插座" ><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
-                    <button className="button 有WIFI" ><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
-                    <button className="button 不限時" ><img src="../icon/@1x/Time.svg" alt="不限時" />不限時</button>
-                    <button className="button 可訂位" ><img src="../icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
-                    <button className="button 寵物友善" ><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
-                    <button className="button 可聊天" ><img src="../icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
-                    <button className="button 安靜" ><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
-                    <button className="button 有鹹食" ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
+                    <button className="button 有插座" ><img src="../icon/@1x/Plug.svg" alt="有插座" onClick={filtered} />有插座</button>
+                    <button className="button 有WIFI" ><img src="../icon/@1x/Wifi.svg" alt="有WIFI" onClick={filtered} />有WIFI</button>
+                    <button className="button 不限時" ><img src="../icon/@1x/Time.svg" alt="不限時" onClick={filtered} />不限時</button>
+                    <button className="button 可訂位" ><img src="../icon/@1x/Date.svg" alt="可訂位" onClick={filtered} />可訂位</button>
+                    <button className="button 寵物友善" ><img src="../icon/@1x/Pet.svg" alt="寵物友善" onClick={filtered} />寵物友善</button>
+                    <button className="button 可聊天" ><img src="../icon/@1x/Chat.svg" alt="可聊天" onClick={filtered} />可聊天</button>
+                    <button className="button 安靜" ><img src="../icon/@1x/nochat.svg" alt="安靜" onClick={filtered} />安靜</button>
+                    <button className="button 有鹹食" ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" onClick={filtered} />有鹹食</button>
                 </div>
 
 
