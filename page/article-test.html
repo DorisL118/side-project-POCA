@@ -106,7 +106,7 @@
             {
                 id: 5,
                 img: "../img/cafe/cafe5.png",
-                title: "沉浸書香，品味咖啡的文學天堂",
+                title: "毛孩天堂：超推的寵物友善咖啡廳",
                 button1: { src: "../icon/@1x/mrt.svg", text: "板南線" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
@@ -114,14 +114,16 @@
             {
                 id: 6,
                 img: "../img/cafe/cafe6.png",
-                title: "沉浸書香，品味咖啡的文學天堂",
+                title: "唱片迷必去的復古唱片咖啡廳",
                 button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+
             },
             {
                 id: 7,
                 img: "../img/cafe/cafe7.png",
-                title: "沉浸書香，品味咖啡的文學天堂",
+                title: "被療癒了！想被貓咪包圍就來這",
                 button1: { src: "../icon/@1x/Time.svg", text: "有限時" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
@@ -129,7 +131,7 @@
             {
                 id: 8,
                 img: "../img/cafe/cafe8.png",
-                title: "沉浸書香，品味咖啡的文學天堂",
+                title: "超有氣氛的咖啡廳！好吃又好拍",
                 button1: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
                 button2: { src: "../icon/@1x/Time.svg", text: "有限時" },
                 button3: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
@@ -137,10 +139,34 @@
             {
                 id: 9,
                 img: "../img/cafe/cafe9.png",
-                title: "沉浸書香，品味咖啡的文學天堂",
+                title: "與毛孩共度美好時光",
                 button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
                 button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+            },
+            {
+                id: 10,
+                img: "../img/cafe/cafe10.png",
+                title: "探索奇幻世界：一趟魔法咖啡之旅",
+                button1: { src: "../icon/@1x/mrt.svg", text: "中和新蘆線" },
+                button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
+                button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+            },
+            {
+                id: 11,
+                img: "../img/cafe/cafe11.png",
+                title: "城市角落的寶藏咖啡廳",
+                button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
+                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+            },
+            {
+                id: 12,
+                img: "../img/cafe/cafe12.png",
+                title: "不限時有插座咖啡廳推薦！辦公讀書必收藏",
+                button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
+                button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
+                button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
             },
         ]
 
@@ -150,7 +176,7 @@
                     return (
                         (article.button1 && article.button1.text.includes(tag)) ||
                         (article.button2 && article.button2.text.includes(tag)) ||
-                        (article.button3 && article.button3.text.includes(tag))
+                        (article.button3 && article.button3.text.includes(tag)) 
                     );
                 });
             }, [articles, tag]);
@@ -194,24 +220,18 @@
                 </div>
 
                 <div className="dropdown" tag={tag}>
-                    <button className="button dropdown-toggle" id="dropdownMenuButton">
-                        鄰近捷運站
+                    <button className="button 文湖線" id="dropdownMenuButton"  onClick={(e) => setTag(["線"])}>
+                        <img src="../icon/@1x/mrt.svg" alt="有插座" />鄰近捷運站
                     </button>
-                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item 文湖線" onClick={(e) => setTag("文湖線")}>文湖線</a>
-                        <a className="dropdown-item 淡水信義線" onClick={(e) => setTag("淡水信義線")}>淡水信義線</a>
-                        <a className="dropdown-item 松山新店線" onClick={(e) => setTag("松山新店線")}>松山新店線</a>
-                        <a className="dropdown-item 中和新蘆線" onClick={(e) => setTag("中和新蘆線")}>中和新蘆線</a>
-                        <a className="dropdown-item 板南線" onClick={(e) => setTag("板南線")}>板南線</a>
-                    </div>
                     <button className="button 有插座" onClick={(e) => setTag("有插座")}><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
-                    <button className="button 有WIFI" onClick={(e) => setTag("有WIFI")}><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                    <button className="button 有WIFI" onClick={(e) => setTag("有Wifi")}><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
                     <button className="button 不限時" onClick={(e) => setTag("不限時")}><img src="../icon/@1x/Time.svg" alt="不限時" />不限時</button>
                     <button className="button 可訂位" onClick={(e) => setTag("可訂位")}><img src="../icon/@1x/Date.svg" alt="可訂位" />可訂位</button>
                     <button className="button 寵物友善" onClick={(e) => setTag("寵物友善")}><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
                     <button className="button 可聊天" onClick={(e) => setTag("可聊天")}><img src="../icon/@1x/Chat.svg" alt="可聊天" />可聊天</button>
                     <button className="button 安靜" onClick={(e) => setTag("安靜")}><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
                     <button className="button 有鹹食" onClick={(e) => setTag("有鹹食")} ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
+                    <button className="button 全部" onClick={(e) => setTag("")}>All</button>
                     </div>
 
                 <div className="article-content-all">

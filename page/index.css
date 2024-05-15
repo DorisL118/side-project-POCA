@@ -946,21 +946,25 @@ br::after {
     /* 設置 hr 背景顏色 */
     margin: 6px 0;
 }
+.article-content-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
 .article-content {
     width: calc(33.33% - 20px);
-    /* 每個欄位佔三分之一，並考慮間距 */
+    margin-right: 20px;
     margin-bottom: 20px;
-    /* 元素之間的間距 */
 }
 
 .article-content-photo {
-    width: 97%;
-    /* 圖片佔滿父容器寬度 */
+    width: 100%;
     height: auto;
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
 
 .title {
     font-size: 1.1rem;
@@ -1030,11 +1034,10 @@ br::after {
     color: #141414;
 }
 
-/* 滑鼠懸停時顯示下拉式選單 */
-.dropdown:hover .dropdown-menu {
+/* 當 button.dropdown-toggle 被 hover 時，顯示相鄰的 .dropdown-menu */
+.button.dropdown-toggle:hover + .dropdown-menu {
     display: block;
 }
-
 
 
 
