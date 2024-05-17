@@ -30,6 +30,7 @@
         const { useState } = React;
 
         const Nav = ({ cartQuantity }) => {
+
             const [showOverlay, setShowOverlay] = useState(false);
 
             const handleClick = () => {
@@ -56,11 +57,11 @@
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <li className="nav-item-1">
+                                    <li className="nav-item">
                                         <img src="../icon/@1x/ShoppingCart.svg" alt="" />
-                                        <span>{cartQuantity}</span>
+                                        <div>{cartQuantity}</div>
                                     </li>
-                                    <li className="nav-item-2" onClick={handleClick}>
+                                    <li className="nav-item" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
@@ -165,8 +166,7 @@
                     <input type="text" id="quantity" value={quantity} readOnly />
                     <button className="counter-btn" onClick={increaseQuantity}>＋</button>
                     <button className="counter-btn" onClick={decreaseQuantity}>－</button>
-                    {/* 提交按鈕更新購物車數量 */}
-                    <div onClick={submitCart}><img src="../icon/@1x/ShoppingCart-btn.svg" alt="" /></div>
+                    <div type="submit" onClick={submitCart}><img src="../icon/@1x/ShoppingCart-btn.svg" alt="" /></div>
                 </div>
             )
         }
@@ -223,7 +223,7 @@
                                 </div>
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
-                                    <ShoppingCart updateCartQuantity={() => { }} />
+                                    <ShoppingCart updateCartQuantity={updateCartQuantity} />
                                     <hr />
                                 </div>
                             </div>

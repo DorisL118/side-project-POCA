@@ -1195,7 +1195,7 @@ br::after {
 
 /*--------------- Page-5 | Product 咖啡豆產品總覽---------------*/
 #quantity {
-    width: 2vw;
+    width: 1.5vw;
     height: 22px;
     margin-right: .5rem;
 }
@@ -1268,6 +1268,7 @@ br::after {
 .page-product-title-2 {
     width: 55vw;
     margin-top: 1rem;
+    line-height: 1.5rem;
 }
 
 .page-product-title-2 img {
@@ -1284,25 +1285,55 @@ br::after {
 
 /* 平板 */
 @media (max-width:820px) {
+    #quantity {
+        width: 3vw;
+        height: 22px;
+        margin-right: .5rem;
+    }
     .page-product-all {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+    }
+    .page-product-all img {
+        width: 60vw;
+    }
+    .page-product-title-1 img {
+        width: 35vw;
+    }
+    .page-product-title-1 p {
+        margin-top: 1rem;
     }
     .page-product-title-2 img {
         width: 57vw;
         height: auto;
         margin-bottom: 2rem;
     }
+    .page-product-title-2 {
+        width: 60vw;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
 }
 
 /* 手機板 */
 @media (max-width:640px) {
+    #quantity {
+        width: 5vw;
+        height: 22px;
+        margin-right: .5rem;
+    }
     .page-product-all {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .page-product-title-2 img {
         margin-bottom: 2rem;
+    }
+    .page-product-title-1 img {
+        width: 50vw;
     }
 }
