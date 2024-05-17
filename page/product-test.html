@@ -21,7 +21,16 @@
     <script src="../json/jquery-1.11.3.min.js"></script>
     <script src="../json/jquery.jcarousellite.min.js"></script>
 </head>
-
+<style>
+    .nav-item-1-1 {
+        position: relative;
+        margin-left: .3rem;
+    }
+    .nav-item-1-2 {
+        position: absolute;
+        top: 3%;
+    }
+</style>
 <body>
     <div id="root"></div>
     <div id="nav"></div>
@@ -58,8 +67,8 @@
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
                                     <li className="nav-item">
-                                        <img src="../icon/@1x/ShoppingCart.svg" alt="" />
-                                        <div>{cartQuantity}</div>
+                                        <div className="nav-item-1-1"><img src="../icon/@1x/ShoppingCart.svg" alt="" /></div>
+                                        <div className="nav-item-1-2">{cartQuantity}</div>
                                     </li>
                                     <li className="nav-item" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
