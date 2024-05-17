@@ -73,74 +73,9 @@
         }
 
 
-        const articles = [
-            {
-                id: 1,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 2,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 3,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 4,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 5,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 6,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 7,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-            {
-                id: 8,
-                img: "../img/@1x/product-M.png",
-                button1: { text: "#巴西" },
-                button2: { text: "#水洗" },
-                button3: { text: "#中深焙" },
-                price: "674",
-            },
-        ]
 
-        const ShoppingCart = ({ updateCartQuantity }) => {
+
+        const ShoppingCart = ({ item, updateCartQuantity }) => {
             const [quantity, setQuantity] = useState(1); // 初始化數量為1
 
             // 減少數量
@@ -157,7 +92,7 @@
 
             // 更新購物車數量
             const submitCart = () => {
-                updateCartQuantity(quantity);
+                updateCartQuantity(item, quantity);
             }
 
             return (
@@ -173,12 +108,94 @@
 
 
         const Product = () => {
-            const [cartQuantity, setCartQuantity] = useState(0); // 初始化購物車數量為0
-            // 更新購物車數量
-            const updateCartQuantity = (quantity) => {
-                setCartQuantity(quantity);
-            }
+            const [cartItems, setCartItems] = useState([]);
+            const [cartQuantity, setCartQuantity] = useState(0);
 
+            const updateCartQuantity = (item, quantity) => {
+                const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
+                let updatedCartItems;
+
+                if (existingItem) {
+                    updatedCartItems = cartItems.map(cartItem =>
+                        cartItem.id === item.id
+                            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+                            : cartItem
+                    );
+                } else {
+                    updatedCartItems = [...cartItems, { ...item, quantity }];
+                }
+
+                setCartItems(updatedCartItems);
+                setCartQuantity(updatedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+            };
+
+            const products = [
+                {
+                    id: 1,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 2,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 3,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 4,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 5,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 6,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 7,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+                {
+                    id: 8,
+                    img: "../img/@1x/product-M.png",
+                    button1: { text: "#巴西" },
+                    button2: { text: "#水洗" },
+                    button3: { text: "#中深焙" },
+                    price: "674",
+                },
+            ]
+            
             return <>
                 <div>
                     <Nav cartQuantity={cartQuantity} />
@@ -203,7 +220,7 @@
                     </div>
 
                     <div className="product-content-all">
-                        {articles.map(({ id, img, button1, button2, button3, price }) => (
+                        {products.map(({ id, img, button1, button2, button3, price }) => (
                             <div className="product-content" key={id}>
                                 <div>
                                     <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
@@ -223,7 +240,7 @@
                                 </div>
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
-                                    <ShoppingCart updateCartQuantity={updateCartQuantity} />
+                                    <ShoppingCart item={{id}} updateCartQuantity={updateCartQuantity} />
                                     <hr />
                                 </div>
                             </div>
