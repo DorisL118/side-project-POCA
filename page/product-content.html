@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>首頁 | 產品總覽</title>
+    <title>首頁 | 產品內容</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -26,14 +26,17 @@
         position: relative;
         margin-left: .3rem;
     }
+
     .nav-item-1-2 {
         position: absolute;
         top: 3%;
     }
+
     .article-container {
         cursor: pointer;
     }
 </style>
+
 <body>
     <div id="root"></div>
     <div id="nav"></div>
@@ -108,7 +111,7 @@
             }
 
             return (
-                <div className="counter">
+                <div className="introduction-counter">
                     <label htmlFor="quantity">數量</label>
                     <input type="text" id="quantity" value={quantity} readOnly />
                     <button className="counter-btn" onClick={increaseQuantity}>＋</button>
@@ -144,70 +147,21 @@
             const products = [
                 {
                     id: 1,
-                    img: "../img/@1x/product-M.png",
+                    img: "../img/@1x/product0517.png",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
+                    li1: "口感明亮活潑、酸苦平衡",
+                    li2: "釋放咖啡中優質的風味，為標準焙度",
+                    li3: "中深烘焙法，均衡平順",
+                    li4: "維護生態品質更好",
+                    li5: "國際公平貿易認證",
+                    li6: "500g",
                     price: "674",
-                },
-                {
-                    id: 2,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 3,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 4,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 5,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 6,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 7,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
-                },
-                {
-                    id: 8,
-                    img: "../img/@1x/product-M.png",
-                    button1: { text: "#巴西" },
-                    button2: { text: "#水洗" },
-                    button3: { text: "#中深焙" },
-                    price: "674",
+                    text: "巴西咖啡產業產量約佔世界總量的三分之一，是目前世界上最大的咖啡生產國。巴西全國境內的咖啡種植園合共佔地約27000平方公里，主要分佈在巴西東南部的米納斯吉拉斯州、聖保羅州和巴拉那州，因為這些州份的環境和氣候為咖啡豆提供了理想的生長條件。",
                 },
             ]
-            
+
             return <>
                 <div>
                     <Nav cartQuantity={cartQuantity} />
@@ -231,11 +185,13 @@
                         </div>
                     </div>
 
-                    <div className="product-content-all">
-                        {products.map(({ id, img, button1, button2, button3, price }) => (
-                            <div className="product-content" key={id}>
+                    <div className="product-introduction-all">
+                        {products.map(({ id, img, button1, button2, button3, li1, li2, li3, li4, li5, li6, price }) => (
+                            <div className="product-introduction" key={id}>
                                 <div>
-                                    <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
+                                    <img className="product-introduction-photo" src={img} alt="公平貿易咖啡豆" />
+                                </div>
+                                <div className="product-introduction-1">
                                     <div>
                                         <button className="button">
                                             <p>{button1.text}</p>
@@ -249,14 +205,30 @@
                                                 <p>{button3.text}</p>
                                             </button>}
                                     </div>
-                                </div>
-                                <div>
-                                    <div className="price"><p>NT$ {price}</p></div>
-                                    <ShoppingCart item={{id}} updateCartQuantity={updateCartQuantity} />
-                                    <hr />
+
+                                    <div>
+                                        <ul>
+                                            <li>{li1}</li>
+                                            <li>{li2}</li>
+                                            <li>{li3}</li>
+                                            <li>{li4}</li>
+                                            <li>{li5}</li>
+                                            <li>{li6}</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="product-introduction-price">
+                                        <div className="price"><p>NT$ {price}</p></div>
+                                        <div><ShoppingCart item={{ id }} updateCartQuantity={updateCartQuantity} /></div>
+                                        <hr />
+                                    </div>
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="product-introduction-2">
+                        <div><p>巴西咖啡產業產量約佔世界總量的三分之一，是目前世界上最大的咖啡生產國。巴西全國境內的咖啡種植園合共佔地約27000平方公里，主要分佈在巴西東南部的米納斯吉拉斯州、聖保羅州和巴拉那州，因為這些州份的環境和氣候為咖啡豆提供了理想的生長條件。</p></div>
                     </div>
 
                     <div className="footer">

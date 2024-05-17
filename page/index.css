@@ -1290,26 +1290,32 @@ br::after {
         height: 22px;
         margin-right: .5rem;
     }
+
     .page-product-all {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .page-product-all img {
         width: 60vw;
     }
+
     .page-product-title-1 img {
         width: 35vw;
     }
+
     .page-product-title-1 p {
         margin-top: 1rem;
     }
+
     .page-product-title-2 img {
         width: 57vw;
         height: auto;
         margin-bottom: 2rem;
     }
+
     .page-product-title-2 {
         width: 60vw;
         margin-top: 1rem;
@@ -1324,16 +1330,99 @@ br::after {
         height: 22px;
         margin-right: .5rem;
     }
+
     .page-product-all {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .page-product-title-2 img {
         margin-bottom: 2rem;
     }
+
     .page-product-title-1 img {
         width: 50vw;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-6 | Product 咖啡豆產品簡介---------------*/
+.product-introduction-all {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product-introduction {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.product-introduction li {
+    list-style-type: disc;
+    margin-left: 5%;
+    margin-top: 3%;
+
+}
+
+.product-introduction-photo {
+    width: 40vw;
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .product-introduction {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-introduction-photo {
+        width: 70vw;
+    }
+}
+.product-introduction-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+}
+.product-introduction-2 {
+    width: 75vw;
+    margin: 0 auto;
+    padding: 10vh 0;
+}
+.product-introduction-price {
+    align-self: flex-end;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.introduction-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#quantity {
+    width: 3vw;
+    height: 22px;
+    margin: .7rem;
 }
