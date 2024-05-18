@@ -1515,7 +1515,7 @@ br::after {
     display: flex;
     flex-direction: column;
 }
-.form-data div {
+.form-data div:not(.totals-checkout div) {
     margin-bottom: 5vh;
 }
 .form-data select {
