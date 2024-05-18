@@ -26,20 +26,23 @@
         position: relative;
         margin-left: .3rem;
     }
+
     .nav-item-1-2 {
         position: absolute;
         top: 3%;
     }
+
     .article-container {
         cursor: pointer;
     }
 </style>
+
 <body>
     <div id="root"></div>
     <div id="nav"></div>
     <script type="text/babel">
 
-        const { useState } = React;
+        const { useState, useEffect } = React;
 
         const Nav = ({ cartQuantity }) => {
 
@@ -123,6 +126,16 @@
             const [cartItems, setCartItems] = useState([]);
             const [cartQuantity, setCartQuantity] = useState(0);
 
+            // 在組件加載時從 localStorage 中讀取購物車數據
+            useEffect(() => {
+                const savedCartItems = localStorage.getItem('cartItems');
+                if (savedCartItems) {
+                    const parsedCartItems = JSON.parse(savedCartItems);
+                    setCartItems(parsedCartItems);
+                    setCartQuantity(parsedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+                }
+            }, []);
+
             const updateCartQuantity = (item, quantity) => {
                 const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
                 let updatedCartItems;
@@ -139,6 +152,9 @@
 
                 setCartItems(updatedCartItems);
                 setCartQuantity(updatedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+
+                // 將購物車數據保存到 localStorage
+                localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
             };
 
             const products = [
@@ -207,7 +223,7 @@
                     price: "674",
                 },
             ]
-            
+
             return <>
                 <div>
                     <Nav cartQuantity={cartQuantity} />
@@ -252,7 +268,7 @@
                                 </div>
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
-                                    <ShoppingCart item={{id}} updateCartQuantity={updateCartQuantity} />
+                                    <ShoppingCart item={{ id }} updateCartQuantity={updateCartQuantity} />
                                     <hr />
                                 </div>
                             </div>
