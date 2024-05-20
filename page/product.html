@@ -161,6 +161,7 @@
                 {
                     id: 1,
                     img: "../img/@1x/product-M.png",
+                    title: "台灣咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -169,6 +170,7 @@
                 {
                     id: 2,
                     img: "../img/@1x/product-M.png",
+                    title: "羅布斯塔咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -177,6 +179,7 @@
                 {
                     id: 3,
                     img: "../img/@1x/product-M.png",
+                    title: "巴西咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -185,6 +188,7 @@
                 {
                     id: 4,
                     img: "../img/@1x/product-M.png",
+                    title: "哥倫比亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -193,6 +197,7 @@
                 {
                     id: 5,
                     img: "../img/@1x/product-M.png",
+                    title: "衣索比亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -201,6 +206,7 @@
                 {
                     id: 6,
                     img: "../img/@1x/product-M.png",
+                    title: "肯亞咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -209,6 +215,7 @@
                 {
                     id: 7,
                     img: "../img/@1x/product-M.png",
+                    title: "夏威夷咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -217,6 +224,7 @@
                 {
                     id: 8,
                     img: "../img/@1x/product-M.png",
+                    title: "阿拉比卡咖啡豆",
                     button1: { text: "#巴西" },
                     button2: { text: "#水洗" },
                     button3: { text: "#中深焙" },
@@ -237,7 +245,7 @@
                         <div><img src="../img/@1x/FairTradeCoffee02.png" alt="" /></div>
                         <div>
                             <div className="page-product-title-1">
-                                <p>公平貿易咖啡</p>
+                            {/*<p>公平貿易咖啡</p>*/}
                                 <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
                             </div>
                             <div className="page-product-title-2">
@@ -248,11 +256,12 @@
                     </div>
 
                     <div className="product-content-all">
-                        {products.map(({ id, img, button1, button2, button3, price }) => (
+                        {products.map(({ id, img, title, button1, button2, button3, price }) => (
                             <div className="product-content" key={id}>
                                 <div>
                                     <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
                                     <div>
+                                        <p className="product-content-title">{title}</p>
                                         <button className="button">
                                             <p>{button1.text}</p>
                                         </button>
