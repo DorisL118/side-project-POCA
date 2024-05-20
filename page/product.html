@@ -24,7 +24,7 @@
 <style>
     .nav-item-1-1 {
         position: relative;
-        margin-left: .3rem;
+        margin-left: 0.8rem;
     }
 
     .nav-item-1-2 {
@@ -73,9 +73,11 @@
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
                                     <li className="nav-item">
-                                        <div className="nav-item-1-1"><img src="../icon/@1x/ShoppingCart.svg" alt="" />
-                                            <a href="https://127.0.0.1:5501/page/checkout.html"></a>
-                                            </div>
+                                        <div className="nav-item-1-1">
+                                            <a href="http://127.0.0.1:5501/page/checkout.html">
+                                                <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            </a>
+                                        </div>
                                         <div className="nav-item-1-2">{cartQuantity}</div>
                                     </li>
                                     <li className="nav-item" onClick={handleClick}>

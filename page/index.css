@@ -1459,6 +1459,8 @@ br::after {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100vw;
+        height: auto;
     }
 }
 
@@ -1469,6 +1471,8 @@ br::after {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100vw;
+        height: auto;
     }
 }
 
@@ -1527,15 +1531,23 @@ br::after {
 .shopping-cart-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .shopping-cart-page h2 {
     color: var(--main);
     font-weight: 600;
     font-size: larger;
 }
-.shopping-cart-page ul {
-    margin: 10px 0;
+.shopping-cart-page ul{
+    display: block;
 }
+.shopping-cart-page li {
+    height: 11vh;
+}
+.shopping-cart-page li p {
+    margin: 5px 0;
+}
+
 
 
 
