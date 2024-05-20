@@ -70,58 +70,128 @@
             );
         }
 
-        const content = [
-
-        ]
-
-
         const Checkout = () => {
-            const ShoppingCartPage = () => {
-                const [cartItems, setCartItems] = useState([]);
-                const [showIframe, setShowIframe] = useState(false); // 新增一個狀態來控制是否顯示 iframe
+            const [cartItems, setCartItems] = useState([]);
+            const [showIframe, setShowIframe] = useState(false);
 
-                useEffect(() => {
-                    const savedCartItems = localStorage.getItem('cartItems');
-                    if (savedCartItems) {
-                        setCartItems(JSON.parse(savedCartItems));
-                    }
-                }, []);
+            useEffect(() => {
+                const savedCartItems = localStorage.getItem('cartItems');
+                if (savedCartItems) {
+                    setCartItems(JSON.parse(savedCartItems));
+                }
+            }, []);
 
-                useEffect(() => {
-                    // 判斷購物車是否為空，如果是空的則設置 showIframe 為 true，否則為 false
-                    setShowIframe(cartItems.length === 0);
-                }, [cartItems]);
+            useEffect(() => {
+                if (cartItems.length === 0) {
+                    setShowIframe(true);
+                } else {
+                    setShowIframe(false);
+                }
+            }, [cartItems]);
 
-                const handleDeleteItem = (itemId) => {
-                    // 過濾出要刪除的項目之外的所有項目
-                    const updatedCartItems = cartItems.filter(item => item.id !== itemId);
-                    // 更新購物車項目列表
-                    setCartItems(updatedCartItems);
-                    // 同時更新 localStorage
-                    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-                };
-
-                return (
-                    <>
-                        <div className="shopping-cart-page">
-                            <h2>購物清單</h2>
-                            {showIframe ? (<iframe src="../cpmponent/cartEmpty.html" title="空購物車" width="100%" height="500px"></iframe>) : (
-                                <ul>
-                                    {cartItems.map(item => (
-                                        <li key={item.id}>
-                                            {item.title ? <p>商品名稱: {item.title}</p> : null}
-                                            <p>數量: {item.quantity}</p>
-                                            {item.price ? <p>金額: {item.price}</p> : null}
-                                            <button onClick={() => handleDeleteItem(item.id)}>刪除</button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )
-                            }
-                        </div>
-                    </>
-                );
+            const handleDeleteItem = (itemId) => {
+                const updatedCartItems = cartItems.filter(item => item.id !== itemId);
+                setCartItems(updatedCartItems);
+                localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
             };
+
+            const calculateTotalPrice = (items) => {
+                return items.reduce((total, item) => {
+                    return total + (item.price * item.quantity);
+                }, 0);
+            };
+
+            const totalPrice = calculateTotalPrice(cartItems);
+
+            const ShoppingCartPage = () => (
+                <div className="shopping-cart-page">
+                    <h2>購物清單</h2>
+                    <ul>
+                        {cartItems.map(item => (
+                            <li key={item.id}>
+                                {item.title ? <p>商品名稱: {item.title}</p> : null}
+                                <p>數量: {item.quantity}</p>
+                                {item.price ? <p>金額: {item.quantity * item.price}</p> : null}
+                                <button onClick={() => handleDeleteItem(item.id)}>刪除</button>
+                            </li>
+                        ))}
+                        <div><p>總計: {totalPrice} 元</p></div>
+                    </ul>
+                </div>
+            );
+
+            const Form = () => (
+                <div className="form-data">
+                    <form className="smoove" action="" method="post" name="form-contact" id="form-contact" title="完成訂購表單">
+                        <small className="ps">「*」為必填。</small>
+                        <div>
+                            <label htmlFor="username">*姓名：</label>
+                            <input type="text" name="username" id="username" title="請輸入姓名" placeholder="請輸入姓名" required />
+                        </div>
+                        <div>
+                            <label htmlFor="tel">聯絡電話：</label>
+                            <input type="tel" name="tel" id="tel" title="請輸入聯絡電話" placeholder="請輸入聯絡電話" />
+                        </div>
+                        <div>
+                            <label htmlFor="email">*電子郵件：</label>
+                            <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="請輸入電子郵件" required />
+                        </div>
+                        <div>
+                            <label htmlFor="county">*運送方式：</label>
+                            <select name="county" id="county" required>
+                                <option value="選擇" disabled selected>請選擇運送方式</option>
+                                <option value="宅配">宅配</option>
+                                <option value="超商店到店">超商店到店</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="county">*收件縣市：</label>
+                            <select name="county" id="county" required>
+                                <option value="選擇" disabled selected>請選擇收件縣市</option>
+                                <option value="台北市">台北市</option>
+                                <option value="新北市">新北市</option>
+                                <option value="桃園市">桃園市</option>
+                                <option value="台中市">台中市</option>
+                                <option value="台南市">台南市</option>
+                                <option value="高雄市">高雄市</option>
+                                <option value="基隆市">基隆市</option>
+                                <option value="新竹市">新竹市</option>
+                                <option value="嘉義市">嘉義市</option>
+                                <option value="新竹縣">新竹縣</option>
+                                <option value="苗栗縣">苗栗縣</option>
+                                <option value="彰化縣">彰化縣</option>
+                                <option value="南投縣">南投縣</option>
+                                <option value="雲林縣">雲林縣</option>
+                                <option value="嘉義縣">嘉義縣</option>
+                                <option value="屏東縣">屏東縣</option>
+                                <option value="宜蘭縣">宜蘭縣</option>
+                                <option value="花蓮縣">花蓮縣</option>
+                                <option value="台東縣">台東縣</option>
+                                <option value="澎湖縣">澎湖縣</option>
+                                <option value="金門縣">金門縣</option>
+                                <option value="連江縣">連江縣</option>
+                            </select>
+                            <label htmlFor="zipcode">*郵遞區號：</label>
+                            <input type="text" name="zipcode" id="zipcode" title="請輸入郵遞區號" placeholder="請輸入郵遞區號" required />
+                        </div>
+                        <div className="btn-form">
+                            <span className="font-noto-sans">完成訂購 ❯</span>
+                        </div>
+                    </form>
+                </div>
+            );
+
+            const CartEmpty = () => (
+                <div className="wavebox">
+                    <div className="wavecontent">
+                        <div>
+                            <img src="./img/@1x/wave-notify-v0507.svg" alt="" />
+                            <p>購物車尚未加入任何商品。</p>
+                            <img src="./img/@1x/wave-notify-v0507.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            );
 
             return (
                 <>
@@ -133,82 +203,14 @@
                         <hr />
                     </div>
 
-
                     <section className="form">
-                        <div>
-                            <ShoppingCartPage />
-                        </div>
-
-                        <div className="form-data">
-                            <form className="smoove" action="" method="post" name="form-contact" id="form-contact" title="完成訂購表單">
-                                <small className="ps">「*」為必填。</small>
-
-                                <div>
-                                    <label htmlFor="username">*姓名：</label>
-                                    <input type="text" name="username" id="username" title="請輸入姓名" placeholder="請輸入姓名" required />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="tel">聯絡電話：</label>
-                                    <input type="tel" name="tel" id="tel" title="請輸入聯絡電話" placeholder="請輸入聯絡電話" />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="email">*電子郵件：</label>
-                                    <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="請輸入電子郵件" required />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="county">*運送方式：</label>
-                                    <select name="county" id="county" required>
-                                        <option value="選擇" disabled selected>請選擇運送方式</option>
-                                        <option value="台北市">宅配</option>
-                                        <option value="台北市">超商店到店</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label htmlFor="county">*收件縣市：</label>
-                                    <select name="county" id="county" required>
-                                        <option value="選擇" disabled selected>請選擇收件縣市</option>
-                                        <option value="台北市">台北市</option>
-                                        <option value="新北市">新北市</option>
-                                        <option value="桃園市">桃園市</option>
-                                        <option value="台中市">台中市</option>
-                                        <option value="台南市">台南市</option>
-                                        <option value="高雄市">高雄市</option>
-                                        <option value="基隆市">基隆市</option>
-                                        <option value="新竹市">新竹市</option>
-                                        <option value="嘉義市">嘉義市</option>
-                                        <option value="新竹縣">新竹縣</option>
-                                        <option value="苗栗縣">苗栗縣</option>
-                                        <option value="彰化縣">彰化縣</option>
-                                        <option value="南投縣">南投縣</option>
-                                        <option value="雲林縣">雲林縣</option>
-                                        <option value="嘉義縣">嘉義縣</option>
-                                        <option value="屏東縣">屏東縣</option>
-                                        <option value="宜蘭縣">宜蘭縣</option>
-                                        <option value="花蓮縣">花蓮縣</option>
-                                        <option value="台東縣">台東縣</option>
-                                        <option value="澎湖縣">澎湖縣</option>
-                                        <option value="金門縣">金門縣</option>
-                                        <option value="連江縣">連江縣</option>
-                                    </select>
-
-                                    <label htmlFor="email">*郵遞區號：</label>
-                                    <input type="email" name="email" id="email" title="請輸入郵遞區號" placeholder="請輸入郵遞區號" required />
-                                </div>
-
-                                <div className="totals-checkout">
-                                    <div><label htmlFor="message">總計：</label></div>
-                                    <div><div className="btn-form">
-                                        <span className="font-noto-sans">完成訂購 ❯</span>
-                                    </div></div>
-                                </div>
-                            </form>
-                        </div>
+                        {showIframe ? <CartEmpty /> : (
+                            <>
+                                <ShoppingCartPage />
+                                <Form />
+                            </>
+                        )}
                     </section>
-
 
                     <div className="footer">
                         <hr />
@@ -216,8 +218,7 @@
                     </div>
                 </>
             );
-        }
-
+        };
 
 
         ReactDOM.createRoot(document.getElementById('root')).render(<Checkout />);

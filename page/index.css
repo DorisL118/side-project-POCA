@@ -1474,7 +1474,7 @@ br::after {
 
 .form > div {
     flex: 1;
-    margin: 0 10px; /* 左右各 10px 的間距 */
+    margin: 0 100px; /* 左右各 10px 的間距 */
 }
 
 .btn-form span {
@@ -1522,4 +1522,62 @@ br::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.shopping-cart-page {
+    display: flex;
+    flex-direction: column;
+}
+.shopping-cart-page h2 {
+    color: var(--main);
+    font-weight: 600;
+    font-size: larger;
+}
+.shopping-cart-page ul {
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- Page-8 | Checkout 購物車清單 暫無購物項目 ---------------*/
+.wavebox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+}
+
+/* 波浪圖 */
+.wavecontent img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 通知文字 */
+.wavecontent p {
+    text-align: center;
+    margin: 48px auto;
+}
+
+/* 訂購完成 */
+.success p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.success small {
+    font-size: 0.75rem;
 }
