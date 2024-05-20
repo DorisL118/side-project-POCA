@@ -216,6 +216,14 @@ button {
     margin-top: 10px;
 }
 
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+a:hover, .nav-home:hover {
+    color: var(--main)
+}
+
 p {
     cursor: pointer;
     font-weight: 550;

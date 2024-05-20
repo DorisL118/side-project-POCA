@@ -44,10 +44,10 @@
             return (
                 <>
                     <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
-                        <div className="nav-find"><p>首頁 | POCA ❯</p><a href="../page/index.html"></a></div>
-                        <div className="nav-find"><p>找咖啡 | Cafe Article ❯</p><a href="../page/article.html"></a></div>
-                        <div className="nav-buy"><p>買咖啡 | Coffee Shop ❯</p><a href="../page/product.html"></a></div>
-                        <div className="nav-map"><p>店家地圖 | Cafe Map ❯</p><a href="../page/map.html"></a></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
+                        <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
+                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
@@ -58,9 +58,11 @@
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <li className="nav-item-1">
-                                        <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
-                                    </li>
+                                    <div className="nav-item-1-1">
+                                        <a href="http://127.0.0.1:5501/page/checkout.html">
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                        </a>
+                                    </div>
                                     <li className="nav-item-2" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
@@ -176,7 +178,7 @@
                     return (
                         (article.button1 && article.button1.text.includes(tag)) ||
                         (article.button2 && article.button2.text.includes(tag)) ||
-                        (article.button3 && article.button3.text.includes(tag)) 
+                        (article.button3 && article.button3.text.includes(tag))
                     );
                 });
             }, [articles, tag]);
@@ -220,7 +222,7 @@
                 </div>
 
                 <div className="dropdown" tag={tag}>
-                    <button className="button 文湖線" id="dropdownMenuButton"  onClick={(e) => setTag(["線"])}>
+                    <button className="button 文湖線" id="dropdownMenuButton" onClick={(e) => setTag(["線"])}>
                         <img src="../icon/@1x/mrt.svg" alt="有插座" />鄰近捷運站
                     </button>
                     <button className="button 有插座" onClick={(e) => setTag("有插座")}><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
@@ -232,7 +234,7 @@
                     <button className="button 安靜" onClick={(e) => setTag("安靜")}><img src="../icon/@1x/nochat.svg" alt="安靜" />安靜</button>
                     <button className="button 有鹹食" onClick={(e) => setTag("有鹹食")} ><img src="../icon/@1x/Dinner.svg" alt="有鹹食" />有鹹食</button>
                     <button className="button 全部" onClick={(e) => setTag("")}>All</button>
-                    </div>
+                </div>
 
                 <div className="article-content-all">
                     <FilterArticles articles={articles} tag={tag} />

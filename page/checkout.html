@@ -43,10 +43,11 @@
             return (
                 <>
                     <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
-                        <div className="nav-find"><p>找咖啡 | Cafe ❯</p></div>
-                        <div className="nav-buy"><p>買咖啡 | Online Shop ❯</p></div>
-                        <div className="nav-map"><p>店家地圖 | Cafe Map ❯</p></div>
-                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
+                        <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
+                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
                     <div className="article-container">
@@ -56,9 +57,11 @@
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <li className="nav-item-1">
-                                        <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
-                                    </li>
+                                    <div className="nav-item-1-1">
+                                        <a href="http://127.0.0.1:5501/page/checkout.html">
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                        </a>
+                                    </div>
                                     <li className="nav-item-2" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>

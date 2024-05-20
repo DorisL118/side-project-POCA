@@ -55,22 +55,25 @@
             return (
                 <>
                     <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
-                        <div className="nav-find"><p>找咖啡 | Cafe ❯</p></div>
-                        <div className="nav-buy"><p>買咖啡 | Online Shop ❯</p></div>
-                        <div className="nav-map"><p>店家地圖 | Cafe Map ❯</p></div>
-                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
+                        <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
+                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
-                    <div className="container">
+                    <div className="article-container">
                         <div className="row row-cols-2 mt-3">
-                            <div className="row-col-2">
+                            <div className="row-col-2" >
                                 <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <li className="nav-item-1">
-                                        <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
-                                    </li>
+                                    <div className="nav-item-1-1">
+                                        <a href="http://127.0.0.1:5501/page/checkout.html">
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                        </a>
+                                    </div>
                                     <li className="nav-item-2" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
@@ -92,9 +95,15 @@
 
                     <section className="header">
                         <div className="header-photo"><img src="../img/@1x/Top.png" alt="" /></div>
-                        <div className="header-logo"><img src="../logo/@1x/LOGO-Line.svg" alt="" /></div>
-                        <div className="header-logo"><img src="../logo/@1x/LOGO-L.svg" alt="" /></div>
-                        <div className="header-logo"><img src="../logo/@1x/LOGO-Line.svg" alt="" /></div>
+                        <div className="header-logo">
+                            <img src="../logo/@1x/LOGO-L.svg" alt="" />
+                        </div>
+                        <div className="header-logo animate-up">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
+                        <div className="header-logo animate-down">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
                     </section>
 
                     {/*搜尋主題*/}
@@ -159,7 +168,7 @@
                                 <p className="title">令人食指大動的咖啡廳鹹食料理</p>
                                 <button className="button"><img src="../icon/@1x/mrt.svg" alt="鄰近捷運站" /><small>鄰近捷運站</small></button>
                                 <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" /><small>有插座</small></button>
-                                <button className="button"><img src="../icon/@1x/nochat.svg" alt="禁止交談" /><small>禁止交談</small></button>
+                                <button className="button"><img src="../icon/@1x/nochat.svg" alt="禁止交談" /><small>安靜</small></button>
                             </div>
 
                             <div className="article-item">
@@ -207,6 +216,8 @@
                                 <p>公平貿易咖啡</p>
                                 <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
                                 <img className="coffe-item-1-img" src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                                <img src="../img/@1x/CB-3.png" alt="Image 1" className="scroll-img" />
+                                <img src="../img/@1x/CB-4.png" alt="Image 2" className="scroll-img" />
                             </div>
 
                             <div className="coffe-item-2">
