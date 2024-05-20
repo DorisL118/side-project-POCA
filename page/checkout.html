@@ -78,6 +78,7 @@
         const Checkout = () => {
             const ShoppingCartPage = () => {
                 const [cartItems, setCartItems] = useState([]);
+                const [showIframe, setShowIframe] = useState(false); // 新增一個狀態來控制是否顯示 iframe
 
                 useEffect(() => {
                     const savedCartItems = localStorage.getItem('cartItems');
@@ -86,22 +87,39 @@
                     }
                 }, []);
 
+                useEffect(() => {
+                    // 判斷購物車是否為空，如果是空的則設置 showIframe 為 true，否則為 false
+                    setShowIframe(cartItems.length === 0);
+                }, [cartItems]);
+
+                const handleDeleteItem = (itemId) => {
+                    // 過濾出要刪除的項目之外的所有項目
+                    const updatedCartItems = cartItems.filter(item => item.id !== itemId);
+                    // 更新購物車項目列表
+                    setCartItems(updatedCartItems);
+                    // 同時更新 localStorage
+                    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+                };
+
                 return (
-                    <div className="shopping-cart-page">
-                        <h2>購物車</h2>
-                        {cartItems.length === 0 ? (
-                            <p>購物車是空的</p>
-                        ) : (
-                            <ul>
-                                {cartItems.map(item => (
-                                    <li key={item.id}>
-                                        <p>商品ID: {item.id}</p>
-                                        <p>數量: {item.quantity}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
+                    <>
+                        <div className="shopping-cart-page">
+                            <h2>購物清單</h2>
+                            {showIframe ? (<iframe src="../cpmponent/cartEmpty.html" title="空購物車" width="100%" height="500px"></iframe>) : (
+                                <ul>
+                                    {cartItems.map(item => (
+                                        <li key={item.id}>
+                                            {item.title ? <p>商品名稱: {item.title}</p> : null}
+                                            <p>數量: {item.quantity}</p>
+                                            {item.price ? <p>金額: {item.price}</p> : null}
+                                            <button onClick={() => handleDeleteItem(item.id)}>刪除</button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )
+                            }
+                        </div>
+                    </>
                 );
             };
 
@@ -143,7 +161,7 @@
                                 <div>
                                     <label htmlFor="county">*運送方式：</label>
                                     <select name="county" id="county" required>
-                                        <option value="" disabled selected>請選擇運送方式</option>
+                                        <option value="選擇" disabled selected>請選擇運送方式</option>
                                         <option value="台北市">宅配</option>
                                         <option value="台北市">超商店到店</option>
                                     </select>
@@ -152,7 +170,7 @@
                                 <div>
                                     <label htmlFor="county">*收件縣市：</label>
                                     <select name="county" id="county" required>
-                                        <option value="" disabled selected>請選擇收件縣市</option>
+                                        <option value="選擇" disabled selected>請選擇收件縣市</option>
                                         <option value="台北市">台北市</option>
                                         <option value="新北市">新北市</option>
                                         <option value="桃園市">桃園市</option>

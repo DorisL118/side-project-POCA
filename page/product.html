@@ -88,8 +88,6 @@
         }
 
 
-
-
         const ShoppingCart = ({ item, updateCartQuantity }) => {
             const [quantity, setQuantity] = useState(1); // 初始化數量為1
 
@@ -245,7 +243,7 @@
                         <div><img src="../img/@1x/FairTradeCoffee02.png" alt="" /></div>
                         <div>
                             <div className="page-product-title-1">
-                            {/*<p>公平貿易咖啡</p>*/}
+                                {/*<p>公平貿易咖啡</p>*/}
                                 <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
                             </div>
                             <div className="page-product-title-2">
@@ -277,8 +275,7 @@
                                 </div>
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
-                                    <ShoppingCart item={{ id }} updateCartQuantity={updateCartQuantity} />
-                                    <hr />
+                                    <ShoppingCart item={{ id, title, price }} updateCartQuantity={updateCartQuantity} />
                                 </div>
                             </div>
                         ))}
