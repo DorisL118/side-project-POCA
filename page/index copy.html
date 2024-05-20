@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>POCA | 首頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+
+    <script src="../json/jquery-1.11.3.min.js"></script>
+    <script src="../json/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(function () {
+            $("#article-all, #product-all").jCarouselLite({
+                auto: 1200, //停留多久時間
+                speed: 600, //輪播速度
+                visible: 4, //顯示張數
+                scroll: 1 //每次捲動張數
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="nav"></div>
+    <script type="text/babel">
+
+        const { useState } = React;
+
+        const Nav = () => {
+            const [showOverlay, setShowOverlay] = useState(false);
+
+            const handleClick = () => {
+                setShowOverlay(!showOverlay); // 點擊時切換 showOverlay 的狀態
+            };
+
+            const handleHomeClick = () => {
+                setShowOverlay(false); // 點擊 Home 時隱藏 showOverlay
+            };
+
+            return (
+                <>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                        <div className="nav-find"><p>找咖啡 | Cafe ❯</p></div>
+                        <div className="nav-buy"><p>買咖啡 | Online Shop ❯</p></div>
+                        <div className="nav-map"><p>店家地圖 | Cafe Map ❯</p></div>
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Home ❯</p></div>
+                    </div>
+
+                    <div className="container">
+                        <div className="row row-cols-2 mt-3">
+                            <div className="row-col-2">
+                                <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
+                            </div>
+                            <div className="row-col-2" >
+                                <ul className="nav justify-content-end">
+                                    <li className="nav-item-1">
+                                        <img src="../icon/@1x/ShoppingCart.svg" className="nav-link-shop" href="#"></img>
+                                    </li>
+                                    <li className="nav-item-2" onClick={handleClick}>
+                                        <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+        const App = () => {
+
+            return <>
+                {/*首頁*/}
+                <div className="index">
+
+                    <Nav id="nav"></Nav>
+
+                    <section className="header">
+                        <div className="header-photo"><img src="../img/@1x/Top.png" alt="" /></div>
+                        <div className="header-logo">
+                            <img src="../logo/@1x/LOGO-L.svg" alt="" />
+                        </div>
+                        <div className="header-logo animate-up">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
+                        <div className="header-logo animate-down">
+                            <img src="../logo/@1x/LOGO-Line.svg" alt="" />
+                        </div>
+                    </section>
+
+                    {/*搜尋主題*/}
+                    <section className="search">
+                        <div className="search-1">
+                            <div className="search-bg">
+                                <img src="../img/@1x/wave.svg" alt="" />
+                            </div>
+
+                            <div className="search-item-all">
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-find.jpg" alt="" /></div>
+                                    <div className="search-item-content"><link href="" />
+                                        <img src="../icon/@1x/magnifier-L.svg" alt="" />
+                                        <p>找咖啡</p>
+                                    </div>
+                                </div>
+
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-fair.jpg" alt="" /></div>
+                                    <div className="search-item-content"><link href="" />
+                                        <img src="../icon/@1x/Q.svg" alt="" />
+                                        <p>公平貿易咖啡</p>
+                                    </div>
+                                </div>
+
+                                <div className="search-item">
+                                    <div className="search-item-bg"><img src="../img/@1x/index-buy.jpg" alt="" /></div>
+                                    <div className="search-item-content"><link href="" />
+                                        <img src="../icon/@1x/CoffeeBean.svg" alt="" />
+                                        <p>買咖啡</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    {/*文章 找咖啡*/}
+                    <section className="article">
+                        <div className="article-title">
+                            <div>
+                                <p>找咖啡</p>
+                                <img src="../title-coco-font/CAFE.png" alt="" />
+                            </div>
+                            <div>
+                                <p className="view-all">View All ❯</p>
+                            </div>
+                        </div>
+
+                        <div id="article-all">
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe1.png" alt="" />
+                                <p className="title">隱藏在巷弄在地人的老咖啡廳</p>
+                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                                <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                                <button className="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                            </div>
+
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe2.png" alt="" />
+                                <p className="title">令人食指大動的咖啡廳鹹食料理</p>
+                                <button className="button"><img src="../icon/@1x/mrt.svg" alt="鄰近捷運站" /><small>鄰近捷運站</small></button>
+                                <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" /><small>有插座</small></button>
+                                <button className="button"><img src="../icon/@1x/nochat.svg" alt="禁止交談" /><small>禁止交談</small></button>
+                            </div>
+
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
+                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
+                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                            </div>
+
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
+                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
+                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                            </div>
+
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
+                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
+                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                            </div>
+
+                            <div className="article-item">
+                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
+                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
+                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    {/*地圖*/}
+                    <section className="map">
+                        <iframe id="map-content" src="../map/map.html" frameBorder="0"></iframe>
+                    </section>
+
+
+                    {/*公平貿易咖啡*/}
+                    <section className="coffe">
+                        <div className="coffe-item-all">
+                            <div className="coffe-item-1">
+                                <p>公平貿易咖啡</p>
+                                <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
+                                <img className="coffe-item-1-img" src="../img/@1x/FairTradeCoffee01.png" alt="" />
+                                <img src="../img/@1x/CB-3.png" alt="Image 1" className="scroll-img" />
+                                <img src="../img/@1x/CB-4.png" alt="Image 2" className="scroll-img" />
+                            </div>
+
+                            <div className="coffe-item-2">
+                                <p>針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。<br />針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。<br />某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。</p>
+                            </div>
+                        </div>
+
+                        <div className="coffe-2">
+                            <div className="wave"><img src="../img/@1x/wave-M.svg" alt="" /></div>
+
+                            <div className="coffe-item-all-2">
+                                <div className="coffe-item-2-1"><img src="../img/@1x/circle-txt.svg" alt="" /></div>
+                                <div className="coffe-item-2-2"><p>Buy It Now !</p></div>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    {/*咖啡豆販賣產品*/}
+                    <section className="product">
+                        <div className="product-title">
+                            <div>
+                                <p>買咖啡</p>
+                                <img src="../title-coco-font/ONLINE SHOP.png" alt="" />
+                            </div>
+                            <div>
+                                <p className="view-all">View All ❯</p>
+                            </div>
+                        </div>
+
+                        <div id="product-all">
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#日曬</small></button>
+                                    <button><small>#中深焙</small></button>
+                                </div>
+                            </div>
+
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#水洗</small></button>
+                                    <button><small>#淺焙</small></button>
+                                </div>
+                            </div>
+
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#日曬</small></button>
+                                    <button><small>#中深焙</small></button>
+                                </div>
+                            </div>
+
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#日曬</small></button>
+                                    <button><small>#中深焙</small></button>
+                                </div>
+                            </div>
+
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#日曬</small></button>
+                                    <button><small>#中深焙</small></button>
+                                </div>
+                            </div>
+
+                            <div className="product-item">
+                                <img src="../img/@1x/product-M.png" alt="" />
+                                <div className="product-item-btn">
+                                    <button><small>#巴西</small></button>
+                                    <button><small>#日曬</small></button>
+                                    <button><small>#中深焙</small></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <div className="footer">
+                        <hr />
+                        <p> © 2024 POCA. | 跑咖</p>
+                    </div>
+                </div>
+            </>
+
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
+
+    </script>
+
+</body>
+
+</html>

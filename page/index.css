@@ -142,7 +142,7 @@ body {
 
 section {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
 }
@@ -233,11 +233,8 @@ p {
     position: absolute;
     /* 將 #nav 設置為絕對定位 */
     top: 0;
-    /* 與父元素頂部對齊 */
     left: 0;
-    /* 與父元素左側對齊 */
     width: 100%;
-    /* 撐滿父元素寬度 */
     height: 6.5vh;
     background-color: rgba(255, 255, 255, 0.009);
     z-index: 99;
@@ -362,9 +359,34 @@ p {
 .header-logo {
     position: absolute;
     margin-left: 50%;
-    transform: translateY(90%);
-    /* 垂直置中 */
+    transform: translateY(65%);
+    z-index: 444;
 }
+.animate-up {
+    animation: moveUp 1s ease-out forwards;
+}
+.animate-down {
+    animation: moveDown 1s ease-out forwards;
+}
+@keyframes moveUp {
+    from {
+        transform: translate(0, 65%) translateY(0); /* 從原始位置開始，不進行垂直移動 */
+    }
+    to {
+        transform: translate(0, 65%) translateY(-130px); /* 向上移動 50px */
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translate(0, 65%) translateY(0); /* 從原始位置開始，不進行垂直移動 */
+    }
+    to {
+        transform: translate(0, 65%) translateY(200px); /* 向下移動 50px */
+    }
+}
+
+
 
 /* RWD斷點 */
 /* 電腦 */
@@ -660,7 +682,7 @@ p {
 }
 
 .coffe-item-all {
-    padding: 0px 5px;
+    padding: 0px 45px;
     display: flex;
     flex-direction: row;
 }
@@ -670,6 +692,7 @@ p {
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    position: relative;
 }
 
 .coffe-item-1 img {
@@ -784,8 +807,6 @@ br::after {
     }
 }
 
-
-
 .coffe-2 {
     padding: 0px 40px 0px 0px;
     display: flex;
@@ -831,6 +852,47 @@ br::after {
     transform: translate(-50%, -50%);
     /* 居中 */
     cursor: pointer;
+}
+
+.scroll-img {
+    height: 70vh;
+    width: 60vw;
+    position: absolute;
+    opacity: 0; 
+    top: 0;
+    left: 0;
+    animation: fadeIn 1s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 第二個圖片動畫 */
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* 從上方移動 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.coffe-item-1 .scroll-img {
+    animation: fadeIn 1s ease-out forwards;
+}
+.coffe-item-1 .scroll-img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.coffe-item-1 .scroll-img:nth-child(2) {
+    animation-delay: 1s;
 }
 
 /*--------------- 產品 ---------------*/
