@@ -165,8 +165,6 @@ section {
         width: 100%;
         margin-bottom: 150px;
     }
-
-    #search,
     #article,
     .map,
     #coffee,
@@ -177,8 +175,6 @@ section {
     .search section {
         width: auto;
         height: 51vh !important;
-        display: flex;
-        flex-direction: column;
     }
 }
 
