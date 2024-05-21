@@ -20,6 +20,19 @@
 
     <script src="../json/jquery-1.11.3.min.js"></script>
     <script src="../json/jquery.jcarousellite.min.js"></script>
+
+    <style>
+        /* 移除超連結的 hover 樣式 */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -82,6 +95,7 @@
                 button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
                 button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 2,
@@ -89,6 +103,7 @@
                 title: "令人食指大動的咖啡廳鹹食料理",
                 button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
                 button2: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 3,
@@ -96,6 +111,7 @@
                 title: "最適合友聚時光的下午茶咖啡館",
                 button1: { src: "../icon/@1x/mrt.svg", text: "淡水信義線" },
                 button2: { src: "../icon/@1x/Date.svg", text: "可訂位" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 4,
@@ -104,6 +120,7 @@
                 button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
                 button2: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 5,
@@ -112,6 +129,7 @@
                 button1: { src: "../icon/@1x/mrt.svg", text: "板南線" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 6,
@@ -120,7 +138,7 @@
                 button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/Plug.svg", text: "有插座" },
-
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 7,
@@ -129,6 +147,7 @@
                 button1: { src: "../icon/@1x/Time.svg", text: "有限時" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 8,
@@ -137,6 +156,7 @@
                 button1: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
                 button2: { src: "../icon/@1x/Time.svg", text: "有限時" },
                 button3: { src: "../icon/@1x/Wifi.svg", text: "有Wifi" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 9,
@@ -145,6 +165,7 @@
                 button1: { src: "../icon/@1x/mrt.svg", text: "松山新店線" },
                 button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
                 button3: { src: "../icon/@1x/Pet.svg", text: "寵物友善" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 10,
@@ -153,6 +174,7 @@
                 button1: { src: "../icon/@1x/mrt.svg", text: "中和新蘆線" },
                 button2: { src: "../icon/@1x/Dinner.svg", text: "有鹹食" },
                 button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 11,
@@ -161,6 +183,7 @@
                 button1: { src: "../icon/@1x/Date.svg", text: "可訂位" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/Chat.svg", text: "可聊天" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
             {
                 id: 12,
@@ -169,6 +192,7 @@
                 button1: { src: "../icon/@1x/Plug.svg", text: "有插座" },
                 button2: { src: "../icon/@1x/Time.svg", text: "不限時" },
                 button3: { src: "../icon/@1x/nochat.svg", text: "安靜" },
+                url: "http://127.0.0.1:5501/page/article-content.html",
             },
         ]
 
@@ -184,10 +208,12 @@
             }, [articles, tag]);
 
             return <>
-                {filterArticles.map(({ id, img, title, button1, button2, button3 }) => (
+                {filterArticles.map(({ id, img, title, button1, button2, button3, url }) => (
                     <div className="article-content" key={id} >
-                        <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
-                        <p className="title">{title}</p>
+                        <a href={url}>
+                            <img className="article-content-photo" src={img} alt="咖啡廳形象照" />
+                            <p className="title">{title}</p>
+                        </a>
                         <div>
                             <button className="button">
                                 <img src={button1.src} alt="button" />
