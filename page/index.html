@@ -54,7 +54,7 @@
 
             return (
                 <>
-                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
                         <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
@@ -62,18 +62,18 @@
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
-                    <div className="article-container">
+                    <div className="container">
                         <div className="row row-cols-2 mt-3">
-                            <div className="row-col-2" >
+                            <div className="row-col-2">
                                 <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <div className="nav-item-1-1">
+                                    <li className="nav-item-1">
                                         <a href="http://127.0.0.1:5501/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" className="nav-link-shop"/>
                                         </a>
-                                    </div>
+                                    </li>
                                     <li className="nav-item-2" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
@@ -116,9 +116,9 @@
                             <div className="search-item-all">
                                 <div className="search-item">
                                     <div className="search-item-bg"><img src="../img/@1x/index-find.jpg" alt="" /></div>
-                                    <div className="search-item-content"><link href="" />
+                                    <div className="search-item-content">
                                         <img src="../icon/@1x/magnifier-L.svg" alt="" />
-                                        <p>找咖啡</p>
+                                        <div><a href="#article"><p>找咖啡</p></a></div>
                                     </div>
                                 </div>
 
@@ -126,7 +126,7 @@
                                     <div className="search-item-bg"><img src="../img/@1x/index-fair.jpg" alt="" /></div>
                                     <div className="search-item-content"><link href="" />
                                         <img src="../icon/@1x/Q.svg" alt="" />
-                                        <p>公平貿易咖啡</p>
+                                        <div><a href="#coffee"><p>公平貿易咖啡</p></a></div>
                                     </div>
                                 </div>
 
@@ -134,7 +134,7 @@
                                     <div className="search-item-bg"><img src="../img/@1x/index-buy.jpg" alt="" /></div>
                                     <div className="search-item-content"><link href="" />
                                         <img src="../icon/@1x/CoffeeBean.svg" alt="" />
-                                        <p>買咖啡</p>
+                                        <div><a href="#product"><p>買咖啡</p></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
 
 
                     {/*文章 找咖啡*/}
-                    <section className="article">
+                    <section id="article">
                         <div className="article-title">
                             <div>
                                 <p>找咖啡</p>
@@ -210,14 +210,14 @@
 
 
                     {/*公平貿易咖啡*/}
-                    <section className="coffe">
+                    <section id="coffee">
                         <div className="coffe-item-all">
                             <div className="coffe-item-1">
                                 <p>公平貿易咖啡</p>
                                 <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
                                 <img className="coffe-item-1-img" src="../img/@1x/FairTradeCoffee01.png" alt="" />
-                                <img src="../img/@1x/CB-3.png" alt="Image 1" className="scroll-img" />
-                                <img src="../img/@1x/CB-4.png" alt="Image 2" className="scroll-img" />
+                                <img src="../img/@1x/CB-1.svg" alt="Image 1" className="scroll-img" />
+                                <img src="../img/@1x/CB-2.svg" alt="Image 2" className="scroll-img" />
                             </div>
 
                             <div className="coffe-item-2">
@@ -230,7 +230,7 @@
 
                             <div className="coffe-item-all-2">
                                 <div className="coffe-item-2-1"><img src="../img/@1x/circle-txt.svg" alt="" /></div>
-                                <div className="coffe-item-2-2"><p>Buy It Now !</p></div>
+                                <div className="coffe-item-2-2"><a href="http://127.0.0.1:5501/page/product.html"><p>Buy It Now !</p></a></div>
                             </div>
                         </div>
 
@@ -238,7 +238,7 @@
 
 
                     {/*咖啡豆販賣產品*/}
-                    <section className="product">
+                    <section id="product">
                         <div className="product-title">
                             <div>
                                 <p>買咖啡</p>

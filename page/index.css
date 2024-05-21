@@ -142,9 +142,16 @@ body {
 
 section {
     width: 100%;
-    height: 90vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
+}
+
+#search,
+.map,
+#coffee,
+#product section {
+    justify-content: center;
 }
 
 /* 電腦 */
@@ -152,15 +159,26 @@ section {
 
 /* 平板 */
 @media (max-width:820px) {
+
     .header {
-        height: 50vh;
+        height: 43vh;
         width: 100%;
         margin-bottom: 150px;
     }
 
+    #search,
+    #article,
+    .map,
+    #coffee,
+    #product section {
+        justify-content: center;
+    }
+
     .search section {
-        width: 100%;
-        height: 55vh;
+        width: auto;
+        height: 51vh !important;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -172,9 +190,28 @@ section {
         margin-bottom: 10px;
     }
 
+    .header-photo img {
+        height: 60vh !important;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        margin-left: 45%;
+        transform: translate(-82px, 213px);
+    }
+
+    #search,
+    #article,
+    .map,
+    #coffee,
+    #product section {
+        justify-content: center;
+    }
+
     .search section {
         width: 100%;
-        height: 90vh;
+        height: 70vh;
         margin-bottom: 150px;
     }
 }
@@ -217,10 +254,12 @@ button {
 }
 
 a {
-    text-decoration: none; 
-    color: inherit; 
+    text-decoration: none;
+    color: inherit;
 }
-a:hover, .nav-home:hover {
+
+a:hover,
+.nav-home:hover {
     color: var(--main)
 }
 
@@ -234,6 +273,22 @@ p {
     font-weight: 300;
     font-size: .7rem;
     color: #777777;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+    align-items: center;
+}
+
+#article {
+    scroll-margin-top: 200px;
+    /* 設置上方間距 */
+}
+
+#coffee,
+#product {
+    scroll-margin-top: 100px;
+    /* 設置上方間距 */
 }
 
 /*--------------- nav ---------------*/
@@ -330,16 +385,20 @@ p {
         width: 100%;
         margin-bottom: 150px;
     }
+
     .header-logo {
-        transform: translateY(65%);
+        transform: translateY(75%);
     }
+
     .search section {
         width: 100%;
         height: 55vh;
     }
+
     .animate-up {
         display: none;
     }
+
     .animate-down {
         display: none;
     }
@@ -353,14 +412,28 @@ p {
         margin-bottom: 200px;
     }
 
+    .header-photo img {
+        height: 65vh;
+        width: 130%;
+        overflow: hidden;
+    }
+
+    .header-logo {
+        position: absolute;
+        margin-left: 40%;
+        transform: translate(-70px, 200px);
+    }
+
     .search section {
         width: 100%;
         height: 90vh;
         margin-bottom: 100px;
     }
+
     .animate-up {
         display: none;
     }
+
     .animate-down {
         display: none;
     }
@@ -381,30 +454,39 @@ p {
 .header-logo {
     position: absolute;
     margin-left: 50%;
-    transform: translateY(65%);
+    transform: translateY(100%);
     z-index: 444;
 }
+
 .animate-up {
     animation: moveUp 1s ease-out forwards;
 }
+
 .animate-down {
     animation: moveDown 1s ease-out forwards;
 }
+
 @keyframes moveUp {
     from {
-        transform: translate(0, 65%) translateY(0); /* 從原始位置開始，不進行垂直移動 */
+        transform: translate(0, 75%) translateY(0);
+        /* 從原始位置開始，不進行垂直移動 */
     }
+
     to {
-        transform: translate(0, 65%) translateY(-130px); /* 向上移動 50px */
+        transform: translate(0, 75%) translateY(-200px);
+        /* 向上移動 50px */
     }
 }
 
 @keyframes moveDown {
     from {
-        transform: translate(0, 65%) translateY(0); /* 從原始位置開始，不進行垂直移動 */
+        transform: translate(0, 75%) translateY(0);
+        /* 從原始位置開始，不進行垂直移動 */
     }
+
     to {
-        transform: translate(0, 65%) translateY(200px); /* 向下移動 50px */
+        transform: translate(0, 75%) translateY(350px);
+        /* 向下移動 50px */
     }
 }
 
@@ -625,7 +707,7 @@ p {
 
 
 /*--------------- 文章 找咖啡 ---------------*/
-.article {
+#article {
     width: 100%;
 }
 
@@ -681,6 +763,12 @@ p {
     margin: 10px 0px;
 }
 
+/* 手機板 */
+@media (max-width:640px) {
+    .article-title img {
+        width: 20vw;
+    }
+}
 
 
 
@@ -699,7 +787,7 @@ p {
 
 
 /*--------------- 公平貿易咖啡 ---------------*/
-.coffe {
+#coffe {
     margin: 0 0 200px 0;
 }
 
@@ -880,10 +968,10 @@ br::after {
     height: 70vh;
     width: 60vw;
     position: absolute;
-    opacity: 0; 
+    opacity: 0;
     top: 0;
     left: 0;
-    animation: fadeIn 1s ease-out forwards; 
+    animation: fadeIn 1s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -891,33 +979,44 @@ br::after {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 /* 第二個圖片動畫 */
 @keyframes fadeIn2 {
     from {
         opacity: 0;
-        transform: translateY(-50px); /* 從上方移動 */
+        transform: translateY(-50px);
+        /* 從上方移動 */
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .coffe-item-1 .scroll-img {
     animation: fadeIn 1s ease-out forwards;
 }
+
 .coffe-item-1 .scroll-img:nth-child(1) {
     animation-delay: 0.5s;
 }
+
 .coffe-item-1 .scroll-img:nth-child(2) {
     animation-delay: 1s;
 }
 
 /*--------------- 產品 ---------------*/
+#product {
+    padding-top: 100px;
+}
+
 .product-title {
     margin: 0px 50px;
     display: flex;
@@ -925,7 +1024,7 @@ br::after {
     align-items: center;
 }
 
-.product p {
+#product p {
     font-family: "noto-sans-tc";
     font-size: 0.9rem;
     font-weight: 600;
@@ -949,6 +1048,19 @@ br::after {
     margin: 10px 20px;
 }
 
+/* 平板 */
+@media (max-width:820px) {
+    #product {
+        padding-top: 200px;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .product-title img {
+        width: 40vw;
+    }
+}
 
 
 
@@ -1300,9 +1412,11 @@ br::after {
 .product-content>div {
     margin-bottom: 10px;
 }
+
 .product-content-title {
     margin: 20px 0 5px 0;
 }
+
 .product-content img {
     margin-bottom: .3rem;
 }
@@ -1482,6 +1596,7 @@ br::after {
         width: 70vw;
     }
 }
+
 .product-introduction-1 {
     display: flex;
     flex-direction: column;
@@ -1489,16 +1604,19 @@ br::after {
     width: 40%;
     height: 100%;
 }
+
 .product-introduction-2 {
     width: 74vw;
     margin: 0 auto;
     padding: 10vh 0;
 }
+
 .product-introduction-2 img {
     width: 74vw;
     height: auto;
     margin: 4rem 0 6rem 0;
 }
+
 .product-introduction-price {
     align-self: flex-end;
     width: 100%;
@@ -1560,9 +1678,10 @@ br::after {
     }
 }
 
-.form > div {
+.form>div {
     flex: 1;
-    margin: 0 100px; /* 左右各 10px 的間距 */
+    margin: 0 100px;
+    /* 左右各 10px 的間距 */
 }
 
 .btn-form span {
@@ -1577,35 +1696,69 @@ br::after {
     animation: rotate 0.7s ease-in-out both;
     color: var(--main);
 }
+
 .btn-form:hover span {
     animation: storm 0.7s ease-in-out both;
     animation-delay: 0.06s;
 }
+
 @keyframes rotate {
-    0%   { transform: rotate(0deg) ; }
-    25%  { transform: rotate(3deg) ; }
-    50%  { transform: rotate(-3deg) ; }
-    75%  { transform: rotate(1deg) ; }
-    100% { transform: rotate(0deg) ; }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
+
 @keyframes storm {
-    0%   { transform: translate3d(0, 0, 0); }
-    25%  { transform: translate3d(4px, 0, 0); }
-    50%  { transform: translate3d(-3px, 0, 0); }
-    75%  { transform: translate3d(2px, 0, 0); }
-    100% { transform: translate3d(0, 0, 0); }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .form-data {
     display: flex;
     flex-direction: column;
 }
+
 .form-data div:not(.totals-checkout div) {
     margin-bottom: 5vh;
 }
+
 .form-data select {
     width: 204px;
 }
+
 .totals-checkout {
     display: flex;
     justify-content: space-between;
@@ -1617,23 +1770,27 @@ br::after {
     flex-direction: column;
     align-items: center;
 }
+
 .shopping-cart-page h2 {
     color: var(--main);
     font-weight: 600;
     font-size: larger;
 }
-.shopping-cart-page ul{
+
+.shopping-cart-page ul {
     display: block;
 }
+
 .shopping-cart-page li {
     height: 11vh;
 }
+
 .shopping-cart-page li p {
     margin: 5px 0;
 }
-
-
-
+.address input {
+    width: 475px;
+}
 
 
 
