@@ -1296,10 +1296,6 @@ br::after {
     margin-bottom: 10px;
 }
 
-.article-content a:hover {
-    text-decoration: none;
-    color: inherit;
-}
 
 .title {
     font-size: 1.1rem;
@@ -1850,6 +1846,7 @@ br::after {
 }
 .shopping-cart-page li {
     display: flex;
+    margin: 20px 0;
 }
 
 .shopping-cart-page button {
@@ -1949,12 +1946,23 @@ br::after {
     color: var(--main);
     font-weight: 600;
     font-size: larger;
+    margin-bottom: 15px;
 }
 
 .shopping-cart-page ul button img {
-    width: 2vw;
+    width: 1.3vw;
     height: auto;
 }
+/* 對SVG圖片應用新顏色 */
+.my-edit-icon:hover {
+    fill: red; 
+}
+
+/* 對img元素應用新顏色 */
+.shopping-cart-page ul button img:hover {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(144deg) brightness(100%) contrast(100%);
+}
+
 
 .shopping-cart-page ul {
     display: block;
