@@ -1190,6 +1190,7 @@ br::after {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0px auto;
+    margin-bottom: 100px;
 }
 
 .page-title {
@@ -1424,7 +1425,7 @@ br::after {
 .article-text-all {
     display: flex;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .text {
@@ -1511,6 +1512,7 @@ br::after {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 0px auto;
+    margin-bottom: 100px;
 }
 
 .product-content {
