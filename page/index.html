@@ -56,9 +56,13 @@
                 <>
                 <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
+                        <hr />
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
+                        <hr/>
                         <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
+                        <hr/>
                         <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
+                        <hr/>
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
@@ -94,14 +98,18 @@
                     <Nav id="nav"></Nav>
 
                     <section className="header">
-                        <div className="header-photo"><img src="../img/@1x/Top.png" alt="" /></div>
+                        <div className="header-photo">
+                            <img src="../img/@1x/Top1.png" alt="" />
+                            <img src="../img/@1x/Top2.png" alt=""/>
+                            <img src="../img/@1x/Top3.png" alt=""/>
+                        </div>
                         <div className="header-logo">
                             <img src="../logo/@1x/LOGO-L.svg" alt="" />
                         </div>
-                        <div className="header-logo animate-up">
+                        <div className="header-logo-1 animate-up">
                             <img src="../logo/@1x/LOGO-Line.svg" alt="" />
                         </div>
-                        <div className="header-logo animate-down">
+                        <div className="header-logo-2 animate-down">
                             <img src="../logo/@1x/LOGO-Line.svg" alt="" />
                         </div>
                     </section>
