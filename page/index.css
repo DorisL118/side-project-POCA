@@ -120,25 +120,26 @@ q {
 /*--------------- 共用區 ---------------*/
 @font-face {
     font-family: "noto-sans-tc";
-    src: url(../noto-sans-tc-font);
+    src: url('../noto-sans-tc-font.woff2') format('woff2'),
+        url('../noto-sans-tc-font.woff') format('woff');
+    unicode-range: U+4E00-9FFF;
+    /* 中日韩统一表意文字 */
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url(../popins-font);
-}
-
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    src: url('../popins-font.woff2') format('woff2'),
+        url('../popins-font.woff') format('woff');
+    unicode-range: U+0020-007E;
+    /* 基本拉丁字符 */
 }
 
 body {
-    font-family: "noto-sans-tc", "Poppins";
+    font-family: "noto-sans-tc", "Poppins", sans-serif;
     background-color: var(--bg-color-1);
     overflow-x: hidden;
 }
+
 
 section {
     width: 100%;
@@ -154,17 +155,24 @@ section {
     justify-content: center;
 }
 
+
 /* 電腦 */
-@media (min-width:821px) {}
+@media (min-width: 821px) {
+    .header {
+        height: auto;
+        /* 自定義電腦端樣式 */
+    }
+
+}
 
 /* 平板 */
-@media (max-width:820px) {
-
+@media (max-width: 820px) {
     .header {
         height: 43vh;
         width: 100%;
         margin-bottom: 150px;
     }
+
     #article,
     .map,
     #coffee,
@@ -172,18 +180,18 @@ section {
         justify-content: center;
     }
 
-    .search section {
-        width: auto;
-        height: 51vh !important;
+    #search {
+        width: 100%;
+        height: 35vh;
     }
 }
 
 /* 手機板 */
-@media (max-width:640px) {
+@media (max-width: 640px) {
     .header {
         height: 70vh;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 80px !important;
     }
 
     .header-photo img {
@@ -193,8 +201,8 @@ section {
 
     .header-logo {
         position: absolute;
-        margin-left: 45%;
-        transform: translate(-82px, 213px);
+        margin-left: 45% !important;
+        transform: translate(-90px, 200px) !important;
     }
 
     #search,
@@ -205,12 +213,18 @@ section {
         justify-content: center;
     }
 
-    .search section {
+    #search {
+        width: 100%;
+        height: 85vh;
+    }
+
+    #search section {
         width: 100%;
         height: 70vh;
         margin-bottom: 150px;
     }
 }
+
 
 :root {
     /*bg color*/
@@ -344,6 +358,28 @@ p {
     padding: 4% 0;
 }
 
+/* 平板 */
+@media (max-width:820px) {
+    .nav-find,
+    .nav-buy,
+    .nav-map,
+    .nav-contact,
+    .nav-home {
+        padding: 10% 0;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) {
+    .nav-find,
+    .nav-buy,
+    .nav-map,
+    .nav-contact,
+    .nav-home {
+        padding: 16% 0;
+    }
+}
+
 .container {
     background-color: transparent !important;
     position: absolute;
@@ -386,7 +422,7 @@ p {
         transform: translateY(75%);
     }
 
-    .search section {
+    #search section {
         width: 100%;
         height: 55vh;
     }
@@ -420,7 +456,7 @@ p {
         transform: translate(-70px, 200px);
     }
 
-    .search section {
+    #search section {
         width: 100%;
         height: 90vh;
         margin-bottom: 100px;
@@ -540,7 +576,7 @@ p {
     align-items: center;
 }
 
-.search {
+#search {
     width: 100%;
 }
 
@@ -721,6 +757,7 @@ p {
     color: #111111;
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
+    margin-top: 3rem;
 }
 
 .view-all {
@@ -759,6 +796,15 @@ p {
     margin: 10px 0px;
 }
 
+/* 電腦 */
+@media (min-width:821px) {
+    .article-title p {
+        margin-top: 5rem;
+    }
+    .product-title p {
+        margin-top: 2rem;
+    }
+}
 /* 手機板 */
 @media (max-width:640px) {
     .article-title img {
@@ -849,6 +895,40 @@ br::after {
     display: block;
     margin-top: 1em;
     /* 調整空行的行高，根據需要調整 */
+}
+
+#fair-trade-text::after {
+    content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
+    display: block;
+    white-space: pre-wrap;
+    /* 允許文本換行 */
+    line-height: 1.6;
+    /* 設置行間距 */
+}
+
+/* 電腦版 */
+@media (min-width: 821px) {
+    #fair-trade-text::after {
+        font-size: 1rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。\A\A針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。\A\A根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。\A\A某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。";
+    }
+}
+
+/* 平板 */
+@media (max-width: 820px) and (min-width: 641px) {
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。\A\A針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。";
+    }
+}
+
+/* 手機板 */
+@media (max-width: 640px) {
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
+        margin: 50px 0;
+    }
 }
 
 /* RWD斷點 */
@@ -1140,16 +1220,30 @@ br::after {
     margin: 6px 0;
 }
 
-.article-content-all {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
 
+/* 電腦版 */
 .article-content {
     width: calc(33.33% - 20px);
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+/* 平板版 */
+@media (max-width: 820px) {
+    .article-content {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 手機版 */
+@media (max-width: 640px) {
+    .article-content {
+        width: calc(100% - 20px);
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 }
 
 .article-content-photo {
@@ -1159,6 +1253,10 @@ br::after {
     margin-bottom: 10px;
 }
 
+.article-content a:hover {
+    text-decoration: none;
+    color: inherit;
+}
 
 .title {
     font-size: 1.1rem;
@@ -1255,7 +1353,7 @@ br::after {
 }
 
 .content-title-img {
-    width: 69vw;
+    width: 70vw;
     height: auto;
 }
 
@@ -1326,6 +1424,7 @@ br::after {
 .article-text-all {
     display: flex;
     align-items: center;
+    margin-bottom: 200px;
 }
 
 .text {
@@ -1342,15 +1441,29 @@ br::after {
 }
 
 .article-text {
-    width: 60vw;
+    width: 65vw;
     height: auto;
 }
 
 .article-text img {
-    width: 60vw;
+    width: 65vw;
     height: auto;
 }
+/* 平板 */
+@media (max-width:820px) { }
 
+/* 手機板 */
+@media (max-width:640px) {
+    .article-text {
+        width: 80vw;
+        height: auto;
+    }
+    
+    .article-text img {
+        width: 80vw;
+        height: auto;
+    }
+}
 
 
 
@@ -1784,6 +1897,7 @@ br::after {
 .shopping-cart-page li p {
     margin: 5px 0;
 }
+
 .address input {
     width: 475px;
 }
