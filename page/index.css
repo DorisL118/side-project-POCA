@@ -491,27 +491,25 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* 初始状态下隐藏所有图片 */
+    opacity: 0;
     animation: changeImage 6s infinite;
 }
 
 .header-photo img:nth-child(1) {
-    animation-delay: 0s; /* 第一张图片从开始 */
+    animation-delay: 0s;
 }
 
 .header-photo img:nth-child(2) {
-    animation-delay: 2s; /* 第二张图片延迟2秒 */
+    animation-delay: 2s;
 }
 
 .header-photo img:nth-child(3) {
-    animation-delay: 4s; /* 第三张图片延迟4秒 */
+    animation-delay: 4s;
 }
 
 @keyframes changeImage {
-    0% { opacity: 0; }
-    33.33% { opacity: 1; }
-    66.66% { opacity: 1; }
-    100% { opacity: 0; }
+    0%, 33.33% { opacity: 1; }
+    33.34%, 100% { opacity: 0; }
 }
 
 
@@ -1809,7 +1807,9 @@ br::after {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 10vh;
+    margin: 10vh 0 10vh 0;
+    width: 100vw !important;
+    height: auto !important;
 }
 
 /* RWD斷點
@@ -1847,6 +1847,16 @@ br::after {
 .shopping-cart-page li {
     display: flex;
     margin: 20px 0;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.shopping-cart-page li img {
+    width: 85px;
+    height: auto;
 }
 
 .shopping-cart-page button {
@@ -1949,6 +1959,11 @@ br::after {
     margin-bottom: 15px;
 }
 
+.shopping-cart-page ul {
+    display: block;
+    width: 70%;
+}
+
 .shopping-cart-page ul button img {
     width: 1.3vw;
     height: auto;
@@ -1968,12 +1983,14 @@ br::after {
     display: block;
 }
 
-
 .address input {
     width: 475px;
 }
 
-
+.totalPrice p {
+    text-align: end;
+    margin-top: 25px;
+}
 
 
 
