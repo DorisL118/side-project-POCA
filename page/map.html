@@ -52,15 +52,15 @@
 
             return (
                 <>
-                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
                         <hr />
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
@@ -87,10 +87,58 @@
             );
         }
 
+        const mapData = [
+            {
+                id: 1,
+                title: "義特咖啡",
+                address: "新北市板橋區縣民大道一段300號",
+                tel: "02 2600-0000",
+            },
+            {
+                id: 2,
+                title: "寵物樂園",
+                address: "新北市板橋區縣民大道一段200號",
+                tel: "02 2600-5000",
+            },
+            {
+                id: 3,
+                title: "義特咖啡",
+                address: "新北市板橋區縣民大道一段100號",
+                tel: "02 2600-7700",
+            },
+        ];
+
+
+        const Store = ({ mapData }) => {
+            return (
+                <>
+                    {mapData.map(({ id, title, address, tel }) => (
+                        <div key={id} className="coffee-map-data-all">
+                            <div>
+                                <img src="../img/@1x/wave-notify-v0507.svg" alt="" />
+                                <p>{title}</p>
+                                <div className="coffee-map-data">
+                                    <img src="../icon/@1x/Place.svg" alt="" />
+                                    <p>{address}</p>
+                                </div>
+                                <div className="coffee-map-data">
+                                    <img src="../icon/@1x/Phone.svg" alt="" />
+                                    <p>{tel}</p>
+                                </div>
+                                <img src="../img/@1x/wave-notify-v0507.svg" alt="" />
+                            </div>
+                        </div>
+                    ))}
+                </>
+            );
+        };
+
+
+
+
         const MapPage = () => {
 
             return (<>
-
                 <Nav></Nav>
 
                 <div className="page-title">
@@ -99,23 +147,23 @@
                     <hr />
                 </div>
 
-
-                <section id="map-page">
+                <div id="map-page">
                     <div className="map-page">
-                        <p className="title">咖啡地圖</p>
-                        <hr />
+                        <div>
+                            <p className="title">咖啡地圖</p>
+                            <img src="../img/@1x/CAFE Map.png" alt="" />
+                        </div>
                     </div>
                     <iframe id="map-page-map" src="../map/map.html" frameBorder="0" ></iframe>
+                </div>
 
-                </section>
+                <div className="store"><Store mapData={mapData} /></div>
 
                 <div className="footer">
                     <hr />
                     <p> © 2024 POCA. | 跑咖</p>
                 </div>
-
             </>);
-
         }
 
 

@@ -618,17 +618,13 @@ p {
         overflow: hidden;
     }
 
-    .header-photo img {
-        height: auto;
-        width: 130%;
-        overflow: hidden;
-    }
-
     .header-logo {
         position: absolute;
         margin-left: 51%;
         transform: translate(-100px, 150px);
     }
+
+    
 }
 
 /*--------------- 搜尋主題 ---------------*/
@@ -1538,21 +1534,70 @@ br::after {
 
 
 /*--------------- Page-4 | Article-Content 找咖啡 文章 內容---------------*/
+#map-page {
+    height: 80vh;
+}
+
+#map-page p {
+    cursor: default;
+}
+
 .map-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 4vh 0;
 }
-
-#map-page-map {
-    height: 100vh;
-    width: 100vw;
+.map-page .title {
+    font-size: 1rem;
 }
 
+#map-page-map {
+    height: 85vh;
+    width: 100vw;
+}
+.coffee-map-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.store {
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 2.2rem;
+    margin-bottom: 50px;
+}
+.coffee-map-data-all p {
+    text-align: center;
+}
+/* 平板 */
+@media (max-width:820px) {
+    .store {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        line-height: 2.2rem;
+    }
+    .coffee-map-data-all {
+        display: flex;
+        justify-content: center;
+    }
+}
 
-
-
+/* 手機板 */
+@media (max-width:640px) { 
+    .store {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        line-height: 2.2rem;
+    }
+    .coffee-map-data-all {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 
 
