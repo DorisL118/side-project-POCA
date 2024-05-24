@@ -270,6 +270,9 @@ a {
 }
 
 a:hover,
+.nav-find:hover,
+.nav-buy:hover,
+.nav-map:hover,
 .nav-home:hover {
     color: var(--main)
 }
@@ -303,10 +306,10 @@ p {
 }
 
 .vertical-line {
-    width: 1px; 
-    height: 80%;
-    background-color: var(--deep); 
-    margin-right: 15px;
+    width: 0.8px; 
+    height: 60%;
+    background-color: #c7c7c7; 
+    margin-right: 50px;
 }
 /* RWD斷點 */
 /* 電腦 */
@@ -359,7 +362,7 @@ p {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(155, 155, 155, 0.7);
+    background-color: rgba(105, 105, 105, 0.7);
     /* 半透明背景 */
     backdrop-filter: blur(10px);
     /* 毛玻璃效果 */
