@@ -116,11 +116,11 @@
                     <ul>
                         {cartItems.map(item => (
                             <li key={item.id}>
-                                <img src={item.img} alt={item.title} />
-                                {item.title ? <p>商品名稱: {item.title}</p> : null}
-                                <p>數量: {item.quantity}</p>
-                                {item.price ? <p>金額: {item.quantity * item.price}</p> : null}
-                                <button onClick={() => handleDeleteItem(item.id)}><img src="../icon/@1x/Delete.svg"/></button>
+                                <div><img src={item.img} alt={item.title} /></div>
+                                <div>{item.title ? <p>{item.title}</p> : null}</div>
+                                <div><p>數量: {item.quantity}</p></div>
+                                <div>{item.price ? <p>NT $ {item.quantity * item.price}</p> : null}</div>
+                                <div><button onClick={() => handleDeleteItem(item.id)}><img src="../icon/@1x/Delete.svg"/></button></div>
                             </li>
                         ))}
                         <hr/>
@@ -130,7 +130,10 @@
             );
 
             const Form = () => (
+                <>
                 <div className="form-data">
+                    <div class="vertical-line"></div>
+
                     <form className="smoove" action="" method="post" name="form-contact" id="form-contact" title="完成訂購表單">
                         <small className="ps">「*」為必填。</small>
                         <div>
@@ -192,6 +195,7 @@
                         </div>
                     </form>
                 </div>
+                </>
             );
 
             const CartEmpty = () => (
@@ -219,8 +223,8 @@
                     <section className="form">
                         {showIframe ? <CartEmpty /> : (
                             <>
-                                <ShoppingCartPage/>
-                                <Form />
+                            <ShoppingCartPage/>
+                            <Form />
                             </>
                         )}
                     </section>

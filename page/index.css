@@ -302,6 +302,31 @@ p {
     /* 設置上方間距 */
 }
 
+.vertical-line {
+    width: 1px; 
+    height: 80%;
+    background-color: var(--deep); 
+    margin-right: 15px;
+}
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width:821px) { }
+
+/* 平板 */
+@media (max-width:820px) { 
+    .vertical-line {
+        display: none;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) { 
+    .vertical-line {
+        display: none;
+    }
+}
+
+
 /*--------------- nav ---------------*/
 #nav {
     position: absolute;
@@ -1842,9 +1867,8 @@ br::after {
 
 .form>div {
     flex: 1;
-
 }
-.shopping-cart-page li {
+/* .shopping-cart-page li {
     display: flex;
     margin: 20px 0;
     justify-content: flex-start;
@@ -1852,7 +1876,50 @@ br::after {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+} */
+.shopping-cart-page ul {
+    list-style: none; /* 移除預設的列表樣式 */
+    padding: 0;
 }
+
+.shopping-cart-page li {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.shopping-cart-page li div {
+    flex: 1; /* 每個 div 占據相同的寬度 */
+    margin: 0 10px; /* 設置 div 之間的固定間距 */
+}
+
+.shopping-cart-page li div:first-child {
+    margin-left: 0; /* 第一個 div 左邊不需要間距 */
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.shopping-cart-page li div:last-child {
+    margin-right: 0; /* 最後一個 div 右邊不需要間距 */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shopping-cart-page li img {
+    height: 100px; /* 設置圖片高度 */
+    width: auto; /* 確保圖片等比例縮放 */
+}
+
+.shopping-cart-page li button {
+    background: none; /* 移除按鈕背景 */
+    border: none; /* 移除按鈕邊框 */
+    cursor: pointer; /* 設置按鈕點擊效果 */
+}
+
 
 .shopping-cart-page li img {
     width: 85px;
@@ -1929,7 +1996,7 @@ br::after {
 
 .form-data {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .form-data div:not(.totals-checkout div) {
@@ -1992,6 +2059,46 @@ br::after {
     margin-top: 25px;
 }
 
+/* RWD斷點 */
+/* 電腦 */
+@media (min-width:821px) { }
+
+/* 平板 */
+@media (max-width:820px) { 
+    .shopping-cart-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: auto;
+    }
+}
+
+/* 手機板 */
+@media (max-width:640px) { 
+    .form-data {
+        display: block;
+        width: 85vw;
+    }
+    .address input {
+        width: 80vw;
+    }   
+    .shopping-cart-page ul {
+        width: 90%;
+    }
+    .shopping-cart-page ul button img {
+        width: 5.3vw;
+        height: auto;
+    }
+    .shopping-cart-page li img {
+        width: 75px;
+        height: auto;
+    }
+    .totalPrice p {
+        text-align: end;
+        margin: 25px 0 50px 0;
+    }
+}
 
 
 
