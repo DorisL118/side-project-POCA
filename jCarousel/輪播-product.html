@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jCarouselLite-旋轉木馬</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function getVisibleItems() {
+                var width = $(window).width();
+                if (width >= 1024) {
+                    return 6;
+                } else if (width >= 768) {
+                    return 3;
+                } else {
+                    return 1;
+                }
+            }
+
+            var visibleItems = getVisibleItems();
+
+            $("#product-all").jCarouselLite({
+                auto: 1200,	//多久時間輪播
+                scroll: 1,	//一次輪播的張數
+                visible: visibleItems,	//一次看到幾張圖
+                speed: 1000,	//輪播的速度
+            });
+        });
+    </script>
+    <style>
+        #product-all {
+            visibility: visible;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            left: 0px;
+            width: 100vw !important;
+        }
+
+        #product-all ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #product-all li {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .product-item {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .product-item-photo {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 桌面版 */
+        @media (min-width: 1024px) {
+            #productall .product-item {
+                width: calc((100vw / 6) - 10px);
+                height: auto;
+            }
+        }
+
+        /* 平板版 */
+        @media (max-width:820px) {
+            #product-all .product-item {
+                width: calc((100vw / 3) - 10px);
+                height: auto;
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width:640px) {
+            #product-all .product-item {
+                width: calc(100vw - 10px);
+                height: auto;
+            }
+        }
+
+        :root {
+            /*bg color*/
+            --bg-color-1: #F6F7F2;
+
+            /*main color*/
+            --main: #CDD42A;
+            --deep: #111111;
+            --light: #FFFFFF;
+        }
+
+        button {
+            border-radius: 99px;
+            margin: 0px 8px 0px 0px;
+            border-width: 1px;
+            border-style: solid;
+            background-color: #f1f1f1;
+            color: #686868;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: .8rem;
+            display: flex;
+            float: left;
+            align-items: center;
+            padding: 4px 7px 4px 4px;
+        }
+
+        .button img {
+            padding: 0 2px 0 2px;
+            width: 1.1rem;
+            color: #686868;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        p {
+            cursor: pointer;
+            font-weight: 550;
+            font-family: sans-serif;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="product-all">
+            <ul>
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#水洗</small></button>
+                            <button><small>#淺焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div className="product-item">
+                        <img src="../img/@1x/product-M.png" alt="" />
+                        <div className="product-item-btn">
+                            <button><small>#巴西</small></button>
+                            <button><small>#日曬</small></button>
+                            <button><small>#中深焙</small></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+</body>
+
+</html>

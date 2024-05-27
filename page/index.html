@@ -16,21 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./index.css">
-
-    <script src="../json/jquery-1.11.3.min.js"></script>
-    <script src="../json/jquery.jcarousellite.min.js"></script>
-    <script>
-        $(function () {
-            $("#article-all, #product-all").jCarouselLite({
-                auto: 1200, //停留多久時間
-                speed: 600, //輪播速度
-                visible: 4, //顯示張數
-                scroll: 1 //每次捲動張數
-            });
-        });
-    </script>
-
 
 </head>
 
@@ -54,15 +41,15 @@
 
             return (
                 <>
-                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
                         <hr />
                         <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
-                        <hr/>
+                        <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
@@ -75,7 +62,7 @@
                                 <ul className="nav justify-content-end">
                                     <li className="nav-item-1">
                                         <a href="http://127.0.0.1:5501/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" className="nav-link-shop"/>
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" className="nav-link-shop" />
                                         </a>
                                     </li>
                                     <li className="nav-item-2" onClick={handleClick}>
@@ -100,8 +87,8 @@
                     <section className="header">
                         <div className="header-photo">
                             <img src="../img/@1x/Top1.png" alt="" />
-                            <img src="../img/@1x/Top2.png" alt=""/>
-                            <img src="../img/@1x/Top3.png" alt=""/>
+                            <img src="../img/@1x/Top2.png" alt="" />
+                            <img src="../img/@1x/Top3.png" alt="" />
                         </div>
                         <div className="header-logo">
                             <img src="../logo/@1x/LOGO-L.svg" alt="" />
@@ -162,52 +149,7 @@
                             </div>
                         </div>
 
-                        <div id="article-all">
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe1.png" alt="" />
-                                <p className="title">隱藏在巷弄在地人的老咖啡廳</p>
-                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
-                                <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
-                                <button className="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
-                            </div>
-
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe2.png" alt="" />
-                                <p className="title">令人食指大動的咖啡廳鹹食料理</p>
-                                <button className="button"><img src="../icon/@1x/mrt.svg" alt="鄰近捷運站" /><small>鄰近捷運站</small></button>
-                                <button className="button"><img src="../icon/@1x/Plug.svg" alt="有插座" /><small>有插座</small></button>
-                                <button className="button"><img src="../icon/@1x/nochat.svg" alt="禁止交談" /><small>安靜</small></button>
-                            </div>
-
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
-                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
-                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
-                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
-                            </div>
-
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
-                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
-                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
-                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
-                            </div>
-
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
-                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
-                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
-                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
-                            </div>
-
-                            <div className="article-item">
-                                <img className="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
-                                <p className="title">最適合友聚時光的下午茶咖啡館</p>
-                                <button className="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" /><small>有WIFI</small></button>
-                                <button className="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
-                            </div>
-                        </div>
-
+                        <div className="jCarousel"><iframe src="../jCarousel/輪播-article.html" frameborder="0"></iframe></div>
                     </section>
 
 
@@ -257,61 +199,7 @@
                             </div>
                         </div>
 
-                        <div id="product-all">
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#日曬</small></button>
-                                    <button><small>#中深焙</small></button>
-                                </div>
-                            </div>
-
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#水洗</small></button>
-                                    <button><small>#淺焙</small></button>
-                                </div>
-                            </div>
-
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#日曬</small></button>
-                                    <button><small>#中深焙</small></button>
-                                </div>
-                            </div>
-
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#日曬</small></button>
-                                    <button><small>#中深焙</small></button>
-                                </div>
-                            </div>
-
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#日曬</small></button>
-                                    <button><small>#中深焙</small></button>
-                                </div>
-                            </div>
-
-                            <div className="product-item">
-                                <img src="../img/@1x/product-M.png" alt="" />
-                                <div className="product-item-btn">
-                                    <button><small>#巴西</small></button>
-                                    <button><small>#日曬</small></button>
-                                    <button><small>#中深焙</small></button>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="jCarousel"><iframe src="../jCarousel/輪播-product.html" frameborder="0"></iframe></div>
                     </section>
 
 

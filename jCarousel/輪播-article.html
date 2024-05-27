@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jCarouselLite-旋轉木馬</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.jcarousellite.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function getVisibleItems() {
+                var width = $(window).width();
+                if (width >= 1024) {
+                    return 4; // 桌面裝置顯示 5 張
+                } else if (width >= 768) {
+                    return 3; // 平板裝置顯示 3 張
+                } else {
+                    return 1; // 手機裝置顯示 1 張
+                }
+            }
+
+
+            var visibleItems = getVisibleItems();
+
+            $("#article-all").jCarouselLite({
+                auto: 1200,	//多久時間輪播
+                scroll: 1,	//一次輪播的張數
+                visible: visibleItems,	//一次看到幾張圖
+                speed: 1000,	//輪播的速度
+            });
+        });
+    </script>
+    <style>
+        #article-all {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #article-all ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #article-all li {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .article-item {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .article-item-photo {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 桌面版 */
+        @media (min-width: 1024px) {
+            #article-all .article-item {
+                width: calc((100vw / 4) - 10px);
+            }
+        }
+
+        /* 平板版 */
+        @media (max-width:820px) {
+            #article-all .article-item {
+                width: calc((100vw / 3) - 10px);
+                height: auto;
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width:640px) {
+            #article-all .article-item {
+                width: calc(100vw - 10px);
+                height: auto;
+            }
+        }
+
+        :root {
+            /*bg color*/
+            --bg-color-1: #F6F7F2;
+
+            /*main color*/
+            --main: #CDD42A;
+            --deep: #111111;
+            --light: #FFFFFF;
+        }
+
+        button {
+            border-radius: 99px;
+            margin: 0px 8px 0px 0px;
+            border-width: 1px;
+            border-style: solid;
+            background-color: #f1f1f1;
+            color: #686868;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: .8rem;
+            display: flex;
+            float: left;
+            align-items: center;
+            padding: 4px 7px 4px 4px;
+        }
+
+        .button img {
+            padding: 0 2px 0 2px;
+            width: 1.1rem;
+            color: #686868;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        p {
+            cursor: pointer;
+            font-weight: 550;
+            font-family: sans-serif;
+            text-align: left;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0px;
+        }
+
+        /* 電腦 */
+        @media (min-width: 821px) {
+            .article-title p {
+                margin-top: 5rem;
+            }
+
+            .product-title p {
+                margin-top: 2rem;
+            }
+        }
+
+        /* 手機板 */
+        @media (max-width: 640px) {}
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="article-all">
+            <ul>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe1.png" alt="" />
+                        <p class="title">隱藏在巷弄在地人的老咖啡廳</p>
+                        <button class="button"><img src="../icon/@1x/Wifi.svg" alt="有WIFI" />有WIFI</button>
+                        <button class="button"><img src="../icon/@1x/Plug.svg" alt="有插座" />有插座</button>
+                        <button class="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" />寵物友善</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe2.png" alt="" />
+                        <p class="title">令人食指大動的咖啡廳鹹食料理</p>
+                        <button class="button"><img src="../icon/@1x/mrt.svg"
+                                alt="鄰近捷運站" /><small>鄰近捷運站</small></button>
+                        <button class="button"><img src="../icon/@1x/Plug.svg" alt="有插座" /><small>有插座</small></button>
+                        <button class="button"><img src="../icon/@1x/nochat.svg" alt="禁止交談" /><small>安靜</small></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                        <p class="title">最適合友聚時光的下午茶咖啡館</p>
+                        <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                alt="有WIFI" /><small>有WIFI</small></button>
+                        <button class="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                        <p class="title">最適合友聚時光的下午茶咖啡館</p>
+                        <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                alt="有WIFI" /><small>有WIFI</small></button>
+                        <button class="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                        <p class="title">最適合友聚時光的下午茶咖啡館</p>
+                        <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                alt="有WIFI" /><small>有WIFI</small></button>
+                        <button class="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="article-item">
+                        <img class="article-item-photo" src="../img/cafe/cafe3.png" alt="" />
+                        <p class="title">最適合友聚時光的下午茶咖啡館</p>
+                        <button class="button"><img src="../icon/@1x/Wifi.svg"
+                                alt="有WIFI" /><small>有WIFI</small></button>
+                        <button class="button"><img src="../icon/@1x/Time.svg" alt="有限時" /><small>有限時</small></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
