@@ -712,6 +712,11 @@ p {
     position: relative;
 }
 
+.search-item-bg img {
+    width: auto; 
+    height: 100%;
+}
+
 .search-item-content {
     color: #FFFFFF;
     font-size: 2rem;
@@ -790,6 +795,11 @@ p {
         position: relative;
     }
 
+    .search-item-bg img {
+        width: 105%;
+        height: 100%; 
+    }
+
     .search-item {
         margin: 0 15px;
         text-align: center;
@@ -818,6 +828,11 @@ p {
         animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
         overflow: hidden;
         position: relative;
+    }
+
+    .search-item-bg img {
+        width: 103%;
+        height: 100%; 
     }
 
     .search-item-all {

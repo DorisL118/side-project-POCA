@@ -59,29 +59,6 @@
             height: auto;
         }
 
-        /* 桌面版 */
-        @media (min-width: 1024px) {
-            #article-all .article-item {
-                width: calc((100vw / 4) - 10px);
-            }
-        }
-
-        /* 平板版 */
-        @media (max-width:820px) {
-            #article-all .article-item {
-                width: calc((100vw / 3) - 10px);
-                height: auto;
-            }
-        }
-
-        /* 手機版 */
-        @media (max-width:640px) {
-            #article-all .article-item {
-                width: calc(100vw - 10px);
-                height: auto;
-            }
-        }
-
         :root {
             /*bg color*/
             --bg-color-1: #F6F7F2;
@@ -133,8 +110,12 @@
             margin: 10px 0px;
         }
 
-        /* 電腦 */
-        @media (min-width: 821px) {
+        /* 桌面版 */
+        @media (min-width: 1024px) {
+            #article-all .article-item {
+                width: calc((100vw / 4) - 10px);
+            }
+
             .article-title p {
                 margin-top: 5rem;
             }
@@ -144,8 +125,26 @@
             }
         }
 
-        /* 手機板 */
-        @media (max-width: 640px) {}
+        /* 平板版 */
+        @media (max-width:820px) {
+            #article-all .article-item {
+                width: calc((100vw / 3) - 10px);
+                height: auto;
+                overflow-x: hidden;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+        }
+
+        /* 手機版 */
+        @media (max-width:640px) {
+            #article-all .article-item {
+                width: calc(100vw - 10px);
+                height: auto;
+            }
+        }
     </style>
 </head>
 
@@ -187,7 +186,8 @@
                         <p class="title">沉浸書香，品味咖啡的文學天堂</p>
                         <button class="button"><img src="../icon/@1x/Wifi.svg"
                                 alt="有WIFI" /><small>有WIFI</small></button>
-                        <button class="button"><img src="../icon/@1x/mrt.svg" alt="松山新店線" /><small>松山新店線</small></button>
+                        <button class="button"><img src="../icon/@1x/mrt.svg"
+                                alt="松山新店線" /><small>松山新店線</small></button>
                         <button class="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" /><small>寵物友善</small></button>
                     </div>
                 </li>
@@ -195,8 +195,7 @@
                     <div class="article-item">
                         <img class="article-item-photo" src="../img/cafe/cafe5.png" alt="" />
                         <p class="title">毛孩天堂：超推的寵物友善咖啡廳</p>
-                        <button class="button"><img src="../icon/@1x/Pet.svg"
-                                alt="寵物友善" /><small>寵物友善</small></button>
+                        <button class="button"><img src="../icon/@1x/Pet.svg" alt="寵物友善" /><small>寵物友善</small></button>
                         <button class="button"><img src="../icon/@1x/mrt.svg" alt="板南線" /><small>板南線</small></button>
                     </div>
                 </li>
@@ -204,8 +203,7 @@
                     <div class="article-item">
                         <img class="article-item-photo" src="../img/cafe/cafe6.png" alt="" />
                         <p class="title">唱片迷必去的復古唱片咖啡廳</p>
-                        <button class="button"><img src="../icon/@1x/Date.svg"
-                                alt="可訂位" /><small>可訂位</small></button>
+                        <button class="button"><img src="../icon/@1x/Date.svg" alt="可訂位" /><small>可訂位</small></button>
                         <button class="button"><img src="../icon/@1x/Time.svg" alt="不限時" /><small>不限時</small></button>
                     </div>
                 </li>
