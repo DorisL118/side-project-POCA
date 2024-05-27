@@ -801,7 +801,7 @@ p {
     }
 
     .search-item {
-        margin: 0 15px;
+        margin: 0 3px;
         text-align: center;
         position: relative;
     }
@@ -810,13 +810,20 @@ p {
         width: auto;
         height: auto;
     }
+
+    .search-item p {
+        cursor: pointer;
+        font-weight: 550;
+        font-family: sans-serif;
+        font-size: 1.3rem;
+    }
 }
 
 /* 手機板 */
 @media (max-width:640px) {
     .search-item {
         width: 30vh;
-        height: 33vh;
+        height: 31vh;
         margin: 0px auto;
         text-align: center;
         position: relative;
@@ -840,6 +847,13 @@ p {
         /* 在手機板上改為直向排列 */
         align-items: stretch;
         /* 讓元素佔滿整個寬度 */
+    }
+
+    .search-item p {
+        cursor: pointer;
+        font-weight: 550;
+        font-family: sans-serif;
+        font-size: 1.3rem;
     }
 }
 
