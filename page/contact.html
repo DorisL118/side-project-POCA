@@ -54,18 +54,18 @@
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
                     </div>
 
-                    <div className="container">
+                    <div className="article-container">
                         <div className="row row-cols-2 mt-3">
-                            <div className="row-col-2">
+                            <div className="row-col-2" >
                                 <img src="../logo/@1x/Header-LOGO.svg" alt="#" />
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <li className="nav-item-1">
+                                    <div className="nav-item-1-1">
                                         <a href="http://127.0.0.1:5501/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" className="nav-link-shop" />
+                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
                                         </a>
-                                    </li>
+                                    </div>
                                     <li className="nav-item-2" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
@@ -78,41 +78,82 @@
         }
 
 
-        const Content = () => {
-            const Content = () => {
-                return <>
-
-                </>
-            }
-
+        const Contact = () => {
             return (<>
 
-                <Nav></Nav>
+                <Nav />
 
                 <div className="page-title">
                     <hr />
-                    <p>首頁 | 找咖啡 | 文章內容</p>
+                    <p>首頁 | 聯絡我們</p>
                     <hr />
                 </div>
 
-
                 <section>
-                    
+    <form className="smoove" method="post" name="form-contact" id="form-contact" title="聯絡我們表單">
 
-                    {/*------------這裡放你們的內容 記得 class=>className------------*/}
+        <div className="form-group">
+            <label htmlFor="username">姓名</label>
+            <input
+                type="text"
+                name="username"
+                id="username"
+                title="請輸入姓名"
+                placeholder="請輸入姓名"
+                required
+            />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="tel">聯絡電話</label>
+            <input
+                type="tel"
+                name="tel"
+                id="tel"
+                title="請輸入電話"
+                placeholder="0987654321"
+            />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="email">電子信箱</label>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                title="請輸入電子信箱"
+                placeholder="請輸入電子信箱"
+                required
+            />
+        </div>
+
+        <div className="form-group-textarea">
+            <label htmlFor="message">留言</label>
+            <textarea
+                name="message"
+                id="message"
+                rows="5"
+            ></textarea>
+        </div>
+
+        <button className="btn-form">
+            <p> 送出  ❯</p>
+        </button>
+    </form>
+</section>
+
 
 
                     <div className="footer">
                         <hr />
                         <p> © 2024 POCA. | 跑咖</p>
                     </div>
-                </section>
             </>);
 
         }
 
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Content />);
+        ReactDOM.createRoot(document.getElementById('root')).render(<Contact />);
         ReactDOM.createRoot(document.getElementById('nav')).render(<Nav />);
 
     </script>
