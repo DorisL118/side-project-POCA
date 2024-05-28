@@ -29,7 +29,8 @@
 
         const { useState, useEffect } = React;
 
-        const Nav = () => {
+        const Nav = ({ cartQuantity }) => {
+
             const [showOverlay, setShowOverlay] = useState(false);
 
             const handleClick = () => {
@@ -43,15 +44,17 @@
             return (
                 <>
                 <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
-                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 | POCA ❯</p></a></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
                         <hr />
-                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 | Cafe Article ❯</p></a></div>
-                        <hr/>
-                        <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 | Coffee Shop ❯</p></a></div>
-                        <hr/>
-                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 | Cafe Map ❯</p></a></div>
-                        <hr/>
-                        <div className="nav-home" onClick={handleHomeClick}><p>返回 | Return ❯</p></div>
+                        <div className="nav-find"><a href="http://127.0.0.1:5501/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-buy"><a href="http://127.0.0.1:5501/page/product.html"><p>買咖啡 &nbsp; | &nbsp; Coffee Shop &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/map.html"><p>店家地圖 &nbsp; | &nbsp; Cafe Map &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-map"><a href="http://127.0.0.1:5501/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
+                        <hr />
+                        <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
                     </div>
 
                     <div className="article-container">
@@ -61,12 +64,15 @@
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <div className="nav-item-1-1">
-                                        <a href="http://127.0.0.1:5501/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
-                                        </a>
-                                    </div>
-                                    <li className="nav-item-2" onClick={handleClick}>
+                                    <li className="nav-item">
+                                        <div className="nav-item-1-1">
+                                            <a href="http://127.0.0.1:5501/page/checkout.html">
+                                                <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="nav-item-1-2">{cartQuantity}</div>
+                                    </li>
+                                    <li className="nav-item" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
@@ -202,9 +208,9 @@
                 <div className="wavebox">
                     <div className="wavecontent">
                         <div>
-                            <img src="./img/@1x/wave-notify-v0507.svg" alt="" />
+                            <img src="../img/@1x/wave-notify-v0507.svg" alt="" />
                             <p>購物車尚未加入任何商品。</p>
-                            <img src="./img/@1x/wave-notify-v0507.svg" alt="" />
+                            <img src="../img/@1x/wave-notify-v0507.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -225,8 +231,9 @@
                             <>
                             <ShoppingCartPage/>
                             <Form />
-                            </>
+                            </>                            
                         )}
+
                     </section>
 
                     <div className="footer">
