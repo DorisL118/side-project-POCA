@@ -42,7 +42,7 @@
     <div id="nav"></div>
     <script type="text/babel">
 
-        const { useState } = React;
+        const { useState, useEffect } = React;
 
         const Nav = ({ cartQuantity }) => {
 
@@ -58,7 +58,7 @@
 
             return (
                 <>
-                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
@@ -79,12 +79,15 @@
                             </div>
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
-                                    <div className="nav-item-1-1">
-                                        <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
-                                            <img src="../icon/@1x/ShoppingCart.svg" alt="" />
-                                        </a>
-                                    </div>
-                                    <li className="nav-item-2" onClick={handleClick}>
+                                    <li className="nav-item">
+                                        <div className="nav-item-1-1">
+                                            <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
+                                                <img src="../icon/@1x/ShoppingCart.svg" alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="nav-item-1-2">{cartQuantity}</div>
+                                    </li>
+                                    <li className="nav-item" onClick={handleClick}>
                                         <img src="../icon/@1x/menu.svg" className="nav-link-more" href="#"></img>
                                     </li>
                                 </ul>
@@ -134,6 +137,16 @@
             const [cartItems, setCartItems] = useState([]);
             const [cartQuantity, setCartQuantity] = useState(0);
 
+            // 在組件加載時從 localStorage 中讀取購物車數據
+            useEffect(() => {
+                const savedCartItems = localStorage.getItem('cartItems');
+                if (savedCartItems) {
+                    const parsedCartItems = JSON.parse(savedCartItems);
+                    setCartItems(parsedCartItems);
+                    setCartQuantity(parsedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+                }
+            }, []);
+
             const updateCartQuantity = (item, quantity) => {
                 const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
                 let updatedCartItems;
@@ -150,7 +163,11 @@
 
                 setCartItems(updatedCartItems);
                 setCartQuantity(updatedCartItems.reduce((acc, item) => acc + item.quantity, 0));
+
+                // 將購物車數據保存到 localStorage
+                localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
             };
+
 
             const products = [
                 {
@@ -184,7 +201,7 @@
                         <div><img src="../img/@1x/FairTradeCoffee02.png" alt="" /></div>
                         <div>
                             <div className="page-product-title-1">
-                                <p>公平貿易咖啡</p>
+                                {/*<p>公平貿易咖啡</p>*/}
                                 <img src="../title-coco-font/Fair Trade Coffee.png" alt="" />
                             </div>
                             <div className="page-product-title-2">
@@ -229,7 +246,7 @@
 
                                     <div className="product-introduction-price">
                                         <div className="price"><p>NT$ {price}</p></div>
-                                        <div><ShoppingCart item={{ id }} updateCartQuantity={updateCartQuantity} /></div>
+                                        <div><ShoppingCart item={{ id, title, img, price }} updateCartQuantity={updateCartQuantity} /></div>
                                         <hr />
                                     </div>
                                 </div>
