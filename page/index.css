@@ -277,18 +277,35 @@ section {
 button {
     border-radius: 99px;
     margin: 0px 8px 0px 0px;
-    border-width: 1px;
+    border-width: 0.25px;
     border-style: solid;
-    background-color: #f1f1f1;
-    color: #686868;
-    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #111111;
+    border: 0.25px solid #111111;
     padding: 8px 12px;
     cursor: pointer;
     font-size: .8rem;
     display: flex;
     float: left;
     align-items: center;
-    padding: 4px 7px 4px 4px;
+    padding: 2px 7px 2px 4px;
+}
+
+.button {
+    border-radius: 99px;
+    margin: 0px 8px 0px 0px;
+    border-width: 0.25px;
+    border-style: solid;
+    background-color: transparent;
+    color: #111111;
+    border: 0.25px solid #111111;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: .8rem;
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 3px 7px 3px 4px;
 }
 
 .button img {
@@ -1783,6 +1800,10 @@ br::after {
 
 .page-product-title-2 p {
     margin-bottom: .3rem;
+}
+
+.product-content a:hover {
+    color: #111111;
 }
 
 /* RWD斷點
