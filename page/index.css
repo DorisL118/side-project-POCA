@@ -1342,7 +1342,7 @@ br::after {
 }
 
 .article-content-all {
-    width: 80vw;
+    width: 70vw;
     display: flex;
     flex-wrap: wrap;
     margin: 0px auto;
@@ -1716,7 +1716,7 @@ br::after {
 }
 
 .product-content-all {
-    width: 66.32vw;
+    width: 70vw;
     display: flex;
     flex-wrap: wrap;
     margin: 0px auto;
@@ -1726,7 +1726,7 @@ br::after {
 .product-content {
     display: flex;
     flex-direction: column;
-    margin: 0px 15px;
+    margin: 0px 5px;
 }
 
 .product-content>div {
