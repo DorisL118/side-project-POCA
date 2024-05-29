@@ -1914,6 +1914,11 @@ br::after {
     justify-content: space-evenly;
 }
 
+.product-introduction-1-title {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
 .product-introduction li {
     list-style-type: disc;
     margin-left: 5%;
