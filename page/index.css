@@ -500,7 +500,7 @@ p {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(44, 44, 44, 0.8);
+        background-color: rgba(44, 44, 44, 0.9);
         /* 半透明背景 */
         backdrop-filter: blur(10px);
         /* 毛玻璃效果 */
@@ -526,7 +526,7 @@ p {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(44, 44, 44, 0.8);
+        background-color: rgba(44, 44, 44, 1);
         /* 半透明背景 */
         backdrop-filter: blur(10px);
         /* 毛玻璃效果 */
