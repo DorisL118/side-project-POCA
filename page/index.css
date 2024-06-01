@@ -1531,9 +1531,10 @@ br::after {
 
 
 /*--------------- Page-3 | Article-Content 找咖啡 文章 內容---------------*/
-.article-content section {
+.article-content-text section {
     width: 100vw;
     height: auto;
+    margin-bottom: 50px;
 }
 
 .content-title-all {
@@ -1544,6 +1545,10 @@ br::after {
 .content-title-img {
     width: 70vw;
     height: auto;
+}
+
+.content-title-img img {
+    width: 95%;
 }
 
 .content-title-1 {
@@ -1640,10 +1645,30 @@ br::after {
 }
 
 /* 平板 */
-@media (max-width:820px) {}
+@media (max-width:820px) {
+    .content-title-img {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .content-title-img {
+        width: 113%;
+    }
+}
 
 /* 手機板 */
 @media (max-width:640px) {
+    .content-title-img {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .content-title-img {
+        width: 113%;
+    }
+
     .article-text {
         width: 80vw;
         height: auto;
