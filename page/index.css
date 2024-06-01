@@ -150,19 +150,36 @@ q {
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../poppins-font/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal;
+    src: url('../popins-font/Poppins-Light.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../poppins-font/Poppins-Bold.ttf') format('truetype');
-    font-weight: bold;
+    src: url('../popins-font/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
     font-style: normal;
 }
 
-/* 添加其他字體樣式和權重的 @font-face 規則 */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../popins-font/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.view-all {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #111111;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+    cursor: pointer;
+}
+
+
 
 
 body {
@@ -998,16 +1015,6 @@ p {
     letter-spacing: 0.2rem;
     line-height: 1.2rem;
     margin-top: 3rem;
-}
-
-.view-all {
-    font-family: "Poppins";
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #111111;
-    letter-spacing: 0.2rem;
-    line-height: 1.2rem;
-    cursor: pointer;
 }
 
 
