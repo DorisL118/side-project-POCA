@@ -1617,6 +1617,11 @@ br::after {
 
 /* 手機板 */
 @media (max-width:640px) {
+    .article-content-text {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
     .content-title-all {
         display: flex;
         flex-direction: column;
