@@ -1638,7 +1638,7 @@ br::after {
         object-fit: cover;
         width: 100%;
     }
-    
+
     .content-title-2 {
         display: flex;
         flex-direction: column;
@@ -2126,6 +2126,8 @@ br::after {
     justify-content: space-between;
     /* margin: 10vh 0 10vh 0; */
     width: 100vw;
+    height: 100vh;
+
 }
 
 /* RWD斷點
