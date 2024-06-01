@@ -1627,7 +1627,8 @@ br::after {
 
     .content-title-img img {
         height: 50vh;
-        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
     }
 
     .content-title-2 {
