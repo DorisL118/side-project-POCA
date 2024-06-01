@@ -1984,7 +1984,7 @@ br::after {
 @media (max-width:640px) {
     #quantity {
         width: 8vw;
-        height: 44px;
+        height: 24px !important;
         margin-right: .5rem;
     }
 
