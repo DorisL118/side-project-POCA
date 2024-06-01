@@ -747,14 +747,19 @@ p {
 }
 
 .search-bg {
-    width: 100%;
-    height: auto;
     position: relative;
+    width: 100vw; /* 佔滿視窗寬度 */
+    height: 100vh; /* 佔滿視窗高度 */
+    overflow: hidden; /* 隱藏超出部分 */
 }
 
 .search-bg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
-    height: auto;
+    height: 100%;
+    transform: translate(-50%, -50%); /* 將圖片中心對齊容器中心 */
 }
 
 .search-item-all {
