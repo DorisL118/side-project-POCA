@@ -2076,7 +2076,11 @@ br::after {
 .product-introduction-2 {
     width: 60vw;
     margin: 0 auto;
-    padding: 10vh 0;
+    padding: 5vh 0;
+}
+
+.product-introduction-2 p {
+    line-height: 1.4;
 }
 
 .product-introduction-2 img {
