@@ -1629,15 +1629,16 @@ br::after {
 
     .content-title-img {
         width: 100vw;
-        overflow: hidden;
+        height: 50vh;
+        overflow-x: hidden;
     }
 
     .content-title-img img {
-        height: 50vh;
+        height: 100%;
         object-fit: cover;
-        overflow: hidden;
+        width: 100%;
     }
-
+    
     .content-title-2 {
         display: flex;
         flex-direction: column;
