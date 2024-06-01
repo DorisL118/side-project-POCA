@@ -181,7 +181,6 @@ q {
 
 
 
-
 body {
     font-family: "noto-sans-tc", "Poppins", sans-serif;
     background-color: var(--bg-color-1);
@@ -2477,10 +2476,6 @@ br::after {
     .totalPrice p {
         text-align: end;
         margin: 25px 0 50px 0;
-    }
-
-    .zipcode {
-        margin-left: 0px;
     }
 }
 
