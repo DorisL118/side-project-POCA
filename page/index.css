@@ -81,8 +81,8 @@ body {
     line-height: 1;
     color: black;
     background: white;
-    width: 100vw;
-    overflow-x: hidden;
+    width: 100vw !important;
+    overflow-x: hidden !important;
 }
 
 
