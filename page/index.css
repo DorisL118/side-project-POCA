@@ -2469,6 +2469,9 @@ br::after {
         text-align: end;
         margin: 25px 0 50px 0;
     }
+    .zipcode {
+        margin-left: 9px;
+    }
 }
 
 
