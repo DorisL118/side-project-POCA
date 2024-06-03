@@ -17,3 +17,5 @@ document.querySelector('.article-item').addEventListener('mouseover', function()
 document.querySelector('.article-item').addEventListener('mouseout', function() {
     intervalId = setInterval(slide); // 重新啟動循環
 });
+
+

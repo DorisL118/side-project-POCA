@@ -453,6 +453,11 @@ p {
     cursor: pointer;
 }
 
+.nav-item-1-1 {
+    position: relative;
+    margin-left: 1rem;
+}
+
 .nav-link-more {
     cursor: pointer;
 }
@@ -1330,8 +1335,6 @@ br::after {
 
 
 
-
-
 /* 平板 */
 @media (max-width:820px) {
     #product {
@@ -1347,6 +1350,22 @@ br::after {
     }
 }
 
+
+
+#cartIcon {
+
+}
+
+.fly-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('../icon/@1x/CoffeeBean.main.svg') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
 
 
 /*--------------- footer ---------------*/

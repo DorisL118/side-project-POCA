@@ -17,6 +17,8 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
+    <script src="./product.js"></script>
+
 
     <script src="../json/jquery-1.11.3.min.js"></script>
     <script src="../json/jquery.jcarousellite.min.js"></script>
@@ -58,7 +60,7 @@
 
             return (
                 <>
-                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
@@ -70,7 +72,7 @@
                         <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
-                        <div className="return"  onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt=""/></div>
+                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
                     </div>
 
                     <div className="article-container">
@@ -81,7 +83,7 @@
                             <div className="row-col-2" >
                                 <ul className="nav justify-content-end">
                                     <li className="nav-item">
-                                        <div className="nav-item-1-1">
+                                        <div className="nav-item-1-1" id="cartIcon">
                                             <a href="https://dorisl118.github.io/side-project-POCA/page/checkout.html">
                                                 <img src="../icon/@1x/ShoppingCart.svg" alt="" />
                                             </a>
@@ -116,9 +118,11 @@
             }
 
             // 更新購物車數量
-            const submitCart = () => {
+            const submitCart = (event) => {
                 updateCartQuantity(item, quantity);
-            }
+                animateIcon(event);
+            };
+
 
             return (
                 <div className="counter">
@@ -278,28 +282,28 @@
                             <div className="product-content" key={id}>
                                 <div>
                                     <a href={url}>
-                                    <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
-                                    <div>
-                                        <p className="product-content-title">{title}</p>
-                                        <button className="button">
-                                            <p>{button1.text}</p>
-                                        </button>
-                                        {button2 &&
+                                        <img className="product-content-photo" src={img} alt="公平貿易咖啡豆" />
+                                        <div>
+                                            <p className="product-content-title">{title}</p>
                                             <button className="button">
-                                                <p>{button2.text}</p>
-                                            </button>}
-                                        {button3 &&
-                                            <button className="button">
-                                                <p>{button3.text}</p>
-                                            </button>}
-                                    </div>
-                                </a>
+                                                <p>{button1.text}</p>
+                                            </button>
+                                            {button2 &&
+                                                <button className="button">
+                                                    <p>{button2.text}</p>
+                                                </button>}
+                                            {button3 &&
+                                                <button className="button">
+                                                    <p>{button3.text}</p>
+                                                </button>}
+                                        </div>
+                                    </a>
                                 </div>
                                 <div>
                                     <div className="price"><p>NT$ {price}</p></div>
                                     <ShoppingCart item={{ id, title, img, price }} updateCartQuantity={updateCartQuantity} />
                                 </div>
-                                <hr/>
+                                <hr />
                             </div>
                         ))}
                     </div>
