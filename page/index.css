@@ -2190,7 +2190,8 @@ br::after {
         align-items: center;
         width: 100vw;
         height: auto;
-        min-height: 100vh;    }
+        min-height: 100vh;    
+    }
 }
 
 /* 手機板 */
