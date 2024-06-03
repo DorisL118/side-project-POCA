@@ -5,8 +5,8 @@ const animateIcon = (event) => {
     document.body.appendChild(flyIcon);
 
     const btnRect = event.target.getBoundingClientRect();
-    flyIcon.style.left = `${btnRect.left + btnRect.width / 2 - 15}px`;
-    flyIcon.style.top = `${btnRect.top + btnRect.height / 2 - 15}px`;
+    flyIcon.style.left = `${btnRect.left + btnRect.width / 2 }px`;
+    flyIcon.style.top = `${btnRect.top + btnRect.height / 2 }px`;
 
     // 強制重繪以應用初始樣式
     flyIcon.offsetHeight;

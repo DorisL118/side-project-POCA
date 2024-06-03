@@ -2173,8 +2173,8 @@ br::after {
     justify-content: space-between;
     /* margin: 10vh 0 10vh 0; */
     width: 100vw;
-    height: 100vh;
-
+    height: auto;
+    min-height: 100vh;
 }
 
 /* RWD斷點
@@ -2189,8 +2189,8 @@ br::after {
         justify-content: center;
         align-items: center;
         width: 100vw;
-        height: 100vh;
-    }
+        height: auto;
+        min-height: 100vh;    }
 }
 
 /* 手機板 */
