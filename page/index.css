@@ -252,6 +252,7 @@ section {
 
     .header-photo img {
         height: 60vh !important;
+        width: 138%;
         overflow: hidden;
     }
 
