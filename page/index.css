@@ -1906,7 +1906,7 @@ br::after {
 }
 
 .product-content img {
-    margin-bottom: .3rem;
+    /* margin-bottom: .3rem; */
 }
 
 .counter {
@@ -2032,8 +2032,14 @@ br::after {
 @media (max-width:640px) {
     #quantity {
         width: 8vw;
-        height: 28px !important;
+        height: 3vh !important;
         margin-right: .5rem;
+    }
+
+    .price {
+        position: absolute;
+        font-size: 1.3rem;
+        margin-top: .9rem;
     }
 
     .page-product-all {
