@@ -2031,8 +2031,8 @@ br::after {
 /* 手機板 */
 @media (max-width:640px) {
     #quantity {
-        width: 8vw;
-        height: 3vh !important;
+        width: 9vw;
+        height: 5vh !important;
         margin-right: .5rem;
     }
 
