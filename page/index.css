@@ -1914,6 +1914,7 @@ br::after {
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    height: auto;
 }
 
 .counter-btn {
@@ -2031,15 +2032,15 @@ br::after {
 /* 手機板 */
 @media (max-width:640px) {
     #quantity {
-        width: 8vw;
-        height: 3vh !important;
-        margin-right: .5rem;
+        width: 7vw;
+        height: 29px;
+        margin: .7rem;
     }
 
     .price {
         position: absolute;
         font-size: 1.3rem;
-        margin-top: .9rem;
+        margin-top: .7rem;
     }
 
     .page-product-all {
