@@ -924,8 +924,13 @@ p {
     }
 
     .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 40%;
         width: auto;
-        height: auto;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
     }
 
     .search-item p {
@@ -954,9 +959,14 @@ p {
         position: relative;
     }
 
-    .search-item-bg img {
-        width: 103%;
-        height: 100%;
+    .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 80%;
+        width: auto;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
     }
 
     .search-item-all {
@@ -1162,6 +1172,10 @@ br::after {
         font-size: 1.2rem;
         content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
         margin: 50px 0;
+    }
+    .coffe-item-2-2 p {
+        text-align: center;
+        font-size: .9rem;
     }
 }
 
@@ -1675,7 +1689,7 @@ br::after {
         display: flex;
         flex-direction: column;
     }
-    
+
     .content-title-img {
         width: 100vw;
         height: 50vh;
