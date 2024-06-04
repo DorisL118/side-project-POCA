@@ -2664,7 +2664,14 @@ textarea:focus {
 
 
 /*--------------- 完成訂購畫面 ---------------*/
-
+.shoppingComplete section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* wave+通知文字 */
 /* 垂直置中波浪+通知 */
 .wavebox {
