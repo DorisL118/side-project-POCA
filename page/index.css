@@ -98,14 +98,14 @@ iframe {
 
 .jCarousel iframe {
     width: 100%;
-    height: 525px;
+    height: 500px;
     /* 設置適當的高度 */
     border: none;
 }
 
 .jCarousel {
     width: 100vw;
-    height: 50vh;
+    height: 51vh;
     overflow: hidden;
 }
 
