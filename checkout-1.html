@@ -43,7 +43,7 @@
 
             return (
                 <>
-                    <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
+                <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`}>
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/index.html"><p>首頁 &nbsp; | &nbsp; POCA &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-find"><a href="https://dorisl118.github.io/side-project-POCA/page/article.html"><p>找咖啡 &nbsp; | &nbsp; Cafe Article &nbsp; ❯</p></a></div>
@@ -55,7 +55,7 @@
                         <div className="nav-map"><a href="https://dorisl118.github.io/side-project-POCA/page/contact.html"><p>聯繫我們 &nbsp; | &nbsp; Contact us &nbsp; ❯</p></a></div>
                         <hr />
                         <div className="nav-home" onClick={handleHomeClick}><p>返回 &nbsp; | &nbsp; Return &nbsp; ❯</p></div>
-                        <div className="return" onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt="" /></div>
+                        <div className="return"  onClick={handleHomeClick}><img src="../icon/@1x/menu-return.svg" alt=""/></div>
                     </div>
 
                     <div className="article-container">
@@ -127,84 +127,81 @@
                                 <div>{item.title ? <p>{item.title}</p> : null}</div>
                                 <div><p>數量: {item.quantity}</p></div>
                                 <div>{item.price ? <p>NT $ {item.quantity * item.price}</p> : null}</div>
-                                <div><button onClick={() => handleDeleteItem(item.id)}><img src="../icon/@1x/Delete.svg" /></button></div>
+                                <div><button onClick={() => handleDeleteItem(item.id)}><img src="../icon/@1x/Delete.svg"/></button></div>
                             </li>
                         ))}
-                        <hr />
+                        <hr/>
                         <div className="totalPrice"><p>總計: {totalPrice} 元</p></div>
                     </ul>
                 </div>
             );
-            const clearLocalStorage = () => {
-                localStorage.removeItem('cartItems');
-            };
 
             const Form = () => (
                 <>
-                    <div className="form-data">
-                        <div class="vertical-line"></div>
+                <div className="form-data">
+                    <div class="vertical-line"></div>
 
-                        <form className="smoove" action="" method="post" name="form-contact" id="form-contact" title="完成訂購表單">
-                            <div>
-                                <label htmlFor="username">收件姓名&nbsp;&nbsp;&nbsp;</label>
-                                <input type="text" name="username" id="username" title="請輸入姓名" placeholder="請輸入姓名" required />
-                            </div>
-                            <div>
-                                <label htmlFor="tel">聯絡電話&nbsp;&nbsp;&nbsp;</label>
-                                <input type="tel" name="tel" id="tel" title="請輸入聯絡電話" placeholder="請輸入聯絡電話" required />
-                            </div>
-                            <div>
-                                <label htmlFor="email">電子郵件&nbsp;&nbsp;&nbsp;</label>
-                                <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="請輸入電子郵件" required />
-                            </div>
-                            <div>
-                                <label htmlFor="county">運送方式&nbsp;&nbsp;&nbsp;</label>
-                                <select name="county" id="county" required>
-                                    <option value="選擇" disabled selected>請選擇運送方式</option>
-                                    <option value="宅配">宅配</option>
-                                    <option value="超商店到店">超商店到店</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label htmlFor="county">收件縣市&nbsp;&nbsp;&nbsp;</label>
-                                <select name="county" id="county" required>
-                                    <option value="選擇" disabled selected>請選擇收件縣市</option>
-                                    <option value="台北市">台北市</option>
-                                    <option value="新北市">新北市</option>
-                                    <option value="桃園市">桃園市</option>
-                                    <option value="台中市">台中市</option>
-                                    <option value="台南市">台南市</option>
-                                    <option value="高雄市">高雄市</option>
-                                    <option value="基隆市">基隆市</option>
-                                    <option value="新竹市">新竹市</option>
-                                    <option value="嘉義市">嘉義市</option>
-                                    <option value="新竹縣">新竹縣</option>
-                                    <option value="苗栗縣">苗栗縣</option>
-                                    <option value="彰化縣">彰化縣</option>
-                                    <option value="南投縣">南投縣</option>
-                                    <option value="雲林縣">雲林縣</option>
-                                    <option value="嘉義縣">嘉義縣</option>
-                                    <option value="屏東縣">屏東縣</option>
-                                    <option value="宜蘭縣">宜蘭縣</option>
-                                    <option value="花蓮縣">花蓮縣</option>
-                                    <option value="台東縣">台東縣</option>
-                                    <option value="澎湖縣">澎湖縣</option>
-                                    <option value="金門縣">金門縣</option>
-                                    <option value="連江縣">連江縣</option>
-                                </select>
-
-                                <label className="zipcode" htmlFor="zipcode">郵遞區號&nbsp;&nbsp;&nbsp;</label>
-                                <input type="text" name="zipcode" id="zipcode" title="請輸入郵遞區號" placeholder="請輸入郵遞區號" required />
-                            </div>
-                            <div className="address">
-                                <label htmlFor="address">收件地址&nbsp;&nbsp;&nbsp;</label>
-                                <input type="email" name="email" id="email" title="請輸入詳細收件地址" placeholder="請輸入電子郵件" required />
-                            </div>
-                            <div className="btn-form">
-                                <a href="https://dorisl118.github.io/side-project-POCA/page/shoppingComplete.html"><span className="font-noto-sans" onClick={() => { clearLocalStorage(); }}>完成訂購 ❯</span></a>
-                            </div>
-                        </form>
-                    </div>
+                    <form className="smoove" action="" method="post" name="form-contact" id="form-contact" title="完成訂購表單">
+                        <div>
+                            <label htmlFor="username">收件姓名&nbsp;&nbsp;&nbsp;</label>
+                            <input type="text" name="username" id="username" title="請輸入姓名" placeholder="請輸入姓名" required />
+                        </div>
+                        <div>
+                            <label htmlFor="tel">聯絡電話&nbsp;&nbsp;&nbsp;</label>
+                            <input type="tel" name="tel" id="tel" title="請輸入聯絡電話" placeholder="請輸入聯絡電話" required />
+                        </div>
+                        <div>
+                            <label htmlFor="email">電子郵件&nbsp;&nbsp;&nbsp;</label>
+                            <input type="email" name="email" id="email" title="請輸入電子郵件" placeholder="請輸入電子郵件" required />
+                        </div>
+                        <div>
+                            <label htmlFor="county">運送方式&nbsp;&nbsp;&nbsp;</label>
+                            <select name="county" id="county" required>
+                                <option value="選擇" disabled selected>請選擇運送方式</option>
+                                <option value="宅配">宅配</option>
+                                <option value="超商店到店">超商店到店</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="county">收件縣市&nbsp;&nbsp;&nbsp;</label>
+                            <select name="county" id="county" required>
+                                <option value="選擇" disabled selected>請選擇收件縣市</option>
+                                <option value="台北市">台北市</option>
+                                <option value="新北市">新北市</option>
+                                <option value="桃園市">桃園市</option>
+                                <option value="台中市">台中市</option>
+                                <option value="台南市">台南市</option>
+                                <option value="高雄市">高雄市</option>
+                                <option value="基隆市">基隆市</option>
+                                <option value="新竹市">新竹市</option>
+                                <option value="嘉義市">嘉義市</option>
+                                <option value="新竹縣">新竹縣</option>
+                                <option value="苗栗縣">苗栗縣</option>
+                                <option value="彰化縣">彰化縣</option>
+                                <option value="南投縣">南投縣</option>
+                                <option value="雲林縣">雲林縣</option>
+                                <option value="嘉義縣">嘉義縣</option>
+                                <option value="屏東縣">屏東縣</option>
+                                <option value="宜蘭縣">宜蘭縣</option>
+                                <option value="花蓮縣">花蓮縣</option>
+                                <option value="台東縣">台東縣</option>
+                                <option value="澎湖縣">澎湖縣</option>
+                                <option value="金門縣">金門縣</option>
+                                <option value="連江縣">連江縣</option>
+                            </select>
+                            
+                            <label className="zipcode" htmlFor="zipcode">郵遞區號&nbsp;&nbsp;&nbsp;</label>
+                            <input type="text" name="zipcode" id="zipcode" title="請輸入郵遞區號" placeholder="請輸入郵遞區號" required />
+                        </div>
+                        <div className="address">
+                            <label htmlFor="address">收件地址&nbsp;&nbsp;&nbsp;</label>
+                            <input type="email" name="email" id="email" title="請輸入詳細收件地址" placeholder="請輸入電子郵件" required />
+                        </div>
+                        <div className="btn-form">
+                            <span className="font-noto-sans">完成訂購 ❯</span>
+                        </div>
+                    </form>
+                </div>
                 </>
             );
 
@@ -233,9 +230,9 @@
                     <section className="form">
                         {showIframe ? <CartEmpty /> : (
                             <>
-                                <ShoppingCartPage />
-                                <Form />
-                            </>
+                            <ShoppingCartPage/>
+                            <Form />
+                            </>                            
                         )}
 
                     </section>
