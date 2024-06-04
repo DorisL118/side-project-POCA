@@ -361,6 +361,7 @@ a:hover,
     right: 60px;
     cursor: pointer;
 }
+
 .return:hover {
     background-color: var(--main);
     border-radius: 999;
@@ -404,7 +405,7 @@ p {
 
 /* RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .return {
         position: absolute;
         top: 20px;
@@ -414,10 +415,11 @@ p {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .vertical-line {
         display: none;
     }
+
     .return {
         position: absolute;
         top: 20px;
@@ -506,7 +508,7 @@ p {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
 
     .nav-find,
     .nav-buy,
@@ -557,19 +559,20 @@ p {
 
 /* header RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     #search {
         width: 100%;
         height: 40vh;
     }
+
     #article {
         width: 100%;
         height: 45vh;
     }
-    
+
     .header {
         height: 45vh;
         width: 100%;
@@ -729,10 +732,10 @@ p {
 
 /* RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .header-photo img {
         height: auto;
         width: 80%;
@@ -789,9 +792,12 @@ p {
 
 .search-bg {
     position: relative;
-    width: 100vw; /* 佔滿視窗寬度 */
-    height: 100vh; /* 佔滿視窗高度 */
-    overflow: hidden; /* 隱藏超出部分 */
+    width: 100vw;
+    /* 佔滿視窗寬度 */
+    height: 100vh;
+    /* 佔滿視窗高度 */
+    overflow: hidden;
+    /* 隱藏超出部分 */
 }
 
 .search-bg img {
@@ -800,8 +806,10 @@ p {
     left: 50%;
     width: 100vw;
     height: 80%;
-    object-fit: contain; /* 保持圖片比例並縮放以適應容器 */
-    transform: translate(-50%, -50%); /* 將圖片中心對齊容器中心 */
+    object-fit: contain;
+    /* 保持圖片比例並縮放以適應容器 */
+    transform: translate(-50%, -50%);
+    /* 將圖片中心對齊容器中心 */
 }
 
 .search-item-all {
@@ -900,10 +908,10 @@ p {
     }
 }
 
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .search-item-bg {
         width: 22vh;
         height: 22vh;
@@ -1039,7 +1047,7 @@ p {
 }
 
 /* 電腦 */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .article-title p {
         margin-top: 5rem;
     }
@@ -1151,28 +1159,13 @@ br::after {
 }
 
 /* 電腦版 */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     #fair-trade-text::after {
         font-size: 1rem;
         content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。\A\A針對擁有受僱者的農場，其標準需確保勞動者擁有適當的工資，以及加入工會和團體協商的權利。公平貿易認證的農場必須確保沒有強迫勞動、雇用童工、危害健康與安全的情況。\A\A根據公平貿易認證的標準，擁有受僱者的農場必須設置一位中間人（joint body）代表勞資雙方。這位中間人決定如何將公平貿易組織所投入的輔導金分配予農場的工人。\A\A某些產品，例如咖啡，只有小農組織可以申請公平貿易認證。其他類似茶葉，則兩種組織形式皆可以申請認證。";
     }
 }
 
-/* 小電腦 */
-@media (min-width: 1024px) and (max-width: 1024px) {
-    #fair-trade-text::after {
-        font-size: 1.2rem;
-        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。";
-    }
-    .scrolldownIframe {
-        position: absolute;
-        left: 10px;
-        width: 50px;
-        border: none;
-        overflow: hidden;
-        top: 100%;
-    }
-}
 /* 平板 */
 @media (max-width: 1023px) and (min-width: 641px) and (min-width: 641px) {
     #fair-trade-text::after {
@@ -1188,6 +1181,7 @@ br::after {
         content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。";
         margin: 50px 0;
     }
+
     .coffe-item-2-2 p {
         text-align: center;
         font-size: .9rem;
@@ -1196,10 +1190,10 @@ br::after {
 
 /* RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .coffe-item-all {
         display: block;
         align-items: center;
@@ -1375,7 +1369,7 @@ br::after {
 
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     #product {
         padding-top: 200px;
     }
@@ -1391,9 +1385,7 @@ br::after {
 
 
 
-#cartIcon {
-
-}
+#cartIcon {}
 
 .fly-icon {
     position: absolute;
@@ -1528,7 +1520,7 @@ br::after {
 }
 
 /* 選單 */
-/* .dropdown {
+.dropdown {
     display: inline-block;
     margin: 10px 50px 40px 45px;
 }
@@ -1573,6 +1565,7 @@ br::after {
     transform: translateX(-50%);
     z-index: 1;
     top: calc(100% + 3px);
+    /* 將菜單顯示在 toggle 下方 */
     font-size: .9rem;
 }
 
@@ -1589,9 +1582,9 @@ br::after {
 }
 
 /* 當 button.dropdown-toggle 被 hover 時，顯示相鄰的 .dropdown-menu */
-/* .button.dropdown-toggle:hover+.dropdown-menu {
+.button.dropdown-toggle:hover+.dropdown-menu {
     display: block;
-}  */
+}
 
 
 
@@ -1648,10 +1641,10 @@ br::after {
 
 /* RWD斷點
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .content-title-all {
         display: flex;
         flex-direction: row;
@@ -1755,7 +1748,7 @@ br::after {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .content-title-img {
         width: 100vw;
         height: auto;
@@ -1844,7 +1837,7 @@ br::after {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .store {
         display: block;
         justify-content: center;
@@ -1982,10 +1975,10 @@ br::after {
 
 /* RWD斷點
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     #quantity {
         width: 4vw;
         height: 22px;
@@ -2152,13 +2145,14 @@ br::after {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .product-introduction {
         width: 85%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
+
     .product-introduction-photo {
         width: 35vw;
     }
@@ -2222,10 +2216,10 @@ br::after {
 
 /* RWD斷點
 /* 電腦 */
-@media (min-width: 1024px) {}
+@media (min-width: 1025px) {}
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .form {
         display: flex;
         flex-direction: column;
@@ -2233,7 +2227,7 @@ br::after {
         align-items: center;
         width: 100vw;
         height: auto;
-        min-height: 100vh;    
+        min-height: 100vh;
     }
 }
 
@@ -2406,10 +2400,12 @@ br::after {
     width: 204px;
 }
 
-.form-data input, select {
+.form-data input,
+select {
     background-color: transparent;
     border: 1px solid #111111;
 }
+
 .totals-checkout {
     display: flex;
     justify-content: space-between;
@@ -2465,14 +2461,14 @@ br::after {
 
 /* RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .zipcode {
         margin-left: 15px;
     }
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     .shopping-cart-page {
         display: flex;
         flex-direction: column;
@@ -2480,6 +2476,7 @@ br::after {
         width: 100vw;
         height: auto;
     }
+
     .zipcode {
         margin-left: 15px;
     }
@@ -2514,6 +2511,7 @@ br::after {
         text-align: end;
         margin: 25px 0 50px 0;
     }
+
     .zipcode {
         margin-left: 9px;
     }
@@ -2630,7 +2628,7 @@ textarea:focus {
 
 /* RWD斷點 */
 /* 電腦 */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     #form-contact textarea {
         width: 30vw;
         height: 20vh;
@@ -2638,7 +2636,7 @@ textarea:focus {
 }
 
 /* 平板 */
-@media (max-width: 1023px) and (min-width: 641px) {
+@media (max-width: 1024px) and (min-width: 641px) {
     #form-contact textarea {
         width: 30vw;
         height: 20vh;
@@ -2652,3 +2650,91 @@ textarea:focus {
         height: 20vh;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- 特殊尺寸1024px 小電腦 ---------------*/
+
+/* 小電腦 */
+/* @media (min-width: 1024px) and (max-width: 1024px) {
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #fair-trade-text::after {
+        font-size: 1.2rem;
+        content: "針對弱勢的生產者，發展出分別針對屬於自耕農的小農組織和擁有受僱者的農場等兩種公平貿易認證的標準。\A\A針對小農組織的公平貿易標準，其要求包括民主決策，確保生產者對於公平貿易組織所投入的輔導金之運用有發言的權利。";
+    }
+
+    .scrolldownIframe {
+        position: absolute;
+        left: 10px;
+        width: 50px;
+        border: none;
+        overflow: hidden;
+        top: 100%;
+    }
+
+    .header {
+        height: 100vh;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    .search-bg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: translate(-50%, -50%);
+    }
+
+    #search {
+        width: 100%;
+        height: 65vh;
+    }
+
+    .search-item {
+        margin: 0 15px;
+        text-align: center;
+        position: relative;
+    }
+
+    .search-item-bg {
+        width: 40vh;
+        height: 40vh;
+        animation: 10s ease-in-out 0s infinite alternate none running morph, 20s linear 0s infinite alternate none running change;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #article {
+        width: 100%;
+        height: 90vh;
+    }
+
+    #product {
+        padding-top: 120px;
+    }
+} */
