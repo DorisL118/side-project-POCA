@@ -134,6 +134,10 @@
             font-size: 1rem;
             font-weight: 700;
             margin: 10px 0px;
+            display: -webkit-box;           /* 必須設定這個屬性才能實現多行省略 */
+            -webkit-box-orient: vertical;   /* 必須設置這個屬性才能實現多行省略 */
+            -webkit-line-clamp: 1;          /* 設置顯示的行數 */
+            overflow: hidden;               /* 隱藏超出的部分 */
         }
     </style>
 </head>
