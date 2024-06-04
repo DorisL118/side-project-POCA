@@ -17,6 +17,8 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
+    <script src="./product.js"></script>
+
 
     <script src="../json/jquery-1.11.3.min.js"></script>
     <script src="../json/jquery.jcarousellite.min.js"></script>
@@ -118,9 +120,10 @@
             }
 
             // 更新購物車數量
-            const submitCart = () => {
+            const submitCart = (event) => {
                 updateCartQuantity(item, quantity);
-            }
+                animateIcon(event);
+            };
 
             return (
                 <div className="introduction-counter">

@@ -1919,6 +1919,11 @@ br::after {
 .counter-btn {
     width: 1.4rem;
     height: 1.4rem;
+    font-size: larger;
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+
 }
 
 .counter label {
@@ -2672,6 +2677,7 @@ textarea:focus {
     align-items: center;
     justify-content: center;
 }
+
 /* wave+通知文字 */
 /* 垂直置中波浪+通知 */
 .wavebox {
