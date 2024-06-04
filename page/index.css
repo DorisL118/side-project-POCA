@@ -2031,15 +2031,15 @@ br::after {
 /* 手機板 */
 @media (max-width:640px) {
     #quantity {
-        width: 6vw;
-        height: 24px;
-        margin: .7rem;
+        width: 8vw;
+        height: 3vh !important;
+        margin-right: .5rem;
     }
 
     .price {
         position: absolute;
         font-size: 1.3rem;
-        margin-top: .7rem;
+        margin-top: .9rem;
     }
 
     .page-product-all {
