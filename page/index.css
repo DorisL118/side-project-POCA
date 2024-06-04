@@ -2030,10 +2030,10 @@ br::after {
 
 /* 手機板 */
 @media (max-width:640px) {
-    #quantity input {
-        width: 8vw;
-        height: 3vh !important;
-        margin-right: .5rem;
+    #quantity {
+        width: 6vw;
+        height: 24px;
+        margin: .7rem;
     }
 
     .price {
