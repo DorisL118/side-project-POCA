@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>jCarouselLite-旋轉木馬</title>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery.jcarousellite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.jcarousellite.min.js"></script> -->
     <script>
         $(document).ready(function () {
             function getVisibleItems() {
@@ -31,9 +33,22 @@
         });
     </script>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* 隱藏水平滾動條 */
+        }
+
         #article-all {
-            width: 100%;
+            visibility: visible;
             overflow: hidden;
+            position: relative;
+            z-index: 2;
+            left: 0px;
+            width: 100vw !important;
+            box-sizing: border-box;
+            /* 確保寬度計算包含邊框和內距 */
         }
 
         #article-all ul {
@@ -41,6 +56,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
+            box-sizing: border-box;
         }
 
         #article-all li {
@@ -52,11 +68,13 @@
             width: 100%;
             height: 100%;
             text-align: center;
+            box-sizing: border-box;
         }
 
         .article-item-photo {
             width: 100%;
             height: auto;
+            box-sizing: border-box;
         }
 
         :root {
@@ -109,10 +127,14 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin: 10px 0px;
-            display: -webkit-box;           /* 必須設定這個屬性才能實現多行省略 */
-            -webkit-box-orient: vertical;   /* 必須設置這個屬性才能實現多行省略 */
-            -webkit-line-clamp: 1;          /* 設置顯示的行數 */
-            overflow: hidden;               /* 隱藏超出的部分 */
+            display: -webkit-box;
+            /* 必須設定這個屬性才能實現多行省略 */
+            -webkit-box-orient: vertical;
+            /* 必須設置這個屬性才能實現多行省略 */
+            -webkit-line-clamp: 1;
+            /* 設置顯示的行數 */
+            overflow: hidden;
+            /* 隱藏超出的部分 */
         }
 
 
@@ -120,6 +142,7 @@
         @media (min-width: 1025px) {
             #article-all .article-item {
                 width: calc((100vw / 4) - 10px);
+                overflow: hidden;
             }
 
             .article-title p {
@@ -132,11 +155,11 @@
         }
 
         /* 平板版 */
-        @media (max-width: 1024px) and (min-width: 641px)  {
+        @media (max-width: 1024px) and (min-width: 641px) {
             #article-all .article-item {
                 width: calc((100vw / 2) - 10px);
                 height: auto;
-                overflow-x: hidden;
+                overflow: hidden;
             }
 
             .title {
@@ -149,6 +172,7 @@
             #article-all .article-item {
                 width: calc(100vw - 10px);
                 height: auto;
+                overflow: hidden;
             }
         }
     </style>
@@ -216,6 +240,9 @@
             </ul>
         </div>
     </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.jcarousellite.min.js"></script>
 </body>
 
 </html>
