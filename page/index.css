@@ -2032,7 +2032,7 @@ br::after {
 @media (max-width:640px) {
     #quantity {
         width: 8vw;
-        height: 24px !important;
+        height: 28px !important;
         margin-right: .5rem;
     }
 
