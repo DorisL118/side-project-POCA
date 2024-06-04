@@ -1914,7 +1914,6 @@ br::after {
     align-items: center;
     justify-content: flex-end;
     position: relative;
-    height: auto;
 }
 
 .counter-btn {
@@ -2031,10 +2030,10 @@ br::after {
 
 /* 手機板 */
 @media (max-width:640px) {
-    #quantity {
-        width: 7vw;
-        height: 29px;
-        margin: .7rem;
+    #quantity input {
+        width: 8vw;
+        height: 3vh !important;
+        margin-right: .5rem;
     }
 
     .price {
