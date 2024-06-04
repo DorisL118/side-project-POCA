@@ -1633,7 +1633,7 @@ br::after {
 
     .content-title-img img {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     .content-title-1 {
@@ -1649,7 +1649,7 @@ br::after {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 45vw;
+        width: 40vw;
     }
 
     .content-title-2 iframe {
