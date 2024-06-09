@@ -189,8 +189,7 @@ body {
 
 section {
     width: 100%;
-    min-height: 80vh;
-    height: auto;    
+    height: 80vh;
     display: flex;
     flex-direction: column;
 }
@@ -214,6 +213,10 @@ section {
     .header {
         height: auto;
         /* 自定義電腦端樣式 */
+    }
+    section {
+        min-height: 80vh;
+        height: auto;  
     }
 
 }
